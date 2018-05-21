@@ -1,6 +1,8 @@
-# Starter JS
+# Junk News Aggregator
 
-Starter template for JavaScript web app projects.
+Simple web app that lets users review the contents of a "junk news articles"
+database. The database is a separate system, containing news articles gathered
+from social media.
 
 ## Development
 
