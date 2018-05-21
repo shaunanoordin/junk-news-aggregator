@@ -78,7 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"src/assets/simple-bg.png\";\n\n//# sourceURL=webpack:///./src/assets/simple-bg.png?");
+eval("module.exports = __webpack_require__.p + \"assets/simple-bg.png\";\n\n//# sourceURL=webpack:///./src/assets/simple-bg.png?");
 
 /***/ }),
 

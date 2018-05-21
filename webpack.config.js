@@ -30,7 +30,13 @@ module.exports = {
       {
         test: /\.(jpg|png|gif|svg\d?)$/,
         exclude: /node_modules/,
-        use: "file-loader?name=[path][name].[ext]"
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[path][name].[ext]",
+            context: path.join(__dirname, "src")
+          }
+        }],
       },
       {
         test: /\.styl$/,
