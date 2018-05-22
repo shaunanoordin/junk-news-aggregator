@@ -6,6 +6,10 @@ Junk News Aggregator
 --------------------------------------------------------------------------------
  */
 
+//Import style and asset files, so Webpack knows to package them.
+import "./main.styl";
+import "./assets/simple-bg.png";
+
 /*  Primary App Class
  */
 //==============================================================================
