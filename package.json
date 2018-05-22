@@ -29,9 +29,7 @@
     "stylus": "0.54.5"
   },
   "scripts": {
-    "start": "webpack && stylus src -o app && node server.js",
-    "dev": "concurrently \"webpack --watch\" \"stylus src -o app --watch\" \"node server.js\"",
-    "start-OLD": "webpack && stylus src -o app && node server.js",
-    "dev-OLD": "concurrently \"webpack --watch\" \"stylus src -o app --watch\" \"node server.js\""
+    "start": "webpack && node server.js",
+    "dev": "concurrently \"webpack --watch\" \"node server.js\""
   }
 }
