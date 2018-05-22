@@ -90,7 +90,7 @@ eval("module.exports = __webpack_require__.p + \"assets/simple-bg.png\";\n\n//# 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./main.styl */ \"./src/main.styl\");\n\n__webpack_require__(/*! ./assets/simple-bg.png */ \"./src/assets/simple-bg.png\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } } /*  \n                                                                                                                                                          Junk News Aggregator\n                                                                                                                                                          --------------------\n                                                                                                                                                          \n                                                                                                                                                          (Shaun A. Noordin | shaunanoordin.com | 20180518)\n                                                                                                                                                          --------------------------------------------------------------------------------\n                                                                                                                                                           */\n\n//Import style and asset files, so Webpack knows to package them.\n\n\n/*  Primary App Class\n */\n//==============================================================================\nvar App = function App() {\n  _classCallCheck(this, App);\n\n  this.console = document.getElementById(\"console\");\n};\n//==============================================================================\n\n/*  Initialisations\n */\n//==============================================================================\n\n\nvar app;\nwindow.onload = function () {\n  window.app = new App();\n};\n//==============================================================================\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("\n\n__webpack_require__(/*! ./main.styl */ \"./src/main.styl\");\n\n__webpack_require__(/*! ./assets/simple-bg.png */ \"./src/assets/simple-bg.png\");\n\n__webpack_require__(/*! ./pages/index.php */ \"./src/pages/index.php\");\n\n__webpack_require__(/*! ./pages/index.html */ \"./src/pages/index.html\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } } /*  \n                                                                                                                                                          Junk News Aggregator\n                                                                                                                                                          --------------------\n                                                                                                                                                          \n                                                                                                                                                          (Shaun A. Noordin | shaunanoordin.com | 20180518)\n                                                                                                                                                          --------------------------------------------------------------------------------\n                                                                                                                                                           */\n\n//Import style and asset files, so Webpack knows to package them.\n\n\n/*  Primary App Class\n */\n//==============================================================================\nvar App = function App() {\n  _classCallCheck(this, App);\n\n  //this.console = document.getElementById(\"console\");\n  console.log(\"START\");\n};\n//==============================================================================\n\n/*  Initialisations\n */\n//==============================================================================\n\n\nvar app;\nwindow.onload = function () {\n  window.app = new App();\n};\n//==============================================================================\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ }),
 
@@ -102,6 +102,28 @@ eval("\n\n__webpack_require__(/*! ./main.styl */ \"./src/main.styl\");\n\n__webp
 /***/ (function(module, exports) {
 
 eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/main.styl?");
+
+/***/ }),
+
+/***/ "./src/pages/index.html":
+/*!******************************!*\
+  !*** ./src/pages/index.html ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"index.html\";\n\n//# sourceURL=webpack:///./src/pages/index.html?");
+
+/***/ }),
+
+/***/ "./src/pages/index.php":
+/*!*****************************!*\
+  !*** ./src/pages/index.php ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"index.php\";\n\n//# sourceURL=webpack:///./src/pages/index.php?");
 
 /***/ })
 

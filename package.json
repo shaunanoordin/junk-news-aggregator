@@ -12,7 +12,6 @@
     ]
   },
   "dependencies": {
-    "express": "4.16.3",
     "concurrently": "3.5.1",
     "webpack": "4.5.0",
     "file-loader": "1.1.11",
@@ -25,11 +24,10 @@
     "clean-webpack-plugin": "0.1.19",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
-    "babel-preset-env": "1.6.1",
-    "stylus": "0.54.5"
+    "babel-preset-env": "1.6.1"
   },
   "scripts": {
-    "start": "webpack && node server.js",
-    "dev": "concurrently \"webpack --watch\" \"node server.js\""
+    "start": "webpack && php -S localhost:3000 router.php",
+    "dev": "concurrently \"webpack --watch\" \"php -S localhost:3000 router.php\""
   }
 }

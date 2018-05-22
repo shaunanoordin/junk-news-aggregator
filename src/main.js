@@ -9,13 +9,16 @@ Junk News Aggregator
 //Import style and asset files, so Webpack knows to package them.
 import "./main.styl";
 import "./assets/simple-bg.png";
+import "./pages/index.php";
+import "./pages/index.html";
 
 /*  Primary App Class
  */
 //==============================================================================
 class App {
   constructor() {
-    this.console = document.getElementById("console");
+    //this.console = document.getElementById("console");
+    console.log("START");
   }
 }
 //==============================================================================
