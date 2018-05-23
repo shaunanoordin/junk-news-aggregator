@@ -72,6 +72,15 @@ class App {
   
   init() {
     console.log('+++ Page Type: ', this.currentPageType);
+    
+    if (this.currentPageType === this.PAGE_TYPES.LIST) {
+      this.populateList();
+    }
+  }
+  
+  populateList() {
+    if (!this.html.list) return;
+    
   }
 }
 //------------------------------------------------------------------------------

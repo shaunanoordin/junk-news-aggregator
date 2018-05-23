@@ -165,4 +165,62 @@ select
     overflow: auto
     padding: 0
     
+    .item
+      border: 1px solid $blue
+      display: flex
+      margin: 0.5em
+      overflow: auto
+      
+      .image
+        display: block
+        flex: 0 0 auto
+        margin: 0.5em
+        
+        img
+          width: 10em
+          display: block
+          
+      .content
+        color: $black
+        flex: 1 1 auto
+        margin: 0.5em
+        
+        .header
+          align-items: center
+          display: flex
+          margin-bottom: 1em
+          
+          .publisher
+            flex: 1 1 auto
+            font-size: 1.1em
+            font-weight: bold
+            
+          .time
+            color: $grey-dark
+            flex: 0 0 auto
+            font-size: 0.8em
+        
+        .message
+          line-height: 1.5em
+          margin-bottom: 1em
+          
+        .reactions
+          display: flex
+          flex-wrap: wrap
+          font-size: 0.8em
+          justify-content: flex-end
+          line-height: 2em
+          
+          .reaction
+            flex: 0 0 auto
+            margin: 0.5em
+            
+            .key
+              color: $grey-mid
+              margin: 0 0.05em
+              
+            .value
+              color: $grey-dark
+              margin: 0 0.05em
+    
 //------------------------------------------------------------------------------

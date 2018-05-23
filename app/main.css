@@ -153,3 +153,61 @@ select {
   overflow: auto;
   padding: 0;
 }
+#app > main.home-page .list .item {
+  border: 1px solid #369;
+  display: flex;
+  margin: 0.5em;
+  overflow: auto;
+}
+#app > main.home-page .list .item .image {
+  display: block;
+  flex: 0 0 auto;
+  margin: 0.5em;
+}
+#app > main.home-page .list .item .image img {
+  width: 10em;
+  display: block;
+}
+#app > main.home-page .list .item .content {
+  color: #333;
+  flex: 1 1 auto;
+  margin: 0.5em;
+}
+#app > main.home-page .list .item .content .header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1em;
+}
+#app > main.home-page .list .item .content .header .publisher {
+  flex: 1 1 auto;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#app > main.home-page .list .item .content .header .time {
+  color: #999;
+  flex: 0 0 auto;
+  font-size: 0.8em;
+}
+#app > main.home-page .list .item .content .message {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+#app > main.home-page .list .item .content .reactions {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+  justify-content: flex-end;
+  line-height: 2em;
+}
+#app > main.home-page .list .item .content .reactions .reaction {
+  flex: 0 0 auto;
+  margin: 0.5em;
+}
+#app > main.home-page .list .item .content .reactions .reaction .key {
+  color: #ccc;
+  margin: 0 0.05em;
+}
+#app > main.home-page .list .item .content .reactions .reaction .value {
+  color: #999;
+  margin: 0 0.05em;
+}
