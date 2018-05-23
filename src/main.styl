@@ -1,16 +1,18 @@
-dark-colour = #333
-light-colour = #fff
-primary-colour = #c33
-highlight-colour = #f33
+$foreground-colour = #333
+$background-colour = #fff
+$primary-colour = #369
+$highlight-colour = #3cf
+
+$mobile-width = 800px
 
 *
   box-sizing: border-box
 
 :root
-  font-family: "Lucida Console", monospace
+  font-family: "Roboto", sans-serif
   font-size: 16px
-  background: dark-colour url("./assets/simple-bg.png")
-  color: dark-colour
+  background: $foreground-colour url("./assets/simple-bg.png")
+  color: $foreground-colour
 
 html
 body
@@ -20,11 +22,8 @@ body
   height: 100%
 
 a
-  color: primary-colour
+  color: inherit
   text-decoration: none
-  
-  &:hover
-    color: highlight-colour
 
 table
   width: 100%
@@ -32,29 +31,61 @@ table
   
   td
   th
-    border: 1px solid dark-colour
-  
+    border: 1px solid $foreground-colour
+
 #app
   display: flex
   flex-direction: column
   width: 100%
   height: 100%
-  max-width: 50em
+  max-width: 50rem
   margin: 0 auto
-  background: light-colour
+  background: $background-colour
 
 #app > header
+  flex: 0 0 auto
+
+  .title
+    color: $primary-colour
+    display: block
+    text-align: center
+  
+  nav
+    background: $primary-colour
+    color: $background-colour
+    font-size: 0.75rem
+    text-transform: uppercase
+    
+    a
+      display: block
+      
+    a:hover
+      background: $highlight-colour
+    
+    ul
+      display: flex
+      flex-direction: row
+      justify-content: center
+      list-style: none
+      margin: 0
+      padding: 0
+      
+      @media (max-width: $mobile-width)
+        flex-direction: column
+      
+      li
+        flex: 0 0 auto
+        margin: 0
+        min-width: 8em
+        line-height: 3em
+        padding: 0
+        text-align: center
+
 #app > footer
   flex: 0 0 auto
-  padding: 1em
-  background: primary-colour
-  color: light-colour
   
-  h1
-    margin: 0
-    padding: 0
-
+  
 #app > main
   flex: 1 1 auto
   padding: 1em
-  background: light-colour
+  

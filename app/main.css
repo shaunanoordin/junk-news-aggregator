@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 :root {
-  font-family: "Lucida Console", monospace;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   background: #333 url(assets/simple-bg.png);
   color: #333;
@@ -15,11 +15,8 @@ body {
   height: 100%;
 }
 a {
-  color: #c33;
+  color: inherit;
   text-decoration: none;
-}
-a:hover {
-  color: #f33;
 }
 table {
   width: 100%;
@@ -34,24 +31,55 @@ table th {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  max-width: 50em;
+  max-width: 50rem;
   margin: 0 auto;
   background: #fff;
 }
-#app > header,
-#app > footer {
+#app > header {
   flex: 0 0 auto;
-  padding: 1em;
-  background: #c33;
-  color: #fff;
 }
-#app > header h1,
-#app > footer h1 {
+#app > header .title {
+  color: #369;
+  display: block;
+  text-align: center;
+}
+#app > header nav {
+  background: #369;
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+#app > header nav a {
+  display: block;
+}
+#app > header nav a:hover {
+  background: #3cf;
+}
+#app > header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
   margin: 0;
   padding: 0;
+}
+@media (max-width: 800px) {
+  #app > header nav ul {
+    flex-direction: column;
+  }
+}
+#app > header nav ul li {
+  flex: 0 0 auto;
+  margin: 0;
+  min-width: 8em;
+  line-height: 3em;
+  padding: 0;
+  text-align: center;
+}
+#app > footer {
+  flex: 0 0 auto;
 }
 #app > main {
   flex: 1 1 auto;
   padding: 1em;
-  background: #fff;
 }
