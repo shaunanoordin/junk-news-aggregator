@@ -29,6 +29,7 @@ a {
   text-decoration: none;
 }
 select {
+  font-family: inherit;
   font-size: inherit;
 }
 /* App Style: Main Layout
@@ -88,52 +89,67 @@ select {
   color: #fff;
 }
 #app > main {
+  background: #fff;
   flex: 1 1 auto;
 }
 /*  Page Style: Home Page (List-type)
  */
-#app > main .filter-panel {
+#app > main.home-page {
+  display: flex;
+  flex-direction: column;
+}
+#app > main.home-page .filter-panel {
   background: #ccc;
   display: flex;
+  flex: 0 0 auto;
   flex-direction: row;
   justify-content: center;
   padding: 1em;
 }
 @media (max-width: 800px) {
-  #app > main .filter-panel {
+  #app > main.home-page .filter-panel {
     flex-direction: column;
   }
 }
-#app > main .filter-panel > span {
+#app > main.home-page .filter-panel > span {
   flex: 0 0 auto;
   line-height: 2em;
 }
-#app > main .filter-panel > select {
+#app > main.home-page .filter-panel > select {
   flex: 0 0 auto;
   margin: 0 1em;
 }
 @media (max-width: 800px) {
-  #app > main .filter-panel > select {
+  #app > main.home-page .filter-panel > select {
     margin: 0;
   }
 }
-#app > main .sort-panel {
+#app > main.home-page .sort-panel {
   color: #999;
   display: flex;
+  flex: 0 0 auto;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1em;
 }
-#app > main .sort-panel span,
-#app > main .sort-panel a {
+#app > main.home-page .sort-panel span,
+#app > main.home-page .sort-panel a {
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
 }
-#app > main .sort-panel a {
+#app > main.home-page .sort-panel a {
   border-right: 1px solid #999;
 }
-#app > main .sort-panel a:last-child {
+#app > main.home-page .sort-panel a:last-child {
   border-right: none;
+}
+#app > main.home-page .list {
+  box-shadow: inset 0 0 0.5em #999;
+  flex: 1 1 auto;
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
 }
