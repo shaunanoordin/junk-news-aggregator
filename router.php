@@ -19,13 +19,25 @@ in a development environment.
  */
 
 $fileURI = dirname(__FILE__) . $_SERVER["REQUEST_URI"];
+$INDEX_FILE = "index.php";
 
-if (preg_match("/\.(?:html|txt|js|ico|css|png|jpg|jpeg|gif)$/i", $_SERVER["REQUEST_URI"])) {
-  return false;  //Serve the requested resource as a standard file.
-} else {
-  include_once $fileURI;  //Serve the file as a PHP resource.
+//If a directory is specified, find the index file.
+if (is_dir($fileURI)) {
+  $fileURI = $fileURI . "/" . $INDEX_FILE;
 }
 
-//TODO: handle 404s.
-//TODO: use index.php as the default file.
+//If the file doesn't exist, share a 404. 
+if (!file_exists($fileURI)) {
+  http_response_code(404);
+  echo "Resource not found";
+  die();
+
+//If the file ends with .php, serve is as a PHP resource.
+} else if (preg_match("/\.php$/i", $fileURI)) {  
+  include_once $fileURI;
+
+//Otherwise, serve the requested resource as a standard file.
+} else {
+  return false;  
+}
 ?>

@@ -27,7 +27,7 @@
     "babel-preset-env": "1.6.1"
   },
   "scripts": {
-    "start": "webpack && php -S localhost:3000 router.php",
-    "dev": "concurrently \"webpack --watch\" \"php -S localhost:3000 router.php\""
+    "start": "concurrently \"webpack --watch\" \"php -S localhost:3000 router.php\"",
+    "build": "webpack"
   }
 }
