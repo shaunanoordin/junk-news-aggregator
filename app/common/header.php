@@ -25,4 +25,3 @@
     </ul>
   </nav>
 </header>
-<main>

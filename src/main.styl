@@ -1,18 +1,35 @@
-$foreground-colour = #333
-$background-colour = #fff
-$primary-colour = #369
-$highlight-colour = #3cf
+/*
+App Styles
+----------
+
+--------------------------------------------------------------------------------
+ */
+
+ 
+/*  App Theme
+ */
+//------------------------------------------------------------------------------
+$black = #333
+$white = #fff
+$blue = #369
+$blue-highlight = #3cf
+$grey-mid = #ccc
+$grey-dark = #999
 
 $mobile-width = 800px
+//------------------------------------------------------------------------------
 
+/*  Basic Styles
+ */
+//------------------------------------------------------------------------------
 *
   box-sizing: border-box
 
 :root
   font-family: "Roboto", sans-serif
   font-size: 16px
-  background: $foreground-colour url("./assets/simple-bg.png")
-  color: $foreground-colour
+  background: $white url("./assets/simple-bg.png")
+  color: $black
 
 html
 body
@@ -25,14 +42,14 @@ a
   color: inherit
   text-decoration: none
 
-table
-  width: 100%
-  border-collapse: collapse
-  
-  td
-  th
-    border: 1px solid $foreground-colour
+select
+  font-size: inherit
 
+//------------------------------------------------------------------------------
+
+/* App Style: Main Layout
+ */
+//------------------------------------------------------------------------------
 #app
   display: flex
   flex-direction: column
@@ -40,27 +57,26 @@ table
   height: 100%
   max-width: 50rem
   margin: 0 auto
-  background: $background-colour
+  background: $white
 
 #app > header
   flex: 0 0 auto
 
   .title
-    color: $primary-colour
+    color: $blue
     display: block
     text-align: center
   
   nav
-    background: $primary-colour
-    color: $background-colour
-    font-size: 0.75rem
+    background: $blue
+    color: $white
     text-transform: uppercase
     
     a
       display: block
       
     a:hover
-      background: $highlight-colour
+      background: $blue-highlight
     
     ul
       display: flex
@@ -83,9 +99,57 @@ table
 
 #app > footer
   flex: 0 0 auto
-  
+  background: $blue
+  color: $white
   
 #app > main
   flex: 1 1 auto
-  padding: 1em
+
+//------------------------------------------------------------------------------
+
+/*  Page Style: Home Page (List-type)
+ */
+//------------------------------------------------------------------------------
+#app > main
   
+  .filter-panel
+    background: $grey-mid
+    display: flex
+    flex-direction: row
+    justify-content: center
+    padding: 1em
+    
+    @media (max-width: $mobile-width)
+      flex-direction: column
+    
+    > span
+      flex: 0 0 auto
+      line-height: 2em
+      
+    > select
+      flex: 0 0 auto
+      margin: 0 1em
+      
+      @media (max-width: $mobile-width)
+        margin: 0
+
+  .sort-panel
+    color: $grey-dark
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    padding: 1em
+    
+    span, a
+      display: inline-block
+      padding: 0.5em
+      line-height: 1em
+    
+    a
+      border-right: 1px solid $grey-dark
+      
+    a:last-child
+      border-right: none
+    
+//------------------------------------------------------------------------------
