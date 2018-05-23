@@ -19,11 +19,16 @@ in a development environment.
  */
 
 $fileURI = dirname(__FILE__) . $_SERVER["REQUEST_URI"];
-$INDEX_FILE = "index.php";
+$INDEX_FILE_1 = "index.php";
+$INDEX_FILE_2 = "index.html";
 
 //If a directory is specified, find the index file.
 if (is_dir($fileURI)) {
-  $fileURI = $fileURI . "/" . $INDEX_FILE;
+  if (file_exists($fileURI . "/" . $INDEX_FILE_1)) {
+    $fileURI = $fileURI . "/" . $INDEX_FILE_1;
+  } else {
+    $fileURI = $fileURI . "/" . $INDEX_FILE_2;
+  }
 }
 
 //If the file doesn't exist, share a 404. 
