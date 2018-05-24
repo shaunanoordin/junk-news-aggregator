@@ -58,6 +58,20 @@ module.exports = {
         use: "babel-loader"
       },
       {
+        //PHP and HTML files are simply copied into the app folder.
+        test: /\.(html|php\d?)$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: "file-loader",
+          
+          //These options ensures the image's folder structure is preserved.
+          options: {
+            name: "[path][name].[ext]",
+            context: path.join(__dirname, "src/pages")
+          }
+        }],
+      },
+      {
         //Image files are simply copied into the app folder.
         test: /\.(jpg|png|gif|svg\d?)$/,
         exclude: /node_modules/,

@@ -1,16 +1,34 @@
-dark-colour = #333
-light-colour = #fff
-primary-colour = #c33
-highlight-colour = #f33
+/*
+App Styles
+----------
 
+--------------------------------------------------------------------------------
+ */
+
+/*  App Theme
+ */
+//------------------------------------------------------------------------------
+$black = #333
+$white = #fff
+$blue = #369
+$blue-highlight = #3cf
+$grey-mid = #ccc
+$grey-dark = #999
+
+$mobile-width = 800px
+//------------------------------------------------------------------------------
+
+/*  Basic Styles
+ */
+//------------------------------------------------------------------------------
 *
   box-sizing: border-box
 
 :root
-  font-family: "Lucida Console", monospace
+  font-family: "Roboto", sans-serif
   font-size: 16px
-  background: dark-colour url("./assets/simple-bg.png")
-  color: dark-colour
+  background: $white url("./assets/simple-bg.png")
+  color: $black
 
 html
 body
@@ -20,41 +38,193 @@ body
   height: 100%
 
 a
-  color: primary-colour
+  color: inherit
   text-decoration: none
-  
-  &:hover
-    color: highlight-colour
 
-table
-  width: 100%
-  border-collapse: collapse
-  
-  td
-  th
-    border: 1px solid dark-colour
-  
+select
+  font-family: inherit
+  font-size: inherit
+
+//------------------------------------------------------------------------------
+
+/* App Style: Main Layout
+ */
+//------------------------------------------------------------------------------
 #app
   display: flex
   flex-direction: column
   width: 100%
   height: 100%
-  max-width: 50em
+  max-width: 50rem
   margin: 0 auto
-  background: light-colour
+  background: $white
 
 #app > header
+  flex: 0 0 auto
+
+  .title
+    color: $blue
+    display: block
+    text-align: center
+  
+  nav
+    background: $blue
+    color: $white
+    text-transform: uppercase
+    
+    a
+      display: block
+      
+    a:hover
+      background: $blue-highlight
+    
+    ul
+      display: flex
+      flex-direction: row
+      justify-content: center
+      list-style: none
+      margin: 0
+      padding: 0
+      
+      @media (max-width: $mobile-width)
+        flex-direction: column
+      
+      li
+        flex: 0 0 auto
+        margin: 0
+        min-width: 8em
+        line-height: 3em
+        padding: 0
+        text-align: center
+
 #app > footer
   flex: 0 0 auto
-  padding: 1em
-  background: primary-colour
-  color: light-colour
+  background: $blue
+  color: $white
+  padding: 0.1em 0.5em
+  text-align: right
   
-  h1
-    margin: 0
-    padding: 0
-
 #app > main
+  background: $white
   flex: 1 1 auto
-  padding: 1em
-  background: light-colour
+
+//------------------------------------------------------------------------------
+
+/*  Page Style: Home Page (List-type)
+ */
+//------------------------------------------------------------------------------
+#app > main.home-page
+  display: flex
+  flex-direction: column
+  
+  .filter-panel
+    background: $grey-mid
+    display: flex
+    flex: 0 0 auto
+    flex-direction: row
+    justify-content: center
+    padding: 1em
+    
+    @media (max-width: $mobile-width)
+      flex-direction: column
+    
+    > span
+      flex: 0 0 auto
+      line-height: 2em
+      
+    > select
+      flex: 0 0 auto
+      margin: 0 1em
+      
+      @media (max-width: $mobile-width)
+        margin: 0
+
+  .sort-panel
+    color: $grey-dark
+    display: flex
+    flex: 0 0 auto
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    padding: 1em
+    
+    span, a
+      display: inline-block
+      padding: 0.5em
+      line-height: 1em
+    
+    a
+      border-right: 1px solid $grey-dark
+      
+    a:last-child
+      border-right: none
+  
+  .list
+    box-shadow: inset 0 -0.2em 1em $grey-dark
+    flex: 1 1 auto
+    list-style: none
+    margin: 0
+    overflow: auto
+    padding: 0
+    
+    .item
+      align-items: flex-start
+      border: 1px solid $blue
+      display: flex
+      margin: 0.5em
+      overflow: auto
+      
+      .image
+        background: $grey-dark
+        display: block
+        flex: 0 0 auto
+        margin: 0.5em
+        
+        img
+          width: 10em
+          display: block
+          
+      .content
+        color: $black
+        flex: 1 1 auto
+        margin: 0.5em
+        
+        .header
+          align-items: center
+          display: flex
+          margin-bottom: 1em
+          
+          .publisher
+            flex: 1 1 auto
+            font-size: 1.1em
+            font-weight: bold
+            
+          .time
+            color: $grey-dark
+            flex: 0 0 auto
+            font-size: 0.8em
+        
+        .message
+          line-height: 1.5em
+          margin-bottom: 1em
+          
+        .reactions
+          display: flex
+          flex-wrap: wrap
+          font-size: 0.8em
+          justify-content: flex-end
+          line-height: 2em
+          
+          .reaction
+            flex: 0 0 auto
+            margin: 0.5em
+            
+            .key
+              color: $grey-mid
+              margin: 0 0.05em
+              
+            .value
+              color: $grey-dark
+              margin: 0 0.05em
+    
+//------------------------------------------------------------------------------

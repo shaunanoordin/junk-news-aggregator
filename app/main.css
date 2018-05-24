@@ -1,10 +1,20 @@
+/*
+App Styles
+----------
+
+--------------------------------------------------------------------------------
+ */
+/*  App Theme
+ */
+/*  Basic Styles
+ */
 * {
   box-sizing: border-box;
 }
 :root {
-  font-family: "Lucida Console", monospace;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
-  background: #333 url(assets/simple-bg.png);
+  background: #fff url(assets/simple-bg.png);
   color: #333;
 }
 html,
@@ -15,43 +25,193 @@ body {
   height: 100%;
 }
 a {
-  color: #c33;
+  color: inherit;
   text-decoration: none;
 }
-a:hover {
-  color: #f33;
+select {
+  font-family: inherit;
+  font-size: inherit;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-table td,
-table th {
-  border: 1px solid #333;
-}
+/* App Style: Main Layout
+ */
 #app {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  max-width: 50em;
+  max-width: 50rem;
   margin: 0 auto;
   background: #fff;
 }
-#app > header,
-#app > footer {
+#app > header {
   flex: 0 0 auto;
-  padding: 1em;
-  background: #c33;
-  color: #fff;
 }
-#app > header h1,
-#app > footer h1 {
+#app > header .title {
+  color: #369;
+  display: block;
+  text-align: center;
+}
+#app > header nav {
+  background: #369;
+  color: #fff;
+  text-transform: uppercase;
+}
+#app > header nav a {
+  display: block;
+}
+#app > header nav a:hover {
+  background: #3cf;
+}
+#app > header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
+@media (max-width: 800px) {
+  #app > header nav ul {
+    flex-direction: column;
+  }
+}
+#app > header nav ul li {
+  flex: 0 0 auto;
+  margin: 0;
+  min-width: 8em;
+  line-height: 3em;
+  padding: 0;
+  text-align: center;
+}
+#app > footer {
+  flex: 0 0 auto;
+  background: #369;
+  color: #fff;
+  padding: 0.1em 0.5em;
+  text-align: right;
+}
 #app > main {
-  flex: 1 1 auto;
-  padding: 1em;
   background: #fff;
+  flex: 1 1 auto;
+}
+/*  Page Style: Home Page (List-type)
+ */
+#app > main.home-page {
+  display: flex;
+  flex-direction: column;
+}
+#app > main.home-page .filter-panel {
+  background: #ccc;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em;
+}
+@media (max-width: 800px) {
+  #app > main.home-page .filter-panel {
+    flex-direction: column;
+  }
+}
+#app > main.home-page .filter-panel > span {
+  flex: 0 0 auto;
+  line-height: 2em;
+}
+#app > main.home-page .filter-panel > select {
+  flex: 0 0 auto;
+  margin: 0 1em;
+}
+@media (max-width: 800px) {
+  #app > main.home-page .filter-panel > select {
+    margin: 0;
+  }
+}
+#app > main.home-page .sort-panel {
+  color: #999;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+}
+#app > main.home-page .sort-panel span,
+#app > main.home-page .sort-panel a {
+  display: inline-block;
+  padding: 0.5em;
+  line-height: 1em;
+}
+#app > main.home-page .sort-panel a {
+  border-right: 1px solid #999;
+}
+#app > main.home-page .sort-panel a:last-child {
+  border-right: none;
+}
+#app > main.home-page .list {
+  box-shadow: inset 0 -0.2em 1em #999;
+  flex: 1 1 auto;
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
+#app > main.home-page .list .item {
+  align-items: flex-start;
+  border: 1px solid #369;
+  display: flex;
+  margin: 0.5em;
+  overflow: auto;
+}
+#app > main.home-page .list .item .image {
+  background: #999;
+  display: block;
+  flex: 0 0 auto;
+  margin: 0.5em;
+}
+#app > main.home-page .list .item .image img {
+  width: 10em;
+  display: block;
+}
+#app > main.home-page .list .item .content {
+  color: #333;
+  flex: 1 1 auto;
+  margin: 0.5em;
+}
+#app > main.home-page .list .item .content .header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1em;
+}
+#app > main.home-page .list .item .content .header .publisher {
+  flex: 1 1 auto;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#app > main.home-page .list .item .content .header .time {
+  color: #999;
+  flex: 0 0 auto;
+  font-size: 0.8em;
+}
+#app > main.home-page .list .item .content .message {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+#app > main.home-page .list .item .content .reactions {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+  justify-content: flex-end;
+  line-height: 2em;
+}
+#app > main.home-page .list .item .content .reactions .reaction {
+  flex: 0 0 auto;
+  margin: 0.5em;
+}
+#app > main.home-page .list .item .content .reactions .reaction .key {
+  color: #ccc;
+  margin: 0 0.05em;
+}
+#app > main.home-page .list .item .content .reactions .reaction .value {
+  color: #999;
+  margin: 0 0.05em;
 }
