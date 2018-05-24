@@ -24,6 +24,8 @@
   </div>
   
   <ul id="list" class="list">
+    <!--
+    Example Item
     <li class="item">
       <a
         class="image"
@@ -71,23 +73,12 @@
           </span>
         </div>
       </div>
-    
     </li>
-    <li class="item">Item 2</li>
-    <li class="item">Item 3</li>
-    <li class="item">Item 4</li>
-    <li class="item">Item 5</li>
-    <li class="item">Item 6</li>
-    <li class="item">Item 7</li>
-    <li class="item">Item 8</li>
-    <li class="item">Item 9</li>
-    <li class="item">Item 10</li>
-    <li class="item">Item 11</li>
-    <li class="item">Item 12</li>
-    <li class="item">Item 13</li>
-    <li class="item">Item 14</li>
-    <li class="item">Item 15</li>
-    <li class="item">Item 16</li>
+    -->
+    
+    <!--
+    //TODO: Show loading and error statuses
+    -->
   </ul>
 </main>
 <script>

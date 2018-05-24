@@ -24,7 +24,8 @@
     "clean-webpack-plugin": "0.1.19",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
-    "babel-preset-env": "1.6.1"
+    "babel-preset-env": "1.6.1",
+    "superagent": "3.8.3"
   },
   "scripts": {
     "start": "concurrently \"webpack --watch\" \"php -S localhost:3000 router.php\"",
