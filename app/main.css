@@ -87,6 +87,8 @@ select {
   flex: 0 0 auto;
   background: #369;
   color: #fff;
+  padding: 0.1em 0.5em;
+  text-align: right;
 }
 #app > main {
   background: #fff;
@@ -146,7 +148,7 @@ select {
   border-right: none;
 }
 #app > main.home-page .list {
-  box-shadow: inset 0 0 0.5em #999;
+  box-shadow: inset 0 -0.2em 1em #999;
   flex: 1 1 auto;
   list-style: none;
   margin: 0;
@@ -154,12 +156,14 @@ select {
   padding: 0;
 }
 #app > main.home-page .list .item {
+  align-items: flex-start;
   border: 1px solid #369;
   display: flex;
   margin: 0.5em;
   overflow: auto;
 }
 #app > main.home-page .list .item .image {
+  background: #999;
   display: block;
   flex: 0 0 auto;
   margin: 0.5em;

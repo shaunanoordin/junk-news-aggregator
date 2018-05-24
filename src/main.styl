@@ -101,6 +101,8 @@ select
   flex: 0 0 auto
   background: $blue
   color: $white
+  padding: 0.1em 0.5em
+  text-align: right
   
 #app > main
   background: $white
@@ -158,7 +160,7 @@ select
       border-right: none
   
   .list
-    box-shadow: inset 0 0 0.5em $grey-dark
+    box-shadow: inset 0 -0.2em 1em $grey-dark
     flex: 1 1 auto
     list-style: none
     margin: 0
@@ -166,12 +168,14 @@ select
     padding: 0
     
     .item
+      align-items: flex-start
       border: 1px solid $blue
       display: flex
       margin: 0.5em
       overflow: auto
       
       .image
+        background: $grey-dark
         display: block
         flex: 0 0 auto
         margin: 0.5em
