@@ -3,6 +3,8 @@
   <div class="filter-panel">
     <span>Showing Facebook news posts from the last</span>
     <select id="filter">
+      <option value="1">1 hour</option>
+      <option value="2">2 hours</option>
       <option value="3">3 hours</option>
       <option value="6">6 hours</option>
       <option value="9">9 hours</option>
@@ -12,15 +14,19 @@
   </div>
   
   <div class="sort-panel">
-    <span>Most</span>
-    <a class="sort-button" id="sort_comments" data-sort="comments" href="#">comments</a>
-    <a class="sort-button" id="sort_shares" data-sort="shares" href="#">shares</a>
-    <a class="sort-button" id="sort_likes" data-sort="likes" href="#">👍</a>
-    <a class="sort-button" id="sort_loves" data-sort="LOVEs" href="#">❤️</a>
-    <a class="sort-button" id="sort_hahas" data-sort="HAHAs" href="#">😄</a>
-    <a class="sort-button" id="sort_wows" data-sort="WOWs" href="#">😲</a>
-    <a class="sort-button" id="sort_sads" data-sort="SADs" href="#">😟</a>
-    <a class="sort-button" id="sort_angrys" data-sort="ANGRYs" href="#">😡</a>
+    <label>Sort by:</label>
+    <span>
+      <a class="sort-button" id="sort_comments" data-sort="comments" href="#">comments</a>
+      <a class="sort-button" id="sort_shares" data-sort="shares" href="#">shares</a>
+      <a class="sort-button" id="sort_likes" data-sort="likes" href="#">👍</a>
+      <a class="sort-button" id="sort_loves" data-sort="LOVEs" href="#">❤️</a>
+      <a class="sort-button" id="sort_hahas" data-sort="HAHAs" href="#">😄</a>
+      <a class="sort-button" id="sort_wows" data-sort="WOWs" href="#">😲</a>
+      <a class="sort-button" id="sort_sads" data-sort="SADs" href="#">😟</a>
+      <a class="sort-button" id="sort_angrys" data-sort="ANGRYs" href="#">😡</a>
+      <a class="sort-button" id="sort_comments" data-sort="oldest" href="#">Oldest</a>
+      <a class="sort-button" id="sort_shares" data-sort="newest" href="#">Newest</a>
+    </span>
   </div>
   
   <ul id="list" class="list">

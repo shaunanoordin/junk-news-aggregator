@@ -135,16 +135,21 @@ select {
   justify-content: center;
   padding: 1em;
 }
-#app > main.home-page .sort-panel span,
-#app > main.home-page .sort-panel a {
+#app > main.home-page .sort-panel > label {
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
 }
-#app > main.home-page .sort-panel a {
+#app > main.home-page .sort-panel > span {
+  display: inline-block;
+}
+#app > main.home-page .sort-panel > span a {
+  display: inline-block;
+  padding: 0.5em;
+  line-height: 1em;
   border-right: 1px solid #999;
 }
-#app > main.home-page .sort-panel a:last-child {
+#app > main.home-page .sort-panel > span a:last-child {
   border-right: none;
 }
 #app > main.home-page .list {
@@ -198,6 +203,7 @@ select {
 }
 #app > main.home-page .list .item .content .header .time {
   color: #999;
+  cursor: pointer;
   flex: 0 0 auto;
   font-size: 0.8em;
 }

@@ -69,6 +69,7 @@ class App {
     this.list_settings = {
       filter: '',
       sort: '',
+      limit: 200,
     };
     
     //Initialise settings for List-type page
@@ -84,9 +85,7 @@ class App {
       for (let button of document.getElementsByClassName("sort-button")) {
         const sortValue = button.dataset.sort;
         button.onclick = () => {
-          this.list_settings.sort = (this.list_settings.sort === sortValue)
-            ? ""
-            : sortValue;
+          this.list_settings.sort = sortValue;
           this.updateList();
         };
       }
@@ -114,6 +113,7 @@ class App {
     
     request.get(this.API_URL)
     .query({ hours_ago: this.list_settings.filter })
+    .query({ limit: this.list_settings.limit })
     .then((response) => {
       if (response && response.ok && response.body && response.body.data) {
         return response.body.data;
@@ -161,7 +161,13 @@ class App {
       let valA = 0, valB = 0;
       
       try {
-        if (sortValue !== '') {  //Try to sort by the reaction count.
+        if (sortValue === 'newest') {
+          valA = new Date(itemA["created_time"]);
+          valB = new Date(itemB["created_time"]);
+        } else if (sortValue === 'oldest') {
+          valB = new Date(itemA["created_time"]);
+          valA = new Date(itemB["created_time"]);
+        } else if (sortValue !== '') {  //Try to sort by the reaction count.
           valA = (itemA[sortValue]) ? parseInt(itemA[sortValue]) : 0;
           valB = (itemB[sortValue]) ? parseInt(itemB[sortValue]) : 0;
         } else {  //Else, sort by created_time.
@@ -253,6 +259,7 @@ class App {
           eleTime.textContent = Math.floor(timeAgo / (60 * 60 * 24)) + " day(s) ago";
         }
       } catch (err) { eleTime.textContent = ""; }
+      eleTime.title = item.created_time;
       eleHeader.appendChild(eleTime);
 
       const eleMessage = document.createElement("div");
