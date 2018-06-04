@@ -12,7 +12,7 @@ Interface for getting news data from the Junk News database.
 $json = [
   "data" => [
     (object) [
-      "publisher" => "100percentfedup",
+      "publisher_name" => "100percentfedup",
       "post_ID" => "311190048935167_1703680993019392",
       "link" => "https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3",
       "message" => "After 100 years; the BOY Scouts are changing their name to remove the word “Boy;” so as not to offend... girls 🤦‍♂️🤦‍♂️🤦‍♂️  Tell the Boy Scouts how completely stupid their politically correct pandering is!  972-580-2000 or MyScouting@scouting.org",
@@ -29,7 +29,7 @@ $json = [
       "ANGRYs" => "176",
     ],
     (object) [
-      "publisher" => "100percentfedup",
+      "publisher_name" => "100percentfedup",
       "post_ID" => "311190048935167_1703809663006525",
       "link" => "https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703809643006527/?type=3",
       "message" => "#ThingsISawAtTrumpsWashingtonMIRally #BoycottNFL #MAGA  Leisa and I found this truck parked in a massive lot amongst thousands of vehicles at the Trump rally in Washington;MI",
@@ -46,7 +46,7 @@ $json = [
       "ANGRYs" => "2",
     ],
     (object) [
-      "publisher" => "100percentfedup",
+      "publisher_name" => "100percentfedup",
       "post_ID" => "311190048935167_1703789793008512",
       "link" => "https://100percentfedup.com/kim-kardashian-reportedly-working-with-ivanka-and-jared-on-special-missionliberal-heads-explode-in-54321/",
       "message" => "Do you agree with this?  https://100percentfedup.com/kim-kardashian-reportedly-working-with-ivanka-and-jared-on-special-missionliberal-heads-explode-in-54321/",
@@ -63,7 +63,7 @@ $json = [
       "ANGRYs" => "0",
     ],
     (object) [
-      "publisher" => "100percentfedup",
+      "publisher_name" => "100percentfedup",
       "post_ID" => "311190048935167_1703745146346310",
       "link" => "https://100percentfedup.com/president-trump-responds-to-giulianis-bombshell-claim-during-hannity-interview-about-michael-cohen-payment-to-stormy-daniels-video/",
       "message" => "PRESIDENT TRUMP RESPONDS To Giuliani’s BOMBSHELL Claim During Hannity Interview About Michael Cohen Payment To Stormy Daniels [VIDEO]  https://100percentfedup.com/president-trump-responds-to-giulianis-bombshell-claim-during-hannity-interview-about-michael-cohen-payment-to-stormy-daniels-video/",
@@ -80,7 +80,7 @@ $json = [
       "ANGRYs" => "0",
     ],
     (object) [
-      "publisher" => "100percentfedup",
+      "publisher_name" => "100percentfedup",
       "post_ID" => "311190048935167_1703408046380020",
       "link" => "https://constitution.com/iran-lies-about-nukes-so-cnn-badgers-israel/",
       "message" => "What an embarrassment! Cuomo interrupts the Prime Minister multiple times; acting like a belligerent fool.",
