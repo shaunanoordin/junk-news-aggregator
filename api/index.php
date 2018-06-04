@@ -8,7 +8,7 @@ Interface for getting news data from the Junk News database.
 --------------------------------------------------------------------------------
  */
 
-require("./utility.php");
+require("utility.php");
 
 //Development: Enable errors
 ini_set('display_errors', 1);
@@ -16,7 +16,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Config
-require("./config.php");
+require("config.php");
 
 //Create connection
 $sql_connection = new mysqli($db_server, $db_username, $db_password);
@@ -32,10 +32,17 @@ if (!$sql_connection->select_db($db_database)) {
   die("Database Selection Error");
 }
 
+//Get any query variables.
+$input_debug = varGet("debug");
+$input_limit = varGet("limit");
+
 //Construct the SQL query.
-$sql_where = " WHERE TRUE ";
+$sql_where = " WHERE (message IS NOT null) ";
 $sql_order = " ORDER BY created_time DESC ";
-$sql_limit = " LIMIT 100 ";
+$sql_limit = " LIMIT 200 ";
+if ($input_limit !== "" && intval($input_limit)) {
+  $sql_limit = " LIMIT " . intval($input_limit) . " ";
+}
 $sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
 
 //Prepare the output JSON.
@@ -75,6 +82,13 @@ $sql_connection->close();
 
 //Deliver content.
 header('Access-Control-Allow-Origin: *');  //WARNING: this opens the API to requests from any domain.
-header('Content-Type: application/json');
-echo json_encode($json);
+
+if ($input_debug === "1") {
+  var_dump($json);
+} else if ($input_debug === "2") {
+  echo(mb_internal_encoding());
+} else {
+  header('Content-Type: application/json');
+  safely_print_json($json);
+}
 ?>

@@ -8,6 +8,16 @@ Interface for getting news data from the Junk News database.
 --------------------------------------------------------------------------------
  */
 
+require("utility.php");
+
+//Development: Enable errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+//Config
+require("config.php");
+
 //Example data
 $json = [
   "data" => [
@@ -96,10 +106,29 @@ $json = [
       "SADs" => "6",
       "ANGRYs" => "105",
     ],
+    (object) [
+      "publisher_name" => "100percentfedup",
+      "post_ID" => "311190048935167_1703408046380020",
+      "link" => "https://constitution.com/iran-lies-about-nukes-so-cnn-badgers-israel/",
+      "message" => "It's an example of " . '"STRINGS" that need to be escaped, and other weird characters.',
+      "picture" => "https://external.xx.fbcdn.net/safe_image.php?d=AQAnxRNaoDYefrnG&w=130&h=130&url=https%3A%2F%2Fconstitution.com%2Fwp-content%2Fuploads%2F2018%2F05%2FCNN-Cuomo-Netanyahu.jpg&cfs=1&sx=281&sy=0&sw=632&sh=632&_nc_hash=AQDJUgwJdohYgjpv",
+      "full_picture" => "https://external.xx.fbcdn.net/safe_image.php?d=AQBDRkK5132ObYqv&url=https%3A%2F%2Fconstitution.com%2Fwp-content%2Fuploads%2F2018%2F05%2FCNN-Cuomo-Netanyahu.jpg&_nc_hash=AQCK_-hNKSSmsPOH",
+      "created_time" => "2018-05-03T13:45:00+0000",
+      "shares" => "9",
+      "comments" => "5",
+      "LOVEs" => "2",
+      "HAHAs" => "3",
+      "WOWs" => "12",
+      "SADs" => "8",
+      "ANGRYs" => "65",
+    ],
     
   ]
 ];
 
 header('Content-Type: application/json');
-echo json_encode($json);
+//echo json_encode($json);
+safely_print_json($json);
+
+
 ?>
