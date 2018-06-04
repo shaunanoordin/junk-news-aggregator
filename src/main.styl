@@ -12,6 +12,7 @@ $black = #333
 $white = #fff
 $blue = #369
 $blue-highlight = #3cf
+$red = #c33
 $grey-mid = #ccc
 $grey-dark = #999
 
@@ -166,6 +167,15 @@ select
     margin: 0
     overflow: auto
     padding: 0
+    
+    .info
+      background: $blue
+      color: $white
+      padding: 2em
+      text-align: center
+      
+      &.error
+        background: $red
     
     .item
       align-items: flex-start

@@ -28,7 +28,7 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 
 //Config
 //------------------------------------------------------------------------------
-const API_URL = "../api/";  //TODO //TEMP
+const API_URL = "http://junknews.oii.ox.ac.uk/news/api/";
 //------------------------------------------------------------------------------
 
 /*  Primary App Class
@@ -73,6 +73,16 @@ class App {
     console.log('+++ App.populateList()', this.html);
     if (!this.html.list) return;
     
+    const list = this.html.list;
+    let eleMessage = null;
+    
+    //Show loading message.
+    while (list.hasChildNodes()) { list.removeChild(list.firstChild); }
+    eleMessage = document.createElement("li");
+    eleMessage.className = "info";
+    eleMessage.textContent = "Loading...";
+    list.appendChild(eleMessage);
+    
     request.get(API_URL)
     .then((response) => {
       console.log("+++ Response: ", response);
@@ -87,7 +97,6 @@ class App {
       console.log("+++ Data: ", data);
       
       //Reset the list
-      const list = this.html.list;
       while (list.hasChildNodes()) { list.removeChild(list.firstChild); }
       
       //TODO: sort and/or filter the data list.
@@ -144,7 +153,7 @@ class App {
         
         const elePublisher = document.createElement("span");
         elePublisher.className = "publisher";
-        elePublisher.textContent = item.publisher;
+        elePublisher.textContent = item.publisher_name;
         eleHeader.appendChild(elePublisher);
         
         const eleTime = document.createElement("span");
@@ -211,8 +220,12 @@ class App {
       });    
     })
     .catch((err) => {
-      //TODO
-      alert("ERROR: " + err);
+      //Show loading message.
+      while (list.hasChildNodes()) { list.removeChild(list.firstChild); }
+      eleMessage = document.createElement("li");
+      eleMessage.className = "info error";
+      eleMessage.textContent = "ERROR: " + err;
+      list.appendChild(eleMessage);
     });
   }
 }
