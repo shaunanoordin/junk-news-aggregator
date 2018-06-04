@@ -106,7 +106,7 @@ $json = [
       "SADs" => "6",
       "ANGRYs" => "105",
     ],
-    (object) [
+    /*(object) [
       "publisher_name" => "100percentfedup",
       "post_ID" => "311190048935167_1703408046380020",
       "link" => "https://constitution.com/iran-lies-about-nukes-so-cnn-badgers-israel/",
@@ -121,7 +121,7 @@ $json = [
       "WOWs" => "12",
       "SADs" => "8",
       "ANGRYs" => "65",
-    ],
+    ],*/
     
   ]
 ];
