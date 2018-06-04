@@ -13,14 +13,14 @@
   
   <div class="sort-panel">
     <span>Most</span>
-    <a id="sort_comments" href="#">comments</a>
-    <a id="sort_shares" href="#">shares</a>
-    <a id="sort_likes" href="#">👍</a>
-    <a id="sort_loves" href="#">❤️</a>
-    <a id="sort_hahas" href="#">😄</a>
-    <a id="sort_wows" href="#">😲</a>
-    <a id="sort_sads" href="#">😟</a>
-    <a id="sort_angrys" href="#">😡</a>
+    <a class="sort-button" id="sort_comments" data-sort="comments" href="#">comments</a>
+    <a class="sort-button" id="sort_shares" data-sort="shares" href="#">shares</a>
+    <a class="sort-button" id="sort_likes" data-sort="likes" href="#">👍</a>
+    <a class="sort-button" id="sort_loves" data-sort="LOVEs" href="#">❤️</a>
+    <a class="sort-button" id="sort_hahas" data-sort="HAHAs" href="#">😄</a>
+    <a class="sort-button" id="sort_wows" data-sort="WOWs" href="#">😲</a>
+    <a class="sort-button" id="sort_sads" data-sort="SADs" href="#">😟</a>
+    <a class="sort-button" id="sort_angrys" data-sort="ANGRYs" href="#">😡</a>
   </div>
   
   <ul id="list" class="list">
@@ -74,10 +74,6 @@
         </div>
       </div>
     </li>
-    -->
-    
-    <!--
-    //TODO: Show loading and error statuses
     -->
   </ul>
 </main>

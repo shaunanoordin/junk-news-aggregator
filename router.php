@@ -22,6 +22,9 @@ $fileURI = dirname(__FILE__) . $_SERVER["REQUEST_URI"];
 $INDEX_FILE_1 = "index.php";
 $INDEX_FILE_2 = "index.html";
 
+//Strip off queries, for routing purposes.
+$fileURI = preg_replace("/\\?.*/", "", $fileURI);
+
 //If a directory is specified, find the index file.
 if (is_dir($fileURI)) {
   if (file_exists($fileURI . "/" . $INDEX_FILE_1)) {

@@ -12,6 +12,7 @@ $black = #333
 $white = #fff
 $blue = #369
 $blue-highlight = #3cf
+$red = #c33
 $grey-mid = #ccc
 $grey-dark = #999
 
@@ -167,6 +168,15 @@ select
     overflow: auto
     padding: 0
     
+    .info
+      background: $blue
+      color: $white
+      padding: 2em
+      text-align: center
+      
+      &.error
+        background: $red
+    
     .item
       align-items: flex-start
       border: 1px solid $blue
@@ -227,4 +237,19 @@ select
               color: $grey-dark
               margin: 0 0.05em
     
+//------------------------------------------------------------------------------
+
+/*  Page Style: About Page, Contact Page (Info-type)
+ */
+//------------------------------------------------------------------------------
+#app > main.about-page
+#app > main.contact-page
+  padding: 1em 2em
+  
+  a
+    color: $blue
+    
+    &:hover
+      color: $blue-highlight
+
 //------------------------------------------------------------------------------

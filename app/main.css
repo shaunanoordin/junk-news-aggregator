@@ -155,6 +155,15 @@ select {
   overflow: auto;
   padding: 0;
 }
+#app > main.home-page .list .info {
+  background: #369;
+  color: #fff;
+  padding: 2em;
+  text-align: center;
+}
+#app > main.home-page .list .info.error {
+  background: #c33;
+}
 #app > main.home-page .list .item {
   align-items: flex-start;
   border: 1px solid #369;
@@ -214,4 +223,18 @@ select {
 #app > main.home-page .list .item .content .reactions .reaction .value {
   color: #999;
   margin: 0 0.05em;
+}
+/*  Page Style: About Page, Contact Page (Info-type)
+ */
+#app > main.about-page,
+#app > main.contact-page {
+  padding: 1em 2em;
+}
+#app > main.about-page a,
+#app > main.contact-page a {
+  color: #369;
+}
+#app > main.about-page a:hover,
+#app > main.contact-page a:hover {
+  color: #3cf;
 }
