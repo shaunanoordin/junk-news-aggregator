@@ -28,8 +28,7 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 
 //Config
 //------------------------------------------------------------------------------
-//const API_URL = "http://junknews.oii.ox.ac.uk/news/api/";
-const API_URL = "../api/test.php";  //TEMP
+const API_URL = "http://junknews.oii.ox.ac.uk/news/api/";
 //------------------------------------------------------------------------------
 
 /*  Primary App Class
@@ -39,6 +38,7 @@ class App {
   constructor() {
     this.html = {};
     
+    this.API_URL = API_URL;
     this.PAGE_TYPES = {
       DEFAULT: "default",  //No particular page type.
       LIST: "list",  //Main listing
@@ -112,7 +112,8 @@ class App {
     eleMessage.textContent = "Loading...";
     list.appendChild(eleMessage);
     
-    request.get(API_URL)
+    request.get(this.API_URL)
+    .query({ hours_ago: this.list_settings.filter })
     .then((response) => {
       if (response && response.ok && response.body && response.body.data) {
         return response.body.data;

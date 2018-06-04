@@ -80,6 +80,7 @@
   </ul>
 </main>
 <script>
+  window.app.API_URL = "../api/test.php";  //TEMP
   window.app.currentPageType = window.app.PAGE_TYPES.LIST;
 </script>
 <?php include "common/footer.php" ?>
