@@ -224,3 +224,17 @@ select {
   color: #999;
   margin: 0 0.05em;
 }
+/*  Page Style: About Page, Contact Page (Info-type)
+ */
+#app > main.about-page,
+#app > main.contact-page {
+  padding: 1em 2em;
+}
+#app > main.about-page a,
+#app > main.contact-page a {
+  color: #369;
+}
+#app > main.about-page a:hover,
+#app > main.contact-page a:hover {
+  color: #3cf;
+}

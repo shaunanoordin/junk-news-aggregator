@@ -1,0 +1,9 @@
+<?php include "common/header.php" ?>
+<main class="about-page">
+  <h2>Lorem Ipsum</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi elit, scelerisque vel leo a, suscipit sodales sem. Nam congue libero nulla, eget faucibus tortor pellentesque vitae. Nullam vel ultrices erat, sed semper felis. Praesent rhoncus massa sit amet arcu imperdiet porta. Duis rhoncus molestie aliquam. Ut cursus tempor elit. Nam ac arcu ut ante condimentum mollis id eu neque. Duis ut bibendum odio. Cras at iaculis nisl, vitae scelerisque neque. Vivamus sollicitudin mattis lacus, eget luctus odio molestie vitae. Mauris condimentum congue turpis, id luctus magna tempus nec. Curabitur molestie metus dui, vitae aliquam mi porttitor nec. Mauris at massa non sapien vulputate ultricies. Sed non nisi dignissim, luctus nunc id, ultrices nulla. Sed dui velit, blandit at velit in, ultrices suscipit elit. Ut nec tempor lorem, rutrum sagittis lacus.</p>
+  <div class="image"><img src="assets/no-image.png"></div>
+  <p>Cras ut diam in sapien tincidunt faucibus a non libero. Suspendisse nec pulvinar leo. Donec volutpat egestas velit. Praesent vestibulum varius arcu porttitor dignissim. Duis ipsum quam, malesuada eget efficitur eu, efficitur sed turpis. Donec placerat tincidunt vehicula. Curabitur volutpat consequat libero vitae ullamcorper. Etiam quis dignissim justo. Curabitur ut ex efficitur, maximus quam ut, iaculis ipsum. Donec at ligula leo. Etiam bibendum interdum sagittis. Vestibulum ultricies mattis semper. Integer at purus id nibh molestie consequat quis et lacus. Vivamus fermentum velit pellentesque finibus gravida.</p>
+  <p><a href="https://google.com">Example link</a></p>
+</main>
+<?php include "common/footer.php" ?>

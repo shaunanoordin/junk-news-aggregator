@@ -75,10 +75,6 @@
       </div>
     </li>
     -->
-    
-    <!--
-    //TODO: Show loading and error statuses
-    -->
   </ul>
 </main>
 <script>

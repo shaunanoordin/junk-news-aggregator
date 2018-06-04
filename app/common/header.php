@@ -11,17 +11,17 @@
 <body>
 <div id="app">
 <header>
-  <a class="title" href="#">
+  <a class="title" href="./">
     <h1>
       Junk News Aggregator
     </h1>
   </a>
   <nav>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Archive</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="./">Home</a></li>
+      <li><a href="about.php">About</a></li>
+      <li><a href="archive.php">Archive</a></li>
+      <li><a href="contact.php">Contact</a></li>
     </ul>
   </nav>
 </header>
