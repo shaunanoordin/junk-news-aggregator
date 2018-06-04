@@ -35,9 +35,14 @@ if (!$sql_connection->select_db($db_database)) {
 //Get any query variables.
 $input_debug = varGet("debug");
 $input_limit = varGet("limit");
+$input_hours_ago = varGet("hours_ago");
 
 //Construct the SQL query.
 $sql_where = " WHERE (message IS NOT null) ";
+if ($input_hours_ago !== "" && intval($input_hours_ago)) {
+  $sql_where = $sql_where . " AND (TIMESTAMPDIFF(HOUR, created_time, NOW()) <= " . intval($input_hours_ago) . ") "; 
+}
+
 $sql_order = " ORDER BY created_time DESC ";
 $sql_limit = " LIMIT 200 ";
 if ($input_limit !== "" && intval($input_limit)) {
