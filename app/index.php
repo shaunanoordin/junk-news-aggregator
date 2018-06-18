@@ -31,17 +31,39 @@
   </div>
   
   <ul id="list" class="list">
-    <!--
+    <!-- 
     Example Item
     <li class="item">
-      <a
-        class="image"
-        href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
-        target="_blank"
-      >
-        <img src="https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/31823834_1703680869686071_5510796134324371456_n.jpg?_nc_cat=0&oh=81acd9fe53f698974d7b4633df7805b2&oe=5B522AC6">
-      </a>
-      <div class="content">
+      <div class="left">
+        <a href="photo" 
+          href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/31823834_1703680869686071_5510796134324371456_n.jpg?_nc_cat=0&oh=81acd9fe53f698974d7b4633df7805b2&oe=5B522AC6">
+        </a>
+        <div class="links">
+          <a
+            class="link-facebook"
+            title="View Facebook post"
+            href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="assets/logo-facebook.png">
+          </a>
+          <a
+            class="link-website"
+            title="View original article"
+            href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🌐
+          </a>
+        </div>
+      </div>
+      <div class="right">
         <div class="header">
           <span class="publisher">100percentfedup</span>
           <span class="time">1 hour ago</span>

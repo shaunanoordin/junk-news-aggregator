@@ -185,14 +185,36 @@ class App {
     //For each news article, add it to the list.
     //Structure:
     //  <li class="item">
-    //    <a
-    //      class="image"
-    //      href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
-    //      target="_blank"
-    //    >
-    //      <img src="https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/31823834_1703680869686071_5510796134324371456_n.jpg?_nc_cat=0&oh=81acd9fe53f698974d7b4633df7805b2&oe=5B522AC6">
-    //    </a>
-    //    <div class="content">
+    //    <div class="left">
+    //      <a href="photo" 
+    //        href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+    //        target="_blank"
+    //        rel="noopener noreferrer"
+    //      >
+    //        <img src="https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/31823834_1703680869686071_5510796134324371456_n.jpg?_nc_cat=0&oh=81acd9fe53f698974d7b4633df7805b2&oe=5B522AC6">
+    //      </a>
+    //      <div class="links">
+    //        <a
+    //          class="link-facebook"
+    //          title="View Facebook post"
+    //          href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+    //          target="_blank"
+    //          rel="noopener noreferrer"
+    //        >
+    //          <img src="assets/logo-facebook.png">
+    //        </a>
+    //        <a
+    //          class="link-website"
+    //          title="View original article"
+    //          href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+    //          target="_blank"
+    //          rel="noopener noreferrer"
+    //        >
+    //          🌐
+    //        </a>
+    //      </div>
+    //    </div>
+    //    <div class="right">
     //      <div class="header">
     //        <span class="publisher">100percentfedup</span>
     //        <span class="time">1 hour ago</span>
@@ -202,8 +224,8 @@ class App {
     //      </div>
     //      <div class="reactions">
     //        <span class="reaction">
-    //          <span class="key">Shares</span>
-    //          <span class="value">348</span>
+    //          <span class="key">👍</span>
+    //          <span class="value">180</span>
     //        </span>
     //      </div>
     //    </div>
@@ -219,6 +241,7 @@ class App {
         eleImage.href = item.link;
       }
       eleImage.target = "_blank";
+      eleImage.rel = "noopener noreferrer";
       eleItem.appendChild(eleImage);
 
       const eleImageImg = document.createElement("img");
