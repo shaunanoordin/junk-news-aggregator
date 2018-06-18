@@ -254,7 +254,7 @@ class App {
         } else if (timeAgo < 60 * 60) {
           eleTime.textContent = Math.floor(timeAgo / 60) + " minute(s) ago";
         } else if (timeAgo < 60 * 60 * 24) {
-          eleTime.textContent = Math.floor(timeAgo / (60 * 60)) + " hours(s) ago";
+          eleTime.textContent = Math.floor(timeAgo / (60 * 60)) + " hour(s) ago";
         } else {
           eleTime.textContent = Math.floor(timeAgo / (60 * 60 * 24)) + " day(s) ago";
         }
