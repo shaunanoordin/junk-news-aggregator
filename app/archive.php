@@ -16,16 +16,16 @@
   <div class="sort-panel">
     <label>Sort by:</label>
     <span>
-      <a class="sort-button" id="sort_comments" data-sort="comments" href="#">comments</a>
-      <a class="sort-button" id="sort_shares" data-sort="shares" href="#">shares</a>
-      <a class="sort-button" id="sort_likes" data-sort="likes" href="#">👍</a>
-      <a class="sort-button" id="sort_loves" data-sort="LOVEs" href="#">❤️</a>
-      <a class="sort-button" id="sort_hahas" data-sort="HAHAs" href="#">😄</a>
-      <a class="sort-button" id="sort_wows" data-sort="WOWs" href="#">😲</a>
-      <a class="sort-button" id="sort_sads" data-sort="SADs" href="#">😟</a>
-      <a class="sort-button" id="sort_angrys" data-sort="ANGRYs" href="#">😡</a>
-      <a class="sort-button" id="sort_comments" data-sort="oldest" href="#">Oldest</a>
-      <a class="sort-button" id="sort_shares" data-sort="newest" href="#">Newest</a>
+      <a class="sort-button" id="sort_comments" data-sort="comments" href="#" title="comments">💬</a>
+      <a class="sort-button" id="sort_shares" data-sort="shares" href="#" title="shares">🔃</a>
+      <a class="sort-button" id="sort_likes" data-sort="likes" href="#" title="likes">👍</a>
+      <a class="sort-button" id="sort_loves" data-sort="LOVEs" href="#" title="LOVEs">❤️</a>
+      <a class="sort-button" id="sort_hahas" data-sort="HAHAs" href="#" title="HAHAs">😄</a>
+      <a class="sort-button" id="sort_wows" data-sort="WOWs" href="#" title="WOWs">😲</a>
+      <a class="sort-button" id="sort_sads" data-sort="SADs" href="#" title="SADs">😟</a>
+      <a class="sort-button" id="sort_angrys" data-sort="ANGRYs" href="#" title="ANGRYs">😡</a>
+      <a class="sort-button" id="sort_comments" data-sort="oldest" href="#" title="Oldest">Oldest</a>
+      <a class="sort-button" id="sort_shares" data-sort="newest" href="#" title="Newest">Newest</a>
     </span>
   </div>
   
@@ -84,7 +84,7 @@
   </ul>
 </main>
 <script>
-  window.app.API_URL = "../api/test.php";  //TEMP
+  //window.app.API_URL = "../api/test.php";  //DEBUG: Override to test with hardcoded data
   window.app.currentPageType = window.app.PAGE_TYPES.LIST;
 </script>
 <?php include "common/footer.php" ?>

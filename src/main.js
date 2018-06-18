@@ -273,35 +273,34 @@ class App {
 
       //For each type of Reaction, add it to the Reactions.
       const reactions = {
-        "Shares": "shares",
-        "Comments": "comments",
+        "🔃": "shares",
+        "💬": "comments",
         "👍": "likes",
         "❤️": "LOVEs",
         "😄": "HAHAs",
         "😲": "WOWs",
         "😟": "SADs",
         "😡": "ANGRYs",
-
       };
       Object.entries(reactions).map(([labelKey, itemKey]) => {
-        const eleReaction = document.createElement("span");
-        eleReaction.className = "reaction";
-
         //Only add reactions if they have non-zero values.
         const reactionValue = item[itemKey];
         if (reactionValue && reactionValue !== "0") {
+          const eleReaction = document.createElement("span");
+          eleReaction.className = "reaction";
+          eleReaction.title = itemKey;          
           eleReactions.appendChild(eleReaction);
+          
+          const eleKey = document.createElement("span");
+          eleKey.className = "key";
+          eleKey.textContent = labelKey;
+          eleReaction.appendChild(eleKey);
+
+          const eleValue = document.createElement("span");
+          eleValue.className = "value";
+          eleValue.textContent = reactionValue; 
+          eleReaction.appendChild(eleValue);
         }
-
-        const eleKey = document.createElement("span");
-        eleKey.className = "key";
-        eleKey.textContent = labelKey;
-        eleReaction.appendChild(eleKey);
-
-        const eleValue = document.createElement("span");
-        eleValue.className = "value";
-        eleValue.textContent = reactionValue; 
-        eleReaction.appendChild(eleValue);
       });
 
     });

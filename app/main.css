@@ -221,6 +221,7 @@ select {
 #app > main.home-page .list .item .content .reactions .reaction {
   flex: 0 0 auto;
   margin: 0.5em;
+  cursor: help;
 }
 #app > main.home-page .list .item .content .reactions .reaction .key {
   color: #ccc;
