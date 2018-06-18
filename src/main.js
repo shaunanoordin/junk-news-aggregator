@@ -246,10 +246,14 @@ class App {
       eleTime.className = "time";
       try {
         const now = new Date();
-        const created_time = new Date(item.created_time);
+        let time_string = item.created_time || "";
+        time_string = time_string.replace(/\-/g, '/');  //Browser compatibility: Safari cannot process "2018-12-31 12:59:59" but can process "2018/12/31 12:59:59"
+        const created_time = new Date(time_string);
         const timeAgo = (now - created_time) / 1000;  //Time since created_time, in seconds.
-
-        if (timeAgo < 60) {
+        
+        if (isNaN(timeAgo)) {  //Failsafe
+          eleTime.textContent = item.created_time;
+        } else if (timeAgo < 60) {
           eleTime.textContent = Math.floor(timeAgo) + " second(s) ago";
         } else if (timeAgo < 60 * 60) {
           eleTime.textContent = Math.floor(timeAgo / 60) + " minute(s) ago";
