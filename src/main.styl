@@ -193,19 +193,25 @@ select
       .left
         display: block
         flex: 0 0 auto
+        width: 10em
         margin: 0.5em
         
         .photo
           background: $grey-dark
+          width: 100%
 
           img
-            width: 10em
+            width: 100%
             display: block
         
         .links
+          display: flex
+          flex-direction: row
+          align-items: center
         
           .link-facebook
             display: inline-block
+            padding: 0.25em
 
             img
               width: 1em
@@ -214,6 +220,7 @@ select
           .link-website
             display: inline-block
             font-size: 1em
+            padding: 0.25em
           
       .right
         color: $black

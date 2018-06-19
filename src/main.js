@@ -234,31 +234,69 @@ class App {
       const eleItem = document.createElement("li");
       eleItem.className = "item";
       list.appendChild(eleItem);
+      
+      //----------------
 
-      const eleImage = document.createElement("a");
-      eleImage.className = "image";
+      const eleLeft = document.createElement("div");
+      eleLeft.className = "left";
+      eleItem.append(eleLeft);
+      
+      const elePhoto = document.createElement("a");
+      elePhoto.className = "photo";
       if (item.link) {
-        eleImage.href = item.link;
+        elePhoto.href = item.link;
+        elePhoto.target = "_blank";
+        elePhoto.rel = "noopener noreferrer";
       }
-      eleImage.target = "_blank";
-      eleImage.rel = "noopener noreferrer";
-      eleItem.appendChild(eleImage);
+      eleLeft.appendChild(elePhoto);
 
-      const eleImageImg = document.createElement("img");
+      const elePhotoImg = document.createElement("img");
       if (item.picture) {
-        eleImageImg.src = item.picture;
+        elePhotoImg.src = item.picture;
       } else {
-        eleImageImg.src = "assets/no-image.png";
+        elePhotoImg.src = "assets/no-image.png";
       }
-      eleImage.appendChild(eleImageImg);
+      elePhoto.appendChild(elePhotoImg);
+      
+      const eleLinks = document.createElement("div");
+      eleLinks.className = "links";
+      eleLeft.appendChild(eleLinks);
+      
+      if (item.post_ID) {
+        const urlFacebook = `https://facebook.com/${item.post_ID}`;
+        const eleLinkFacebook = document.createElement("a");
+        eleLinkFacebook.className = "link-facebook";
+        eleLinkFacebook.href = urlFacebook;
+        eleLinkFacebook.title = "View Facebook post";
+        eleLinkFacebook.target = "_blank";
+        eleLinkFacebook.rel = "noopener noreferrer";
+        eleLinks.appendChild(eleLinkFacebook);
+        
+        const eleLinkFacebookImg = document.createElement("img");
+        eleLinkFacebookImg.src = "assets/logo-facebook.png";
+        eleLinkFacebook.appendChild(eleLinkFacebookImg);
+      }
+      
+      if (item.link) {
+        const eleLinkWebsite = document.createElement("a");
+        eleLinkWebsite.className = "link-website";
+        eleLinkWebsite.href = item.link;
+        eleLinkWebsite.title = "View original article";
+        eleLinkWebsite.target = "_blank";
+        eleLinkWebsite.rel = "noopener noreferrer";
+        eleLinkWebsite.textContent = "🌐";
+        eleLinks.appendChild(eleLinkWebsite);
+      }
+      
+      //----------------
 
-      const eleContent = document.createElement("div");
-      eleContent.className = "content";
-      eleItem.appendChild(eleContent);
+      const eleRight = document.createElement("div");
+      eleRight.className = "right";
+      eleItem.appendChild(eleRight);
 
       const eleHeader = document.createElement("div");
       eleHeader.className = "header";
-      eleContent.appendChild(eleHeader);
+      eleRight.appendChild(eleHeader);
 
       const elePublisher = document.createElement("span");
       elePublisher.className = "publisher";
@@ -292,11 +330,11 @@ class App {
       const eleMessage = document.createElement("div");
       eleMessage.className = "message";
       eleMessage.textContent = item.message;
-      eleContent.appendChild(eleMessage);
+      eleRight.appendChild(eleMessage);
 
       const eleReactions = document.createElement("div");
       eleReactions.className = "reactions";
-      eleContent.appendChild(eleReactions);
+      eleRight.appendChild(eleReactions);
 
       //For each type of Reaction, add it to the Reactions.
       const reactions = {

@@ -179,17 +179,25 @@ select {
 #app > main.home-page .list .item .left {
   display: block;
   flex: 0 0 auto;
+  width: 10em;
   margin: 0.5em;
 }
 #app > main.home-page .list .item .left .photo {
   background: #999;
+  width: 100%;
 }
 #app > main.home-page .list .item .left .photo img {
-  width: 10em;
+  width: 100%;
   display: block;
+}
+#app > main.home-page .list .item .left .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 #app > main.home-page .list .item .left .links .link-facebook {
   display: inline-block;
+  padding: 0.25em;
 }
 #app > main.home-page .list .item .left .links .link-facebook img {
   width: 1em;
@@ -198,6 +206,7 @@ select {
 #app > main.home-page .list .item .left .links .link-website {
   display: inline-block;
   font-size: 1em;
+  padding: 0.25em;
 }
 #app > main.home-page .list .item .right {
   color: #333;

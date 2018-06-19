@@ -10,7 +10,6 @@
       <option value="9">9 hours</option>
       <option value="12">12 hours</option>
       <option value="24">1 day</option>
-      <option value="8760">1 year</option>
     </select>
   </div>
   
@@ -103,7 +102,7 @@
         </div>
       </div>
     </li>
-    -->
+    <!-- -->
   </ul>
 </main>
 <script>
