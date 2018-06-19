@@ -176,57 +176,80 @@ select {
   margin: 0.5em;
   overflow: auto;
 }
-#app > main.home-page .list .item .image {
-  background: #999;
+#app > main.home-page .list .item .left {
   display: block;
   flex: 0 0 auto;
+  width: 10em;
   margin: 0.5em;
 }
-#app > main.home-page .list .item .image img {
-  width: 10em;
+#app > main.home-page .list .item .left .photo {
+  background: #999;
+  width: 100%;
+}
+#app > main.home-page .list .item .left .photo img {
+  width: 100%;
   display: block;
 }
-#app > main.home-page .list .item .content {
+#app > main.home-page .list .item .left .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#app > main.home-page .list .item .left .links .link-facebook {
+  display: inline-block;
+  padding: 0.25em;
+}
+#app > main.home-page .list .item .left .links .link-facebook img {
+  width: 1em;
+  display: block;
+}
+#app > main.home-page .list .item .left .links .link-website {
+  display: inline-block;
+  font-size: 1em;
+  padding: 0.25em;
+}
+#app > main.home-page .list .item .right {
   color: #333;
   flex: 1 1 auto;
   margin: 0.5em;
 }
-#app > main.home-page .list .item .content .header {
+#app > main.home-page .list .item .right .header {
   align-items: center;
   display: flex;
   margin-bottom: 1em;
 }
-#app > main.home-page .list .item .content .header .publisher {
+#app > main.home-page .list .item .right .header .publisher {
   flex: 1 1 auto;
   font-size: 1.1em;
   font-weight: bold;
 }
-#app > main.home-page .list .item .content .header .time {
+#app > main.home-page .list .item .right .header .time {
   color: #999;
   cursor: pointer;
   flex: 0 0 auto;
   font-size: 0.8em;
 }
-#app > main.home-page .list .item .content .message {
+#app > main.home-page .list .item .right .message {
   line-height: 1.5em;
   margin-bottom: 1em;
 }
-#app > main.home-page .list .item .content .reactions {
+#app > main.home-page .list .item .right .reactions {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8em;
   justify-content: flex-end;
   line-height: 2em;
 }
-#app > main.home-page .list .item .content .reactions .reaction {
+#app > main.home-page .list .item .right .reactions .reaction {
   flex: 0 0 auto;
   margin: 0.5em;
+  cursor: help;
 }
-#app > main.home-page .list .item .content .reactions .reaction .key {
+#app > main.home-page .list .item .right .reactions .reaction .key {
   color: #ccc;
   margin: 0 0.05em;
 }
-#app > main.home-page .list .item .content .reactions .reaction .value {
+#app > main.home-page .list .item .right .reactions .reaction .value {
   color: #999;
   margin: 0 0.05em;
 }

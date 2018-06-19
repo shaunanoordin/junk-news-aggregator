@@ -190,17 +190,39 @@ select
       margin: 0.5em
       overflow: auto
       
-      .image
-        background: $grey-dark
+      .left
         display: block
         flex: 0 0 auto
+        width: 10em
         margin: 0.5em
         
-        img
-          width: 10em
-          display: block
+        .photo
+          background: $grey-dark
+          width: 100%
+
+          img
+            width: 100%
+            display: block
+        
+        .links
+          display: flex
+          flex-direction: row
+          align-items: center
+        
+          .link-facebook
+            display: inline-block
+            padding: 0.25em
+
+            img
+              width: 1em
+              display: block
+
+          .link-website
+            display: inline-block
+            font-size: 1em
+            padding: 0.25em
           
-      .content
+      .right
         color: $black
         flex: 1 1 auto
         margin: 0.5em
@@ -235,6 +257,7 @@ select
           .reaction
             flex: 0 0 auto
             margin: 0.5em
+            cursor: help
             
             .key
               color: $grey-mid

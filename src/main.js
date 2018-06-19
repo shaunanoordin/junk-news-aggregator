@@ -185,14 +185,36 @@ class App {
     //For each news article, add it to the list.
     //Structure:
     //  <li class="item">
-    //    <a
-    //      class="image"
-    //      href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
-    //      target="_blank"
-    //    >
-    //      <img src="https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/31823834_1703680869686071_5510796134324371456_n.jpg?_nc_cat=0&oh=81acd9fe53f698974d7b4633df7805b2&oe=5B522AC6">
-    //    </a>
-    //    <div class="content">
+    //    <div class="left">
+    //      <a href="photo" 
+    //        href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+    //        target="_blank"
+    //        rel="noopener noreferrer"
+    //      >
+    //        <img src="https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/31823834_1703680869686071_5510796134324371456_n.jpg?_nc_cat=0&oh=81acd9fe53f698974d7b4633df7805b2&oe=5B522AC6">
+    //      </a>
+    //      <div class="links">
+    //        <a
+    //          class="link-facebook"
+    //          title="View Facebook post"
+    //          href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+    //          target="_blank"
+    //          rel="noopener noreferrer"
+    //        >
+    //          <img src="assets/logo-facebook.png">
+    //        </a>
+    //        <a
+    //          class="link-website"
+    //          title="View original article"
+    //          href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
+    //          target="_blank"
+    //          rel="noopener noreferrer"
+    //        >
+    //          🌐
+    //        </a>
+    //      </div>
+    //    </div>
+    //    <div class="right">
     //      <div class="header">
     //        <span class="publisher">100percentfedup</span>
     //        <span class="time">1 hour ago</span>
@@ -202,8 +224,8 @@ class App {
     //      </div>
     //      <div class="reactions">
     //        <span class="reaction">
-    //          <span class="key">Shares</span>
-    //          <span class="value">348</span>
+    //          <span class="key">👍</span>
+    //          <span class="value">180</span>
     //        </span>
     //      </div>
     //    </div>
@@ -212,30 +234,69 @@ class App {
       const eleItem = document.createElement("li");
       eleItem.className = "item";
       list.appendChild(eleItem);
+      
+      //----------------
 
-      const eleImage = document.createElement("a");
-      eleImage.className = "image";
+      const eleLeft = document.createElement("div");
+      eleLeft.className = "left";
+      eleItem.append(eleLeft);
+      
+      const elePhoto = document.createElement("a");
+      elePhoto.className = "photo";
       if (item.link) {
-        eleImage.href = item.link;
+        elePhoto.href = item.link;
+        elePhoto.target = "_blank";
+        elePhoto.rel = "noopener noreferrer";
       }
-      eleImage.target = "_blank";
-      eleItem.appendChild(eleImage);
+      eleLeft.appendChild(elePhoto);
 
-      const eleImageImg = document.createElement("img");
+      const elePhotoImg = document.createElement("img");
       if (item.picture) {
-        eleImageImg.src = item.picture;
+        elePhotoImg.src = item.picture;
       } else {
-        eleImageImg.src = "assets/no-image.png";
+        elePhotoImg.src = "assets/no-image.png";
       }
-      eleImage.appendChild(eleImageImg);
+      elePhoto.appendChild(elePhotoImg);
+      
+      const eleLinks = document.createElement("div");
+      eleLinks.className = "links";
+      eleLeft.appendChild(eleLinks);
+      
+      if (item.post_ID) {
+        const urlFacebook = `https://facebook.com/${item.post_ID}`;
+        const eleLinkFacebook = document.createElement("a");
+        eleLinkFacebook.className = "link-facebook";
+        eleLinkFacebook.href = urlFacebook;
+        eleLinkFacebook.title = "View Facebook post";
+        eleLinkFacebook.target = "_blank";
+        eleLinkFacebook.rel = "noopener noreferrer";
+        eleLinks.appendChild(eleLinkFacebook);
+        
+        const eleLinkFacebookImg = document.createElement("img");
+        eleLinkFacebookImg.src = "assets/logo-facebook.png";
+        eleLinkFacebook.appendChild(eleLinkFacebookImg);
+      }
+      
+      if (item.link) {
+        const eleLinkWebsite = document.createElement("a");
+        eleLinkWebsite.className = "link-website";
+        eleLinkWebsite.href = item.link;
+        eleLinkWebsite.title = "View original article";
+        eleLinkWebsite.target = "_blank";
+        eleLinkWebsite.rel = "noopener noreferrer";
+        eleLinkWebsite.textContent = "🌐";
+        eleLinks.appendChild(eleLinkWebsite);
+      }
+      
+      //----------------
 
-      const eleContent = document.createElement("div");
-      eleContent.className = "content";
-      eleItem.appendChild(eleContent);
+      const eleRight = document.createElement("div");
+      eleRight.className = "right";
+      eleItem.appendChild(eleRight);
 
       const eleHeader = document.createElement("div");
       eleHeader.className = "header";
-      eleContent.appendChild(eleHeader);
+      eleRight.appendChild(eleHeader);
 
       const elePublisher = document.createElement("span");
       elePublisher.className = "publisher";
@@ -246,15 +307,19 @@ class App {
       eleTime.className = "time";
       try {
         const now = new Date();
-        const created_time = new Date(item.created_time);
+        let time_string = item.created_time || "";
+        time_string = time_string.replace(/\-/g, '/');  //Browser compatibility: Safari cannot process "2018-12-31 12:59:59" but can process "2018/12/31 12:59:59"
+        const created_time = new Date(time_string);
         const timeAgo = (now - created_time) / 1000;  //Time since created_time, in seconds.
-
-        if (timeAgo < 60) {
+        
+        if (isNaN(timeAgo)) {  //Failsafe
+          eleTime.textContent = item.created_time;
+        } else if (timeAgo < 60) {
           eleTime.textContent = Math.floor(timeAgo) + " second(s) ago";
         } else if (timeAgo < 60 * 60) {
           eleTime.textContent = Math.floor(timeAgo / 60) + " minute(s) ago";
         } else if (timeAgo < 60 * 60 * 24) {
-          eleTime.textContent = Math.floor(timeAgo / (60 * 60)) + " hours(s) ago";
+          eleTime.textContent = Math.floor(timeAgo / (60 * 60)) + " hour(s) ago";
         } else {
           eleTime.textContent = Math.floor(timeAgo / (60 * 60 * 24)) + " day(s) ago";
         }
@@ -265,43 +330,42 @@ class App {
       const eleMessage = document.createElement("div");
       eleMessage.className = "message";
       eleMessage.textContent = item.message;
-      eleContent.appendChild(eleMessage);
+      eleRight.appendChild(eleMessage);
 
       const eleReactions = document.createElement("div");
       eleReactions.className = "reactions";
-      eleContent.appendChild(eleReactions);
+      eleRight.appendChild(eleReactions);
 
       //For each type of Reaction, add it to the Reactions.
       const reactions = {
-        "Shares": "shares",
-        "Comments": "comments",
+        "🔃": "shares",
+        "💬": "comments",
         "👍": "likes",
         "❤️": "LOVEs",
         "😄": "HAHAs",
         "😲": "WOWs",
         "😟": "SADs",
         "😡": "ANGRYs",
-
       };
       Object.entries(reactions).map(([labelKey, itemKey]) => {
-        const eleReaction = document.createElement("span");
-        eleReaction.className = "reaction";
-
         //Only add reactions if they have non-zero values.
         const reactionValue = item[itemKey];
         if (reactionValue && reactionValue !== "0") {
+          const eleReaction = document.createElement("span");
+          eleReaction.className = "reaction";
+          eleReaction.title = itemKey;          
           eleReactions.appendChild(eleReaction);
+          
+          const eleKey = document.createElement("span");
+          eleKey.className = "key";
+          eleKey.textContent = labelKey;
+          eleReaction.appendChild(eleKey);
+
+          const eleValue = document.createElement("span");
+          eleValue.className = "value";
+          eleValue.textContent = reactionValue; 
+          eleReaction.appendChild(eleValue);
         }
-
-        const eleKey = document.createElement("span");
-        eleKey.className = "key";
-        eleKey.textContent = labelKey;
-        eleReaction.appendChild(eleKey);
-
-        const eleValue = document.createElement("span");
-        eleValue.className = "value";
-        eleValue.textContent = reactionValue; 
-        eleReaction.appendChild(eleValue);
       });
 
     });
