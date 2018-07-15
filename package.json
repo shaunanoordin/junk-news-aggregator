@@ -1,11 +1,11 @@
 {
-  "name": "junk-news-aggregator",
+  "name": "oii-news-aggregator",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaunanoordin/junk-news-aggregator/"
+    "url": "https://github.com/shaunanoordin/oii-news-aggregator/"
   },
-  "homepage": "https://github.com/shaunanoordin/junk-news-aggregator/",
+  "homepage": "https://github.com/shaunanoordin/oii-news-aggregator/",
   "babel": {
     "presets": [
       "env"

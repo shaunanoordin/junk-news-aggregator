@@ -1,9 +1,9 @@
 <?php
 /*
-Junk News Aggregator API
+News Aggregator API
 ------------------------
 
-Interface for getting news data from the Junk News database.
+Interface for getting news data from the News database.
 
 --------------------------------------------------------------------------------
  */

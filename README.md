@@ -1,8 +1,8 @@
-# Junk News Aggregator
+# News Aggregator
 
-Simple web app that lets users review the contents of a "junk news articles"
-database. The database is a separate system, containing news articles gathered
-from social media.
+Simple web app that lets users review the contents of a database of selected
+news articles. The database is a separate system, containing news articles
+gathered from social media.
 
 ## Development
 

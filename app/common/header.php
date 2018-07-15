@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Junk News Aggregator</title>
+<title>News Aggregator</title>
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="./main.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <header>
   <a class="title" href="./">
     <h1>
-      Junk News Aggregator
+      News Aggregator
     </h1>
   </a>
   <nav>
