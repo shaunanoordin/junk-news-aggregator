@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>News Aggregator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="./main.css" rel="stylesheet">
