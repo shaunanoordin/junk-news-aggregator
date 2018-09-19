@@ -24,7 +24,7 @@ $sql_connection = new mysqli($db_server, $db_username, $db_password);
 //If there's an error connecting, return a 500.
 if ($sql_connection->connect_error) {
   http_response_code (500);
-  die("Connection Error: " . $conn->connect_error);
+  die("Connection Error: " . $sql_connection->connect_error);
 }
 
 if (!$sql_connection->select_db($db_database)) {
@@ -34,16 +34,19 @@ if (!$sql_connection->select_db($db_database)) {
 
 //Get any query variables.
 $input_debug = varGet("debug");
+$input_message = trim(varGet("message"));
+$input_publisher = trim(varGet("publisher"));
 $input_limit = varGet("limit");
 $input_hours_ago = varGet("hours_ago");
 
 //Construct the SQL query.
-$sql_where = " WHERE (message IS NOT null) ";
+$sql_where = " WHERE (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) ";
 if ($input_hours_ago !== "" && intval($input_hours_ago)) {
   $sql_where = $sql_where . " AND (TIMESTAMPDIFF(HOUR, created_time, NOW()) <= " . intval($input_hours_ago) . ") "; 
 }
 
 $sql_order = " ORDER BY created_time DESC ";
+
 $sql_limit = " LIMIT 200 ";
 if ($input_limit !== "" && intval($input_limit)) {
   $sql_limit = " LIMIT " . intval($input_limit) . " ";
@@ -56,7 +59,13 @@ $json = [
 ];
 
 //Send the query and fetch the results.
-$sql_results = $sql_connection->query($sql_query);
+$search_message = ($input_message) ? "%".$input_message."%" : "%";
+$search_publisher = ($input_publisher) ? "%".$input_publisher."%" : "%";
+$sql_prepared_statement = $sql_connection->prepare($sql_query);
+$sql_prepared_statement->bind_param("ss", $search_message, $search_publisher);
+$sql_prepared_statement->execute();
+$sql_results = $sql_prepared_statement->get_result();
+
 while ($row = $sql_results->fetch_assoc()) {
   $item = (object) [
     //"publisher" => ...,
