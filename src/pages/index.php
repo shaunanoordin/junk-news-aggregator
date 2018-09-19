@@ -2,7 +2,7 @@
 <main class="home-page">
   <div class="filter-panel">
     <span>Showing Facebook news posts from the last</span>
-    <select id="filter">
+    <select id="filter-time">
       <option value="1">1 hour</option>
       <option value="2">2 hours</option>
       <option value="3">3 hours</option>

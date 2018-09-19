@@ -2,7 +2,7 @@
 <main class="home-page">
   <div class="filter-panel">
     <span>Showing Facebook news posts from the last</span>
-    <select id="filter">
+    <select id="filter-time">
       <option value="24">1 day</option>
       <option value="48">2 days</option>
       <option value="72">3 days</option>
@@ -11,6 +11,9 @@
       <option value="8760">1 year</option>
       <option value="87600">10 years</option>
     </select>
+    <span>with text</span>
+    <input id="filter-message" type="text" value="" placeholder="(anything)">
+    <button id="filter-button">&raquo;</button>
   </div>
   
   <div class="sort-panel">

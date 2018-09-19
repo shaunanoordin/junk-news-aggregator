@@ -54,7 +54,8 @@ class App {
     this.html = {
       app: document.getElementById("app"),
       list: document.getElementById("list"),
-      filter: document.getElementById("filter"),
+      filterTime: document.getElementById("filter-time"),
+      filterMessage: document.getElementById("filter-message"),
       //sort_comments: document.getElementById("sort_comments"),
       //sort_shares: document.getElementById("sort_shares"),
       //sort_likes: document.getElementById("sort_likes"),
@@ -67,7 +68,8 @@ class App {
     
     this.list_data = null;
     this.list_settings = {
-      filter: '',
+      filterTime: '',
+      filterMessage: '',
       sort: '',
       limit: 200,
     };
@@ -76,10 +78,20 @@ class App {
     //--------------------------------
     if (this.currentPageType === this.PAGE_TYPES.LIST) {
       //Register UI: time filter
-      this.html.filter.onchange = () => {
-        this.list_settings.filter = this.html.filter.value;
-        this.fetchList();
-      };
+      if (this.html.filterTime) {
+        this.html.filterTime.onchange = () => {
+          this.list_settings.filterTime = this.html.filterTime.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: message filter
+      if (this.html.filterMessage) {
+        this.html.filterMessage.onchange = () => {
+          this.list_settings.filterMessage = this.html.filterMessage.value;
+          this.fetchList();
+        };
+      }
       
       //Register UI: sort buttons
       for (let button of document.getElementsByClassName("sort-button")) {
@@ -91,7 +103,7 @@ class App {
       }
       
       //Initial data fetch.
-      this.list_settings.filter = this.html.filter.value;
+      this.list_settings.filterTime = this.html.filterTime.value;
       this.fetchList();
     }
     //--------------------------------
@@ -112,7 +124,8 @@ class App {
     list.appendChild(eleMessage);
     
     request.get(this.API_URL)
-    .query({ hours_ago: this.list_settings.filter })
+    .query({ hours_ago: this.list_settings.filterTime })
+    .query({ message: this.list_settings.filterMessage })
     .query({ limit: this.list_settings.limit })
     .then((response) => {
       if (response && response.ok && response.body && response.body.data) {
