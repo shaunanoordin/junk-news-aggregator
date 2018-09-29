@@ -79,6 +79,9 @@ switch ($input_order) {
   case "ANGRYs":
     $sql_order = " ORDER BY ANGRYs DESC ";
     break;
+  case "engagement":
+    $sql_order = " ORDER BY totalEngs DESC ";
+    break;
 }
 
 //Construct the SQL query: LIMIT
@@ -105,7 +108,6 @@ $sql_results = $sql_prepared_statement->get_result();
 
 while ($row = $sql_results->fetch_assoc()) {
   $item = (object) [
-    //"publisher" => ...,
     "publisher_ID" => $row["publisher_ID"],
     "publisher_name" => $row["publisher_name"],
     "publisher_website" => $row["publisher_website"],
@@ -123,6 +125,8 @@ while ($row = $sql_results->fetch_assoc()) {
     "WOWs" => $row["WOWs"],
     "SADs" => $row["SADs"],
     "ANGRYs" => $row["ANGRYs"],
+    "totalEngs" => $row["totalEngs"],
+    //"newsType" => $row["newsType"],  //Do not show news type.
   ];
   
   array_push($json["data"], $item);
