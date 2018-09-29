@@ -38,19 +38,56 @@ $input_message = trim(varGet("message"));
 $input_publisher = trim(varGet("publisher"));
 $input_limit = varGet("limit");
 $input_hours_ago = varGet("hours_ago");
+$input_order = varGet("order");
 
-//Construct the SQL query.
-$sql_where = " WHERE (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) ";
-if ($input_hours_ago !== "" && intval($input_hours_ago)) {
+//Construct the SQL query: WHERE
+$sql_where = " WHERE (newsType = 'JUNK') AND (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) ";
+if ($input_hours_ago !== "" && intval($input_hours_ago) > 0) {
   $sql_where = $sql_where . " AND (TIMESTAMPDIFF(HOUR, created_time, NOW()) <= " . intval($input_hours_ago) . ") "; 
 }
 
+//Construct the SQL query: ORDER
 $sql_order = " ORDER BY created_time DESC ";
+switch ($input_order) {
+  case "newest":
+    $sql_order = " ORDER BY created_time DESC ";
+    break;
+  case "oldest":
+    $sql_order = " ORDER BY created_time ASC ";
+    break;
+  case "shares":
+    $sql_order = " ORDER BY shares DESC ";
+    break;
+  case "comments":
+    $sql_order = " ORDER BY comments DESC ";
+    break;
+  case "likes":
+    $sql_order = " ORDER BY likes DESC ";
+    break;
+  case "LOVEs":
+    $sql_order = " ORDER BY LOVEs DESC ";
+    break;
+  case "HAHAs":
+    $sql_order = " ORDER BY HAHAs DESC ";
+    break;
+  case "WOWs":
+    $sql_order = " ORDER BY WOWs DESC ";
+    break;
+  case "SADs":
+    $sql_order = " ORDER BY SADs DESC ";
+    break;
+  case "ANGRYs":
+    $sql_order = " ORDER BY ANGRYs DESC ";
+    break;
+}
 
-$sql_limit = " LIMIT 200 ";
+//Construct the SQL query: LIMIT
+$sql_limit = " LIMIT 100 ";
 if ($input_limit !== "" && intval($input_limit)) {
   $sql_limit = " LIMIT " . intval($input_limit) . " ";
 }
+
+//Construct the SQL query
 $sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
 
 //Prepare the output JSON.
