@@ -98,7 +98,7 @@ class App {
         const sortValue = button.dataset.sort;
         button.onclick = () => {
           this.list_settings.sort = sortValue;
-          this.updateList();
+          this.fetchList();
         };
       }
       
@@ -127,6 +127,7 @@ class App {
     .query({ hours_ago: this.list_settings.filterTime })
     .query({ message: this.list_settings.filterMessage })
     .query({ limit: this.list_settings.limit })
+    .query({ order: this.list_settings.sort })
     .then((response) => {
       if (response && response.ok && response.body && response.body.data) {
         return response.body.data;
@@ -164,36 +165,6 @@ class App {
       list.appendChild(eleMessage);
       return;
     }
-
-    //Sort data
-    const sortedData = data.sort((itemA, itemB) => {
-      //Sanity check
-      if (!itemA || !itemB) return 0;
-      
-      const sortValue = this.list_settings.sort;
-      let valA = 0, valB = 0;
-      
-      try {
-        if (sortValue === 'newest') {
-          valA = new Date(itemA["created_time"]);
-          valB = new Date(itemB["created_time"]);
-        } else if (sortValue === 'oldest') {
-          valB = new Date(itemA["created_time"]);
-          valA = new Date(itemB["created_time"]);
-        } else if (sortValue !== '') {  //Try to sort by the reaction count.
-          valA = (itemA[sortValue]) ? parseInt(itemA[sortValue]) : 0;
-          valB = (itemB[sortValue]) ? parseInt(itemB[sortValue]) : 0;
-        } else {  //Else, sort by created_time.
-          valA = new Date(itemA.created_time);
-          valB = new Date(itemB.created_time);
-        }
-      } catch (err) {}
-      
-      if (isNaN(valA)) { valA = 0; }
-      if (isNaN(valB)) { valB = 0; }
-      
-      return valB - valA;
-    });
 
     //For each news article, add it to the list.
     //Structure:
@@ -243,7 +214,7 @@ class App {
     //      </div>
     //    </div>
     //  </li>
-    sortedData.map((item) => {
+    data.map((item) => {
       const eleItem = document.createElement("li");
       eleItem.className = "item";
       list.appendChild(eleItem);
