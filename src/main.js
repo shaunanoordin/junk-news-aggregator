@@ -56,6 +56,8 @@ class App {
       list: document.getElementById("list"),
       filterTime: document.getElementById("filter-time"),
       filterMessage: document.getElementById("filter-message"),
+      filterPublisher: document.getElementById("filter-publisher"),
+      filterButton: document.getElementById("filter-button"),
       //sort_comments: document.getElementById("sort_comments"),
       //sort_shares: document.getElementById("sort_shares"),
       //sort_likes: document.getElementById("sort_likes"),
@@ -70,6 +72,7 @@ class App {
     this.list_settings = {
       filterTime: '',
       filterMessage: '',
+      filterPublisher: '',
       sort: '',
       limit: 200,
     };
@@ -89,6 +92,21 @@ class App {
       if (this.html.filterMessage) {
         this.html.filterMessage.onchange = () => {
           this.list_settings.filterMessage = this.html.filterMessage.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: publisher filter
+      if (this.html.filterPublisher) {
+        this.html.filterPublisher.onchange = () => {
+          this.list_settings.filterPublisher = this.html.filterPublisher.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: filter button
+      if (this.html.filterButton) {
+        this.html.filterButton.onclick = () => {
           this.fetchList();
         };
       }
@@ -126,6 +144,7 @@ class App {
     request.get(this.API_URL)
     .query({ hours_ago: this.list_settings.filterTime })
     .query({ message: this.list_settings.filterMessage })
+    .query({ publisher: this.list_settings.filterPublisher })
     .query({ limit: this.list_settings.limit })
     .query({ order: this.list_settings.sort })
     .then((response) => {

@@ -1,16 +1,18 @@
 <?php include "common/header.php" ?>
 <main class="home-page">
   <div class="filter-panel">
-    <span>Showing Facebook news posts from the last</span>
-    <select id="filter-time">
-      <option value="1">1 hour</option>
-      <option value="2">2 hours</option>
-      <option value="3">3 hours</option>
-      <option value="6">6 hours</option>
-      <option value="9">9 hours</option>
-      <option value="12">12 hours</option>
-      <option value="24">1 day</option>
-    </select>
+    <div class="row">
+      <span>Showing Facebook news posts from the last</span>
+      <select id="filter-time">
+        <option value="1">1 hour</option>
+        <option value="2">2 hours</option>
+        <option value="3">3 hours</option>
+        <option value="6">6 hours</option>
+        <option value="9">9 hours</option>
+        <option value="12">12 hours</option>
+        <option value="24">1 day</option>
+      </select>
+    </div>
   </div>
   
   <div class="sort-panel">
