@@ -77,6 +77,7 @@ class App {
       filterPublisher: '',
       sort: '',
       limit: 200,
+      most_engaging: '',  //If this is set to a non-empty string, it means we're only interested in the most engaging stories from the specified time period and the given filters.
     }, this.initialListSettings);
     
     //Initialise settings for List-type page
@@ -149,6 +150,7 @@ class App {
     .query({ publisher: this.list_settings.filterPublisher })
     .query({ limit: this.list_settings.limit })
     .query({ order: this.list_settings.sort })
+    .query({ most_engaging: this.list_settings.most_engaging })
     .then((response) => {
       if (response && response.ok && response.body && response.body.data) {
         return response.body.data;

@@ -39,6 +39,7 @@ $input_publisher = trim(varGet("publisher"));
 $input_limit = varGet("limit");
 $input_hours_ago = varGet("hours_ago");
 $input_order = varGet("order");
+$input_engagement_matters = trim(varGet("most_engaging")) !== '';  //This flag indicates whether we're only interested in the most engaging stories.
 
 //Construct the SQL query: WHERE
 $sql_where = " WHERE (newsType = 'JUNK') AND (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) ";
@@ -91,7 +92,11 @@ if ($input_limit !== "" && intval($input_limit)) {
 }
 
 //Construct the SQL query
-$sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
+if (!$input_engagement_matters) {
+  $sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
+} else {
+  $sql_query = "SELECT * FROM (SELECT * FROM " . $db_table . $sql_where . " ORDER BY totalEngs DESC " . $sql_limit . ") AS midA " . $sql_order;
+}
 
 //Prepare the output JSON.
 $json = [
@@ -143,7 +148,7 @@ if ($input_debug === "1") {
 } else if ($input_debug === "2") {
   echo(mb_internal_encoding());
 } else {
-  header('Content-Type: application/json');
+  header('Content-Type: application/json; charset=utf-8');
   safely_print_json($json);
 }
 ?>

@@ -2,7 +2,7 @@
 <main class="home-page">
   <div class="filter-panel">
     <div class="row">
-      <span>Showing Facebook news posts from the last</span>
+      <span>Showing most engaged Facebook news posts from the last</span>
       <select id="filter-time">
         <option value="24">1 day</option>
         <option value="48">2 days</option>
@@ -41,6 +41,8 @@
 </main>
 <script>
   window.app.currentPageType = window.app.PAGE_TYPES.LIST;
-  window.app.initialListSettings = {};
+  window.app.initialListSettings = {
+    most_engaging: 'yes'
+  };
 </script>
 <?php include "common/footer.php" ?>
