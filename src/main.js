@@ -326,8 +326,9 @@ class App {
         } else {
           eleTime.textContent = Math.floor(timeAgo / (60 * 60 * 24)) + " day(s) ago";
         }
+        
+        eleTime.title = created_time;
       } catch (err) { eleTime.textContent = ""; }
-      eleTime.title = item.created_time;
       eleHeader.appendChild(eleTime);
 
       const eleMessage = document.createElement("div");
