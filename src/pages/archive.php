@@ -40,7 +40,7 @@
   <ul id="list" class="list"></ul>
 </main>
 <script>
-  //window.app.API_URL = "../api/test.php";  //DEBUG: Override to test with hardcoded data
   window.app.currentPageType = window.app.PAGE_TYPES.LIST;
+  window.app.initialListSettings = {};
 </script>
 <?php include "common/footer.php" ?>

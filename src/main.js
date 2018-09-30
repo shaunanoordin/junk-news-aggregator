@@ -45,6 +45,8 @@ class App {
     };
     
     this.currentPageType = this.PAGE_TYPES.DEFAULT;
+    this.initialListSettings = {};  //This can be overwritten on individual pages.
+    
     this.init = this.init.bind(this);
   }
   
@@ -69,13 +71,13 @@ class App {
     };
     
     this.list_data = null;
-    this.list_settings = {
+    this.list_settings = Object.assign({
       filterTime: '',
       filterMessage: '',
       filterPublisher: '',
       sort: '',
       limit: 200,
-    };
+    }, this.initialListSettings);
     
     //Initialise settings for List-type page
     //--------------------------------
