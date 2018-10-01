@@ -28,7 +28,7 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 
 //Config
 //------------------------------------------------------------------------------
-const API_URL = "http://junknews.oii.ox.ac.uk/news/api/";
+const API_URL = "http://oii-lab-001.oii.ox.ac.uk/news/api/";
 //------------------------------------------------------------------------------
 
 /*  Primary App Class
@@ -45,6 +45,8 @@ class App {
     };
     
     this.currentPageType = this.PAGE_TYPES.DEFAULT;
+    this.initialListSettings = {};  //This can be overwritten on individual pages.
+    
     this.init = this.init.bind(this);
   }
   
@@ -54,7 +56,10 @@ class App {
     this.html = {
       app: document.getElementById("app"),
       list: document.getElementById("list"),
-      filter: document.getElementById("filter"),
+      filterTime: document.getElementById("filter-time"),
+      filterMessage: document.getElementById("filter-message"),
+      filterPublisher: document.getElementById("filter-publisher"),
+      filterButton: document.getElementById("filter-button"),
       //sort_comments: document.getElementById("sort_comments"),
       //sort_shares: document.getElementById("sort_shares"),
       //sort_likes: document.getElementById("sort_likes"),
@@ -66,32 +71,60 @@ class App {
     };
     
     this.list_data = null;
-    this.list_settings = {
-      filter: '',
+    this.list_settings = Object.assign({
+      filterTime: '',
+      filterMessage: '',
+      filterPublisher: '',
       sort: '',
       limit: 200,
-    };
+      most_engaging: '',  //If this is set to a non-empty string, it means we're only interested in the most engaging stories from the specified time period and the given filters.
+    }, this.initialListSettings);
     
     //Initialise settings for List-type page
     //--------------------------------
     if (this.currentPageType === this.PAGE_TYPES.LIST) {
       //Register UI: time filter
-      this.html.filter.onchange = () => {
-        this.list_settings.filter = this.html.filter.value;
-        this.fetchList();
-      };
+      if (this.html.filterTime) {
+        this.html.filterTime.onchange = () => {
+          this.list_settings.filterTime = this.html.filterTime.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: message filter
+      if (this.html.filterMessage) {
+        this.html.filterMessage.onchange = () => {
+          this.list_settings.filterMessage = this.html.filterMessage.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: publisher filter
+      if (this.html.filterPublisher) {
+        this.html.filterPublisher.onchange = () => {
+          this.list_settings.filterPublisher = this.html.filterPublisher.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: filter button
+      if (this.html.filterButton) {
+        this.html.filterButton.onclick = () => {
+          this.fetchList();
+        };
+      }
       
       //Register UI: sort buttons
       for (let button of document.getElementsByClassName("sort-button")) {
         const sortValue = button.dataset.sort;
         button.onclick = () => {
           this.list_settings.sort = sortValue;
-          this.updateList();
+          this.fetchList();
         };
       }
       
       //Initial data fetch.
-      this.list_settings.filter = this.html.filter.value;
+      this.list_settings.filterTime = this.html.filterTime.value;
       this.fetchList();
     }
     //--------------------------------
@@ -112,8 +145,12 @@ class App {
     list.appendChild(eleMessage);
     
     request.get(this.API_URL)
-    .query({ hours_ago: this.list_settings.filter })
+    .query({ hours_ago: this.list_settings.filterTime })
+    .query({ message: this.list_settings.filterMessage })
+    .query({ publisher: this.list_settings.filterPublisher })
     .query({ limit: this.list_settings.limit })
+    .query({ order: this.list_settings.sort })
+    .query({ most_engaging: this.list_settings.most_engaging })
     .then((response) => {
       if (response && response.ok && response.body && response.body.data) {
         return response.body.data;
@@ -151,36 +188,6 @@ class App {
       list.appendChild(eleMessage);
       return;
     }
-
-    //Sort data
-    const sortedData = data.sort((itemA, itemB) => {
-      //Sanity check
-      if (!itemA || !itemB) return 0;
-      
-      const sortValue = this.list_settings.sort;
-      let valA = 0, valB = 0;
-      
-      try {
-        if (sortValue === 'newest') {
-          valA = new Date(itemA["created_time"]);
-          valB = new Date(itemB["created_time"]);
-        } else if (sortValue === 'oldest') {
-          valB = new Date(itemA["created_time"]);
-          valA = new Date(itemB["created_time"]);
-        } else if (sortValue !== '') {  //Try to sort by the reaction count.
-          valA = (itemA[sortValue]) ? parseInt(itemA[sortValue]) : 0;
-          valB = (itemB[sortValue]) ? parseInt(itemB[sortValue]) : 0;
-        } else {  //Else, sort by created_time.
-          valA = new Date(itemA.created_time);
-          valB = new Date(itemB.created_time);
-        }
-      } catch (err) {}
-      
-      if (isNaN(valA)) { valA = 0; }
-      if (isNaN(valB)) { valB = 0; }
-      
-      return valB - valA;
-    });
 
     //For each news article, add it to the list.
     //Structure:
@@ -230,7 +237,7 @@ class App {
     //      </div>
     //    </div>
     //  </li>
-    sortedData.map((item) => {
+    data.map((item) => {
       const eleItem = document.createElement("li");
       eleItem.className = "item";
       list.appendChild(eleItem);
@@ -323,8 +330,9 @@ class App {
         } else {
           eleTime.textContent = Math.floor(timeAgo / (60 * 60 * 24)) + " day(s) ago";
         }
+        
+        eleTime.title = created_time;
       } catch (err) { eleTime.textContent = ""; }
-      eleTime.title = item.created_time;
       eleHeader.appendChild(eleTime);
 
       const eleMessage = document.createElement("div");

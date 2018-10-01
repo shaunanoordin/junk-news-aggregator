@@ -24,7 +24,7 @@ $sql_connection = new mysqli($db_server, $db_username, $db_password);
 //If there's an error connecting, return a 500.
 if ($sql_connection->connect_error) {
   http_response_code (500);
-  die("Connection Error: " . $conn->connect_error);
+  die("Connection Error: " . $sql_connection->connect_error);
 }
 
 if (!$sql_connection->select_db($db_database)) {
@@ -34,21 +34,69 @@ if (!$sql_connection->select_db($db_database)) {
 
 //Get any query variables.
 $input_debug = varGet("debug");
+$input_message = trim(varGet("message"));
+$input_publisher = trim(varGet("publisher"));
 $input_limit = varGet("limit");
 $input_hours_ago = varGet("hours_ago");
+$input_order = varGet("order");
+$input_engagement_matters = trim(varGet("most_engaging")) !== '';  //This flag indicates whether we're only interested in the most engaging stories.
 
-//Construct the SQL query.
-$sql_where = " WHERE (message IS NOT null) ";
-if ($input_hours_ago !== "" && intval($input_hours_ago)) {
+//Construct the SQL query: WHERE
+$sql_where = " WHERE (newsType = 'JUNK') AND (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) ";
+if ($input_hours_ago !== "" && intval($input_hours_ago) > 0) {
   $sql_where = $sql_where . " AND (TIMESTAMPDIFF(HOUR, created_time, NOW()) <= " . intval($input_hours_ago) . ") "; 
 }
 
+//Construct the SQL query: ORDER
 $sql_order = " ORDER BY created_time DESC ";
-$sql_limit = " LIMIT 200 ";
+switch ($input_order) {
+  case "newest":
+    $sql_order = " ORDER BY created_time DESC ";
+    break;
+  case "oldest":
+    $sql_order = " ORDER BY created_time ASC ";
+    break;
+  case "shares":
+    $sql_order = " ORDER BY shares DESC ";
+    break;
+  case "comments":
+    $sql_order = " ORDER BY comments DESC ";
+    break;
+  case "likes":
+    $sql_order = " ORDER BY likes DESC ";
+    break;
+  case "LOVEs":
+    $sql_order = " ORDER BY LOVEs DESC ";
+    break;
+  case "HAHAs":
+    $sql_order = " ORDER BY HAHAs DESC ";
+    break;
+  case "WOWs":
+    $sql_order = " ORDER BY WOWs DESC ";
+    break;
+  case "SADs":
+    $sql_order = " ORDER BY SADs DESC ";
+    break;
+  case "ANGRYs":
+    $sql_order = " ORDER BY ANGRYs DESC ";
+    break;
+  case "engagement":
+    $sql_order = " ORDER BY totalEngs DESC ";
+    break;
+}
+
+//Construct the SQL query: LIMIT
+$sql_limit = " LIMIT 100 ";
 if ($input_limit !== "" && intval($input_limit)) {
   $sql_limit = " LIMIT " . intval($input_limit) . " ";
 }
-$sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
+
+//Construct the SQL query
+if (!$input_engagement_matters) {
+  $sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
+} else {
+  $sql_query = "SELECT * FROM (SELECT * FROM " . $db_table . $sql_where . " ORDER BY totalEngs DESC " . $sql_limit . ") AS midA " . $sql_order;
+}
 
 //Prepare the output JSON.
 $json = [
@@ -56,10 +104,15 @@ $json = [
 ];
 
 //Send the query and fetch the results.
-$sql_results = $sql_connection->query($sql_query);
+$search_message = ($input_message) ? "%".$input_message."%" : "%";
+$search_publisher = ($input_publisher) ? "%".$input_publisher."%" : "%";
+$sql_prepared_statement = $sql_connection->prepare($sql_query);
+$sql_prepared_statement->bind_param("ss", $search_message, $search_publisher);
+$sql_prepared_statement->execute();
+$sql_results = $sql_prepared_statement->get_result();
+
 while ($row = $sql_results->fetch_assoc()) {
   $item = (object) [
-    //"publisher" => ...,
     "publisher_ID" => $row["publisher_ID"],
     "publisher_name" => $row["publisher_name"],
     "publisher_website" => $row["publisher_website"],
@@ -77,6 +130,8 @@ while ($row = $sql_results->fetch_assoc()) {
     "WOWs" => $row["WOWs"],
     "SADs" => $row["SADs"],
     "ANGRYs" => $row["ANGRYs"],
+    "totalEngs" => $row["totalEngs"],
+    //"newsType" => $row["newsType"],  //Do not show news type.
   ];
   
   array_push($json["data"], $item);
@@ -93,7 +148,7 @@ if ($input_debug === "1") {
 } else if ($input_debug === "2") {
   echo(mb_internal_encoding());
 } else {
-  header('Content-Type: application/json');
+  header('Content-Type: application/json; charset=utf-8');
   safely_print_json($json);
 }
 ?>

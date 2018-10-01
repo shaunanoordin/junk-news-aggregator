@@ -120,25 +120,30 @@ select
   
   .filter-panel
     background: $grey-mid
-    display: flex
-    flex: 0 0 auto
-    flex-direction: row
-    justify-content: center
-    padding: 1em
-    
-    @media (max-width: $mobile-width)
-      flex-direction: column
-    
-    > span
+        
+    .row
+      display: flex
       flex: 0 0 auto
-      line-height: 2em
-      
-    > select
-      flex: 0 0 auto
-      margin: 0 1em
-      
+      flex-direction: row
+      justify-content: center
+      padding: 0.25em 1em
+
       @media (max-width: $mobile-width)
-        margin: 0
+        flex-direction: column
+      
+      > span
+        flex: 0 0 auto
+        line-height: 2em
+      
+      > input
+      > button
+      > select
+        flex: 0 0 auto
+        margin: 0 0.5em
+
+        @media (max-width: $mobile-width)
+          min-height: 2.5em
+          margin: 0
 
   .sort-panel
     color: $grey-dark
@@ -147,7 +152,7 @@ select
     flex-direction: row
     flex-wrap: wrap
     justify-content: center
-    padding: 1em
+    padding: 0.25em 1em
     
     > label
       display: inline-block
