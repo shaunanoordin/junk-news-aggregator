@@ -109,5 +109,8 @@
 </main>
 <script>
   window.app.currentPageType = window.app.PAGE_TYPES.LIST;
+  window.app.initialListSettings = {
+    most_engaging: 'yes'
+  };
 </script>
 <?php include "common/footer.php" ?>
