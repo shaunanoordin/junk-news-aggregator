@@ -315,8 +315,14 @@ class App {
       try {
         const now = new Date();
         let time_string = item.created_time || "";
-        time_string = time_string.replace(/\-/g, '/');  //Browser compatibility: Safari cannot process "2018-12-31 12:59:59" but can process "2018/12/31 12:59:59"
-        const created_time = new Date(time_string);
+        let created_time = new Date(time_string);
+        
+        //Browser compatibility: Safari
+        if (isNaN(created_time.getTime())) {  //If time is valid, this might be a browser compatibility issue: Safari cannot process "2018-12-31 12:59:59" but can process "2018/12/31 12:59:59"
+          time_string = time_string.replace(/\-/g, '/');
+          created_time = new Date(time_string);
+        }
+        
         const timeAgo = (now - created_time) / 1000;  //Time since created_time, in seconds.
         
         if (isNaN(timeAgo)) {  //Failsafe
