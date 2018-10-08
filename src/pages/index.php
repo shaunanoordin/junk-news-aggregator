@@ -13,6 +13,12 @@
         <option value="24">1 day</option>
       </select>
     </div>
+    <div class="row">
+      <span>optionally filtered by</span>
+      <input id="filter-message" type="text" value="" placeholder="content">
+      <input id="filter-publisher" type="text" value="" placeholder="publisher">
+      <button id="filter-button">&raquo;</button>
+    </div>
   </div>
   
   <div class="sort-panel">

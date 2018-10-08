@@ -9,8 +9,6 @@
         <option value="72">3 days</option>
         <option value="168">1 week</option>
         <option value="720">1 month</option>
-        <option value="8760">1 year</option>
-        <option value="87600">10 years</option>
       </select>
     </div>
     <div class="row">
