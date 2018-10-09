@@ -28,7 +28,7 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 
 //Config
 //------------------------------------------------------------------------------
-const API_URL = "http://oii-lab-001.oii.ox.ac.uk/news/api/";
+const API_URL = "https://oii-lab-001.oii.ox.ac.uk/news/api/";
 //------------------------------------------------------------------------------
 
 /*  Primary App Class
