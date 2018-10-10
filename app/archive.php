@@ -20,19 +20,36 @@
   </div>
   
   <div class="sort-panel">
-    <label>Sort by:</label>
-    <span>
-      <a class="sort-button" id="sort_comments" data-sort="comments" href="#" title="comments">💬</a>
-      <a class="sort-button" id="sort_shares" data-sort="shares" href="#" title="shares">🔃</a>
-      <a class="sort-button" id="sort_likes" data-sort="likes" href="#" title="likes">👍</a>
-      <a class="sort-button" id="sort_loves" data-sort="LOVEs" href="#" title="LOVEs">❤️</a>
-      <a class="sort-button" id="sort_hahas" data-sort="HAHAs" href="#" title="HAHAs">😄</a>
-      <a class="sort-button" id="sort_wows" data-sort="WOWs" href="#" title="WOWs">😲</a>
-      <a class="sort-button" id="sort_sads" data-sort="SADs" href="#" title="SADs">😟</a>
-      <a class="sort-button" id="sort_angrys" data-sort="ANGRYs" href="#" title="ANGRYs">😡</a>
-      <a class="sort-button" id="sort_comments" data-sort="oldest" href="#" title="Oldest">Oldest</a>
-      <a class="sort-button" id="sort_shares" data-sort="newest" href="#" title="Newest">Newest</a>
-    </span>
+    <div class="row">
+      <label>Sort by:</label>
+      <span>
+        <a class="sort-button" data-sort="oldest" href="#" title="Oldest">Oldest</a>
+        <a class="sort-button" data-sort="newest" href="#" title="Newest">Newest</a>
+        <a class="sort-button" data-sort="comments" href="#" title="comments">💬</a>
+        <a class="sort-button" data-sort="shares" href="#" title="shares">🔃</a>
+        <a class="sort-button" data-sort="likes" href="#" title="likes">👍</a>
+        <a class="sort-button" data-sort="LOVEs" href="#" title="LOVEs">❤️</a>
+        <a class="sort-button" data-sort="HAHAs" href="#" title="HAHAs">😄</a>
+        <a class="sort-button" data-sort="WOWs" href="#" title="WOWs">😲</a>
+        <a class="sort-button" data-sort="SADs" href="#" title="SADs">😟</a>
+        <a class="sort-button" data-sort="ANGRYs" href="#" title="ANGRYs">😡</a>
+        <a class="sort-button" data-sort="engagement" href="#" title="Total Engagement">Total</a>
+      </span>
+    </div>
+    <div class="row">
+      <label>Sort by weighted:</label>
+      <span>
+        <a class="sort-button" data-sort="w_comments" href="#" title="comments (weighted)">💬</a>
+        <a class="sort-button" data-sort="w_shares" href="#" title="shares (weighted)">🔃</a>
+        <a class="sort-button" data-sort="w_likes" href="#" title="likes (weighted)">👍</a>
+        <a class="sort-button" data-sort="w_LOVEs" href="#" title="LOVEs (weighted)">❤️</a>
+        <a class="sort-button" data-sort="w_HAHAs" href="#" title="HAHAs (weighted)">😄</a>
+        <a class="sort-button" data-sort="w_WOWs" href="#" title="WOWs (weighted)">😲</a>
+        <a class="sort-button" data-sort="w_SADs" href="#" title="SADs (weighted)">😟</a>
+        <a class="sort-button" data-sort="w_ANGRYs" href="#" title="ANGRYs (weighted)">😡</a>
+        <a class="sort-button" data-sort="w_engagement" href="#" title="Total Engagement">Total</a>
+      </span>
+    </div>
   </div>
   
   <ul id="list" class="list"></ul>

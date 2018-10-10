@@ -153,29 +153,36 @@ select
 
   .sort-panel
     color: $grey-dark
-    display: flex
-    flex: 0 0 auto
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: center
-    padding: 0.25em 1em
     
-    > label
-      display: inline-block
-      padding: 0.5em
-      line-height: 1em
+    .row
+      display: flex
+      flex: 0 0 auto
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      padding: 0.25em 1em
       
-    > span
-      display: inline-block
-      
-      a
+      > label
         display: inline-block
         padding: 0.5em
         line-height: 1em
-        border-right: 1px solid $grey-dark
 
-      a:last-child
-        border-right: none
+      > span
+        display: inline-block
+        
+        @media (max-width: $mobile-width)
+          display: flex
+          justify-content: center
+          flex-wrap: wrap
+
+        a
+          display: inline-block
+          padding: 0.5em
+          line-height: 1em
+          border-right: 1px solid $grey-dark
+
+        a:last-child
+          border-right: none
   
   .list
     box-shadow: inset 0 -0.2em 1em $grey-dark

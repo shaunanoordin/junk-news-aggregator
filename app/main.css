@@ -141,6 +141,8 @@ select {
 }
 #app > main.home-page .sort-panel {
   color: #999;
+}
+#app > main.home-page .sort-panel .row {
   display: flex;
   flex: 0 0 auto;
   flex-direction: row;
@@ -148,21 +150,28 @@ select {
   justify-content: center;
   padding: 0.25em 1em;
 }
-#app > main.home-page .sort-panel > label {
+#app > main.home-page .sort-panel .row > label {
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
 }
-#app > main.home-page .sort-panel > span {
+#app > main.home-page .sort-panel .row > span {
   display: inline-block;
 }
-#app > main.home-page .sort-panel > span a {
+@media (max-width: 800px) {
+  #app > main.home-page .sort-panel .row > span {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+#app > main.home-page .sort-panel .row > span a {
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
   border-right: 1px solid #999;
 }
-#app > main.home-page .sort-panel > span a:last-child {
+#app > main.home-page .sort-panel .row > span a:last-child {
   border-right: none;
 }
 #app > main.home-page .list {
