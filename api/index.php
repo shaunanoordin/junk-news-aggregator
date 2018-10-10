@@ -50,12 +50,15 @@ if ($input_hours_ago !== "" && intval($input_hours_ago) > 0) {
 //Construct the SQL query: ORDER
 $sql_order = " ORDER BY created_time DESC ";
 switch ($input_order) {
+  //Order by time
   case "newest":
     $sql_order = " ORDER BY created_time DESC ";
     break;
   case "oldest":
     $sql_order = " ORDER BY created_time ASC ";
     break;
+  
+  //Order by engagement numbers
   case "shares":
     $sql_order = " ORDER BY shares DESC ";
     break;
@@ -82,6 +85,35 @@ switch ($input_order) {
     break;
   case "engagement":
     $sql_order = " ORDER BY totalEngs DESC ";
+    break;
+  
+  //Order by WEIGHTED engagement numbers
+  case "w_shares":
+    $sql_order = " ORDER BY w_numSHARES DESC ";
+    break;
+  case "w_comments":
+    $sql_order = " ORDER BY w_numCOMMENTS DESC ";
+    break;
+  case "w_likes":
+    $sql_order = " ORDER BY w_numLIKE DESC ";
+    break;
+  case "w_LOVEs":
+    $sql_order = " ORDER BY w_numLOVE DESC ";
+    break;
+  case "w_HAHAs":
+    $sql_order = " ORDER BY w_numHAHA DESC ";
+    break;
+  case "w_WOWs":
+    $sql_order = " ORDER BY w_numWOW DESC ";
+    break;
+  case "w_SADs":
+    $sql_order = " ORDER BY w_numSAD DESC ";
+    break;
+  case "w_ANGRYs":
+    $sql_order = " ORDER BY w_numANGRY DESC ";
+    break;
+  case "w_engagement":
+    $sql_order = " ORDER BY w_totalEngs DESC ";
     break;
 }
 
@@ -111,7 +143,7 @@ $sql_prepared_statement->bind_param("ss", $search_message, $search_publisher);
 $sql_prepared_statement->execute();
 $sql_results = $sql_prepared_statement->get_result();
 
-while ($row = $sql_results->fetch_assoc()) {
+while ($row = $sql_results->fetch_assoc()) {  
   $item = (object) [
     "publisher_ID" => $row["publisher_ID"],
     "publisher_name" => $row["publisher_name"],
@@ -122,6 +154,9 @@ while ($row = $sql_results->fetch_assoc()) {
     "picture" => $row["picture"],
     "full_picture" => $row["full_picture"],
     "created_time" => $row["created_time"] . "+0000",  //Specify the UTC time zone
+    
+    //"newsType" => $row["newsType"],  //Do not show news type.
+    
     "shares" => $row["shares"],
     "comments" => $row["comments"],
     "likes" => $row["likes"],
@@ -131,7 +166,16 @@ while ($row = $sql_results->fetch_assoc()) {
     "SADs" => $row["SADs"],
     "ANGRYs" => $row["ANGRYs"],
     "totalEngs" => $row["totalEngs"],
-    //"newsType" => $row["newsType"],  //Do not show news type.
+    
+    "w_shares" => $row["w_numSHARES"],
+    "w_comments" => $row["w_numCOMMENTS"],
+    "w_likes" => $row["w_numLIKE"],
+    "w_LOVEs" => $row["w_numLOVE"],
+    "w_WOWs" => $row["w_numWOW"],
+    "w_HAHAs" => $row["w_numHAHA"],
+    "w_SADs" => $row["w_numSAD"],
+    "w_ANGRYs" => $row["w_numANGRY"],
+    "w_totalEngs" => $row["w_totalEngs"],
   ];
   
   array_push($json["data"], $item);
