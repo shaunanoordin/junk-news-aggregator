@@ -68,9 +68,15 @@ select
     display: block
     text-align: center
   
+    h1
+      font-size: 1.25em
+      margin: 0
+      padding: 0.5em
+  
   nav
     background: $blue
     color: $white
+    font-size: 0.75em
     text-transform: uppercase
     
     a
@@ -147,29 +153,36 @@ select
 
   .sort-panel
     color: $grey-dark
-    display: flex
-    flex: 0 0 auto
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: center
-    padding: 0.25em 1em
     
-    > label
-      display: inline-block
-      padding: 0.5em
-      line-height: 1em
+    .row
+      display: flex
+      flex: 0 0 auto
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      padding: 0.25em 1em
       
-    > span
-      display: inline-block
-      
-      a
+      > label
         display: inline-block
         padding: 0.5em
         line-height: 1em
-        border-right: 1px solid $grey-dark
 
-      a:last-child
-        border-right: none
+      > span
+        display: inline-block
+        
+        @media (max-width: $mobile-width)
+          display: flex
+          justify-content: center
+          flex-wrap: wrap
+
+        a
+          display: inline-block
+          padding: 0.5em
+          line-height: 1em
+          border-right: 1px solid $grey-dark
+
+        a:last-child
+          border-right: none
   
   .list
     box-shadow: inset 0 -0.2em 1em $grey-dark
@@ -253,24 +266,30 @@ select
           margin-bottom: 1em
           
         .reactions
-          display: flex
-          flex-wrap: wrap
-          font-size: 0.8em
-          justify-content: flex-end
-          line-height: 2em
           
-          .reaction
-            flex: 0 0 auto
-            margin: 0.5em
-            cursor: help
-            
-            .key
+          .row
+            display: flex
+            flex-wrap: wrap
+            font-size: 0.8em
+            justify-content: flex-end
+            line-height: 2em
+          
+            label
               color: $grey-mid
-              margin: 0 0.05em
-              
-            .value
-              color: $grey-dark
-              margin: 0 0.05em
+              margin: 0.25em 0.5em
+
+            .reaction
+              flex: 0 0 auto
+              margin: 0.25em 0.5em
+              cursor: help
+
+              .key
+                color: $grey-mid
+                margin: 0 0.05em
+
+              .value
+                color: $grey-dark
+                margin: 0 0.05em
     
 //------------------------------------------------------------------------------
 

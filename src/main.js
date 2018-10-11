@@ -28,7 +28,10 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 
 //Config
 //------------------------------------------------------------------------------
-const API_URL = "http://oii-lab-001.oii.ox.ac.uk/news/api/";
+let API_URL = "../api/";
+if (window && window.location && /\:\/\/localhost/.test(window.location.href)) {
+  API_URL = "https://oii-lab-001.oii.ox.ac.uk/news/api/";
+}
 //------------------------------------------------------------------------------
 
 /*  Primary App Class
@@ -315,8 +318,14 @@ class App {
       try {
         const now = new Date();
         let time_string = item.created_time || "";
-        time_string = time_string.replace(/\-/g, '/');  //Browser compatibility: Safari cannot process "2018-12-31 12:59:59" but can process "2018/12/31 12:59:59"
-        const created_time = new Date(time_string);
+        let created_time = new Date(time_string);
+        
+        //Browser compatibility: Safari
+        if (isNaN(created_time.getTime())) {  //If time is valid, this might be a browser compatibility issue: Safari cannot process "2018-12-31 12:59:59" but can process "2018/12/31 12:59:59"
+          time_string = time_string.replace(/\-/g, '/');
+          created_time = new Date(time_string);
+        }
+        
         const timeAgo = (now - created_time) / 1000;  //Time since created_time, in seconds.
         
         if (isNaN(timeAgo)) {  //Failsafe
@@ -343,9 +352,60 @@ class App {
       const eleReactions = document.createElement("div");
       eleReactions.className = "reactions";
       eleRight.appendChild(eleReactions);
+      
+      //Prepare the macro for adding reactions. This is for coding convenience.
+      //--------------------------------
+      const macro_addRowOfReactions = (prefix = null, reactions, truncateDecimals = false) => {
+        //Reactions are organised by rows
+        const eleReactionsRow = document.createElement("div");
+        eleReactionsRow.className = "row";
+        eleReactions.appendChild(eleReactionsRow);
+        
+        //If there's a prefix, add a label to the front of the row.
+        if (prefix) {
+          const elePrefix = document.createElement("label");
+          elePrefix.textContent = prefix;
+          eleReactionsRow.appendChild(elePrefix);
+        }
+        
+        //Now let's process each Reaction.
+        Object.entries(reactions).map(([labelKey, itemKey]) => {
+          //Only add reactions if they have non-zero values.
+          const reactionValue = item[itemKey];
+          if (reactionValue && reactionValue !== "0") {
+            //Each Reaction is a key-value pair.
+            const eleReaction = document.createElement("span");
+            eleReaction.className = "reaction";
+            eleReaction.title = `${itemKey}: ${reactionValue}`;
+            eleReactionsRow.appendChild(eleReaction);
 
+            //This is the key
+            const eleKey = document.createElement("span");
+            eleKey.className = "key";
+            eleKey.textContent = labelKey;
+            eleReaction.appendChild(eleKey);
+
+            //This is the value
+            const eleValue = document.createElement("span");
+            eleValue.className = "value";
+            if (!truncateDecimals) {
+              eleValue.textContent = reactionValue; 
+            } else {  //Truncate float values
+              const NUMBER_OF_DECIMALS = 2;
+              const indexOfDecimal = reactionValue.indexOf('.');
+              eleValue.textContent = (indexOfDecimal > 0)
+                ? reactionValue.substr(0, indexOfDecimal + NUMBER_OF_DECIMALS + 1)
+                : reactionValue;
+            }
+            eleReaction.appendChild(eleValue);
+          }
+        });
+      };
+      //--------------------------------
+      
       //For each type of Reaction, add it to the Reactions.
-      const reactions = {
+      //--------------------------------
+      macro_addRowOfReactions(null, {
         "🔃": "shares",
         "💬": "comments",
         "👍": "likes",
@@ -354,27 +414,21 @@ class App {
         "😲": "WOWs",
         "😟": "SADs",
         "😡": "ANGRYs",
-      };
-      Object.entries(reactions).map(([labelKey, itemKey]) => {
-        //Only add reactions if they have non-zero values.
-        const reactionValue = item[itemKey];
-        if (reactionValue && reactionValue !== "0") {
-          const eleReaction = document.createElement("span");
-          eleReaction.className = "reaction";
-          eleReaction.title = itemKey;          
-          eleReactions.appendChild(eleReaction);
-          
-          const eleKey = document.createElement("span");
-          eleKey.className = "key";
-          eleKey.textContent = labelKey;
-          eleReaction.appendChild(eleKey);
-
-          const eleValue = document.createElement("span");
-          eleValue.className = "value";
-          eleValue.textContent = reactionValue; 
-          eleReaction.appendChild(eleValue);
-        }
-      });
+        "Total": "totalEngs",
+      }, false);
+      
+      macro_addRowOfReactions("Weighted:", {
+        "🔃": "w_shares",
+        "💬": "w_comments",
+        "👍": "w_likes",
+        "❤️": "w_LOVEs",
+        "😄": "w_HAHAs",
+        "😲": "w_WOWs",
+        "😟": "w_SADs",
+        "😡": "w_ANGRYs",
+        "Total": "w_totalEngs",
+      }, true);
+      //--------------------------------
 
     });
   }
