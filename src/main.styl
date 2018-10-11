@@ -266,24 +266,30 @@ select
           margin-bottom: 1em
           
         .reactions
-          display: flex
-          flex-wrap: wrap
-          font-size: 0.8em
-          justify-content: flex-end
-          line-height: 2em
           
-          .reaction
-            flex: 0 0 auto
-            margin: 0.5em
-            cursor: help
-            
-            .key
+          .row
+            display: flex
+            flex-wrap: wrap
+            font-size: 0.8em
+            justify-content: flex-end
+            line-height: 2em
+          
+            label
               color: $grey-mid
-              margin: 0 0.05em
-              
-            .value
-              color: $grey-dark
-              margin: 0 0.05em
+              margin: 0.25em 0.5em
+
+            .reaction
+              flex: 0 0 auto
+              margin: 0.25em 0.5em
+              cursor: help
+
+              .key
+                color: $grey-mid
+                margin: 0 0.05em
+
+              .value
+                color: $grey-dark
+                margin: 0 0.05em
     
 //------------------------------------------------------------------------------
 

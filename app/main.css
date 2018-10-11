@@ -255,23 +255,27 @@ select {
   line-height: 1.5em;
   margin-bottom: 1em;
 }
-#app > main.home-page .list .item .right .reactions {
+#app > main.home-page .list .item .right .reactions .row {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8em;
   justify-content: flex-end;
   line-height: 2em;
 }
-#app > main.home-page .list .item .right .reactions .reaction {
+#app > main.home-page .list .item .right .reactions .row label {
+  color: #ccc;
+  margin: 0.25em 0.5em;
+}
+#app > main.home-page .list .item .right .reactions .row .reaction {
   flex: 0 0 auto;
-  margin: 0.5em;
+  margin: 0.25em 0.5em;
   cursor: help;
 }
-#app > main.home-page .list .item .right .reactions .reaction .key {
+#app > main.home-page .list .item .right .reactions .row .reaction .key {
   color: #ccc;
   margin: 0 0.05em;
 }
-#app > main.home-page .list .item .right .reactions .reaction .value {
+#app > main.home-page .list .item .right .reactions .row .reaction .value {
   color: #999;
   margin: 0 0.05em;
 }
