@@ -414,7 +414,7 @@ class App {
         "😲": "WOWs",
         "😟": "SADs",
         "😡": "ANGRYs",
-        "Total": "totalEngs",
+        "All": "totalEngs",
       }, false);
       
       macro_addRowOfReactions("Weighted:", {
@@ -426,7 +426,7 @@ class App {
         "😲": "w_WOWs",
         "😟": "w_SADs",
         "😡": "w_ANGRYs",
-        "Total": "w_totalEngs",
+        "All": "w_totalEngs",
       }, true);
       //--------------------------------
 
