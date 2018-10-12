@@ -8,8 +8,6 @@ Mini app for displaying top 10 stories. Reads from a file and writes to HTML.
 --------------------------------------------------------------------------------
  */
 
-require("utility.php");
-
 //Development: Enable errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -52,7 +50,7 @@ function print_json($json) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="../app/assets/logo-facebook.png">
+        <img src="./assets/logo-facebook.png">
       </a>
       <a
         class="link-website"
@@ -170,7 +168,7 @@ function print_json($json) {
 <title>News Aggregator</title>
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="../app/main.css" rel="stylesheet">
+<link href="./main.css" rel="stylesheet">
 </head>
 <body>
 <div id="app" class="top10-app">
