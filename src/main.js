@@ -30,7 +30,7 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 //------------------------------------------------------------------------------
 let API_URL = "../api/";
 if (window && window.location && /\:\/\/localhost/.test(window.location.href)) {
-  API_URL = "https://oii-lab-001.oii.ox.ac.uk/news/api/";
+  API_URL = "../api/test-2.php";
 }
 //------------------------------------------------------------------------------
 
