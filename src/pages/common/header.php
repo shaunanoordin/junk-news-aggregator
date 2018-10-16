@@ -5,7 +5,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Config
-$config = @file_get_contents('../../files/app-config.json');  //Use @ to suppress errors.
+$config = @file_get_contents('../files/app-config.json');  //Use @ to suppress errors.
+
+//Note that the config file should be relative to the file that requires this
+//header, not relative to the header file. i.e.
+//  app/
+//    index.php
+//    common/header.php
+//  files/app-config.json
 
 //If the config could not be found, try another place.
 //On localhost, the file is relative to the home directory, where there router.php file is.
