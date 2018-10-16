@@ -14,7 +14,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Config
-$json = file_get_contents('./news/files/top10.json');
+$json = @file_get_contents('./news/files/top10.json');  //Use @ to suppress errors.
+
+//If the JSON could not be found, try another place.
+//On localhost, the file is relative to the home directory, where there router.php file is.
+if (!$json) { $json = @file_get_contents('files/top10.json'); }
 
 //Process input
 if (!$json) {
