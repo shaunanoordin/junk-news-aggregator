@@ -14,17 +14,24 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Config
-$json = @file_get_contents('./news/files/top10.json');  //Use @ to suppress errors.
+$config = @file_get_contents('./news/files/app-config.json');  //Use @ to suppress errors.
+$data = @file_get_contents('./news/files/top10.json');  //Use @ to suppress errors.
 
-//If the JSON could not be found, try another place.
+//If the config could not be found, try another place.
 //On localhost, the file is relative to the home directory, where there router.php file is.
-if (!$json) { $json = @file_get_contents('files/top10.json'); }
+if (!$config) { $config = @file_get_contents('files/app-config.json'); }
+if (!$data) { $data = @file_get_contents('files/top10.json'); }
+
+//Apologies, but the config here is very messy and added in as a patch
+//post-development once the server was set up and appeared much different than
+//planned.
 
 //Process input
-if (!$json) {
+if (!$config || !$data) {
   die();
 }
-$json = json_decode($json);
+$config = json_decode($config);
+$data = json_decode($data);
 
 /*
 --------------------------------------------------------------------------------
@@ -34,10 +41,10 @@ function p($d) {
   echo htmlspecialchars($d);
 }
 
-function print_json($json) {
+function print_json($data) {
   $i = 1;
   for ($i = 1; $i <= 10; $i++) {
-    $item = $json->{$i};
+    $item = $data->{$i};
     if (!$item) continue;
     ?>
 <li class="item">
@@ -172,7 +179,7 @@ function print_json($json) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>News Aggregator</title>
+<title><?= $config->top10MiniApp->title ?></title>
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
@@ -472,14 +479,12 @@ select {
 <div id="app" class="top10-app">
 <header>
   <a class="title" href="./">
-    <h1>
-      News Aggregator
-    </h1>
+    <h1><?= $config->top10MiniApp->title ?></h1>
   </a>
 </header>
 <main class="home-page">
   <ul id="list" class="list">
-    <?php print_json($json) ?>
+    <?php print_json($data) ?>
   </ul>
 </main>
 </div><!--/#app-->

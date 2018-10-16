@@ -1,0 +1,10 @@
+{
+  "mainApp": {
+    "title": "Junk News Aggregator",
+    "description": "Junk News Aggregator",
+    "footer": "2018"
+  },
+  "top10MiniApp": {
+    "title": "Junk News Aggregator"
+  }
+}
