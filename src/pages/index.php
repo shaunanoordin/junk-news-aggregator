@@ -1,5 +1,8 @@
 <?php include "common/header.php" ?>
 <main class="home-page">
+  <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>
+  <div class="description-panel"><?= $config->mainApp->homeDescription ?></div>
+  <?php } ?>
   <div class="filter-panel">
     <div class="row">
       <span>Showing Facebook news posts from the last</span>

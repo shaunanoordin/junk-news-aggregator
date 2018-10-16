@@ -121,11 +121,20 @@ select
  */
 //------------------------------------------------------------------------------
 #app > main.home-page
+#app > main.archive-page
   display: flex
   flex-direction: column
   
+  .description-panel
+    font-size: 0.8em
+    padding: 0.5em 1em
+    
+    a
+      color: $blue
+  
   .filter-panel
     background: $grey-mid
+    font-size: 0.8em
         
     .row
       display: flex
@@ -153,6 +162,7 @@ select
 
   .sort-panel
     color: $grey-dark
+    font-size: 0.8em
     
     .row
       display: flex

@@ -1,5 +1,8 @@
 <?php include "common/header.php" ?>
-<main class="home-page">
+<main class="archive-page">
+  <?php if ($config->mainApp->archiveDescription && strlen(trim($config->mainApp->archiveDescription)) > 0) { ?>
+  <div class="description-panel"><?= $config->mainApp->archiveDescription ?></div>
+  <?php } ?>
   <div class="filter-panel">
     <div class="row">
       <span>Showing most engaged Facebook news posts from the last</span>
