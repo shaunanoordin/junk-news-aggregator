@@ -31,7 +31,10 @@ function p($d) {
 }
 
 function print_json($json) {
-  foreach($json as $id => $item) {
+  $i = 1;
+  for ($i = 1; $i <= 10; $i++) {
+    $item = $json->{$i};
+    if (!$item) continue;
     ?>
 <li class="item">
   <div class="left">
