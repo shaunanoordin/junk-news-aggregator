@@ -372,7 +372,8 @@ class App {
         Object.entries(reactions).map(([labelKey, itemKey]) => {
           //Only add reactions if they have non-zero values.
           const reactionValue = item[itemKey];
-          if (reactionValue && reactionValue !== "0") {
+          if ((reactionValue && reactionValue !== "0")  //Most of the time, we only want reactions with a valid value.
+              || (itemKey.startsWith("w_") && reactionValue !== null)) {  //However, an exception is that we'll also show weighted values that have a value of 0. (i.e. not null)
             //Each Reaction is a key-value pair.
             const eleReaction = document.createElement("span");
             eleReaction.className = "reaction";
