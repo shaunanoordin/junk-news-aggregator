@@ -30,7 +30,7 @@ importAll(require.context("./pages/", true, /\.(php|html)$/));
 //------------------------------------------------------------------------------
 let API_URL = "../api/";
 if (window && window.location && /\:\/\/localhost/.test(window.location.href)) {
-  API_URL = "https://oii-lab-001.oii.ox.ac.uk/news/api/";
+  API_URL = "../api/test-2.php";
 }
 //------------------------------------------------------------------------------
 
@@ -372,7 +372,8 @@ class App {
         Object.entries(reactions).map(([labelKey, itemKey]) => {
           //Only add reactions if they have non-zero values.
           const reactionValue = item[itemKey];
-          if (reactionValue && reactionValue !== "0") {
+          if ((reactionValue && reactionValue !== "0")  //Most of the time, we only want reactions with a valid value.
+              || (itemKey.startsWith("w_") && reactionValue !== null)) {  //However, an exception is that we'll also show weighted values that have a value of 0. (i.e. not null)
             //Each Reaction is a key-value pair.
             const eleReaction = document.createElement("span");
             eleReaction.className = "reaction";
@@ -414,7 +415,7 @@ class App {
         "😲": "WOWs",
         "😟": "SADs",
         "😡": "ANGRYs",
-        "Total": "totalEngs",
+        "All": "totalEngs",
       }, false);
       
       macro_addRowOfReactions("Weighted:", {
@@ -426,7 +427,7 @@ class App {
         "😲": "w_WOWs",
         "😟": "w_SADs",
         "😡": "w_ANGRYs",
-        "Total": "w_totalEngs",
+        "All": "w_totalEngs",
       }, true);
       //--------------------------------
 

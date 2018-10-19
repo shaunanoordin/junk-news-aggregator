@@ -10,7 +10,7 @@ App Styles
 //------------------------------------------------------------------------------
 $black = #333
 $white = #fff
-$blue = #369
+$blue = #002147  //Oxford blue
 $blue-highlight = #3cf
 $red = #c33
 $grey-mid = #ccc
@@ -63,15 +63,32 @@ select
 #app > header
   flex: 0 0 auto
 
-  .title
-    color: $blue
-    display: block
-    text-align: center
+  .header
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+    
+    a.logo
+      display: block
+      flex: 0 0 auto
+      margin: 0.5em
+      
+      img
+        display: block
+        width: 110px
+      
+    a.title
+      display: block
+      flex: 1 1 auto
+      margin: 0.5em
+      color: $blue
+      display: block
   
     h1
       font-size: 1.25em
       margin: 0
       padding: 0.5em
+      line-height: 80px
   
   nav
     background: $blue
@@ -108,11 +125,15 @@ select
   flex: 0 0 auto
   background: $blue
   color: $white
+  font-size: 0.8em
   padding: 0.1em 0.5em
   text-align: right
   
 #app > main
   background: $white
+  flex: 1 0 auto  //Due to the increased amount of text on the main app (description + footer), the main section should now expand to fit the content.
+  
+#app.top10-app > main
   flex: 1 1 auto
 
 //------------------------------------------------------------------------------
@@ -121,11 +142,20 @@ select
  */
 //------------------------------------------------------------------------------
 #app > main.home-page
+#app > main.archive-page
   display: flex
   flex-direction: column
   
+  .description-panel
+    font-size: 0.8em
+    padding: 0.5em 1em
+    
+    a
+      color: $blue
+  
   .filter-panel
     background: $grey-mid
+    font-size: 0.8em
         
     .row
       display: flex
@@ -153,6 +183,7 @@ select
 
   .sort-panel
     color: $grey-dark
+    font-size: 0.8em
     
     .row
       display: flex

@@ -1,5 +1,8 @@
 <?php include "common/header.php" ?>
-<main class="home-page">
+<main class="archive-page">
+  <?php if ($config->mainApp->archiveDescription && strlen(trim($config->mainApp->archiveDescription)) > 0) { ?>
+  <div class="description-panel"><?= $config->mainApp->archiveDescription ?></div>
+  <?php } ?>
   <div class="filter-panel">
     <div class="row">
       <span>Showing most engaged Facebook news posts from the last</span>
@@ -33,7 +36,7 @@
         <a class="sort-button" data-sort="WOWs" href="#" title="WOWs">😲</a>
         <a class="sort-button" data-sort="SADs" href="#" title="SADs">😟</a>
         <a class="sort-button" data-sort="ANGRYs" href="#" title="ANGRYs">😡</a>
-        <a class="sort-button" data-sort="engagement" href="#" title="Total Engagement">Total</a>
+        <a class="sort-button" data-sort="engagement" href="#" title="Total Engagement">All</a>
       </span>
     </div>
     <div class="row">
@@ -47,7 +50,7 @@
         <a class="sort-button" data-sort="w_WOWs" href="#" title="WOWs (weighted)">😲</a>
         <a class="sort-button" data-sort="w_SADs" href="#" title="SADs (weighted)">😟</a>
         <a class="sort-button" data-sort="w_ANGRYs" href="#" title="ANGRYs (weighted)">😡</a>
-        <a class="sort-button" data-sort="w_engagement" href="#" title="Total Engagement">Total</a>
+        <a class="sort-button" data-sort="w_engagement" href="#" title="Total Engagement">All</a>
       </span>
     </div>
   </div>

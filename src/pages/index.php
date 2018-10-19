@@ -1,5 +1,8 @@
 <?php include "common/header.php" ?>
 <main class="home-page">
+  <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>
+  <div class="description-panel"><?= $config->mainApp->homeDescription ?></div>
+  <?php } ?>
   <div class="filter-panel">
     <div class="row">
       <span>Showing Facebook news posts from the last</span>
@@ -10,7 +13,7 @@
         <option value="6">6 hours</option>
         <option value="9">9 hours</option>
         <option value="12">12 hours</option>
-        <option value="24">1 day</option>
+        <option value="24">24 hours</option>
       </select>
     </div>
     <div class="row">
@@ -35,7 +38,7 @@
         <a class="sort-button" data-sort="WOWs" href="#" title="WOWs">😲</a>
         <a class="sort-button" data-sort="SADs" href="#" title="SADs">😟</a>
         <a class="sort-button" data-sort="ANGRYs" href="#" title="ANGRYs">😡</a>
-        <a class="sort-button" data-sort="engagement" href="#" title="Total Engagement">Total</a>
+        <a class="sort-button" data-sort="engagement" href="#" title="Total Engagement">All</a>
       </span>
     </div>
     <div class="row">
@@ -49,7 +52,7 @@
         <a class="sort-button" data-sort="w_WOWs" href="#" title="WOWs (weighted)">😲</a>
         <a class="sort-button" data-sort="w_SADs" href="#" title="SADs (weighted)">😟</a>
         <a class="sort-button" data-sort="w_ANGRYs" href="#" title="ANGRYs (weighted)">😡</a>
-        <a class="sort-button" data-sort="w_engagement" href="#" title="Total Engagement">Total</a>
+        <a class="sort-button" data-sort="w_engagement" href="#" title="Total Engagement">All</a>
       </span>
     </div>
   </div>
