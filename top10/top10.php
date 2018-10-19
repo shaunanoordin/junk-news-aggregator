@@ -225,18 +225,35 @@ select {
 #app > header {
   flex: 0 0 auto;
 }
-#app > header .title {
-  color: #369;
-  display: block;
-  text-align: center;
+#app > header .header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
-#app > header .title h1 {
+#app > header .header a.logo {
+  display: block;
+  flex: 0 0 auto;
+  margin: 0.5em;
+}
+#app > header .header a.logo img {
+  display: block;
+  width: 110px;
+}
+#app > header .header a.title {
+  display: block;
+  flex: 1 1 auto;
+  margin: 0.5em;
+  color: #002147;
+  display: block;
+}
+#app > header .header h1 {
   font-size: 1.25em;
   margin: 0;
   padding: 0.5em;
+  line-height: 80px;
 }
 #app > header nav {
-  background: #369;
+  background: #002147;
   color: #fff;
   font-size: 0.75em;
   text-transform: uppercase;
@@ -270,8 +287,9 @@ select {
 }
 #app > footer {
   flex: 0 0 auto;
-  background: #369;
+  background: #002147;
   color: #fff;
+  font-size: 0.8em;
   padding: 0.1em 0.5em;
   text-align: right;
 }
@@ -293,7 +311,7 @@ select {
 }
 #app > main.home-page .description-panel a,
 #app > main.archive-page .description-panel a {
-  color: #369;
+  color: #002147;
 }
 #app > main.home-page .filter-panel,
 #app > main.archive-page .filter-panel {
@@ -393,7 +411,7 @@ select {
 }
 #app > main.home-page .list .info,
 #app > main.archive-page .list .info {
-  background: #369;
+  background: #002147;
   color: #fff;
   padding: 2em;
   text-align: center;
@@ -405,7 +423,7 @@ select {
 #app > main.home-page .list .item,
 #app > main.archive-page .list .item {
   align-items: flex-start;
-  border: 1px solid #369;
+  border: 1px solid #002147;
   display: flex;
   margin: 0.5em;
   overflow: auto;
@@ -516,7 +534,7 @@ select {
 }
 #app > main.about-page a,
 #app > main.contact-page a {
-  color: #369;
+  color: #002147;
 }
 #app > main.about-page a:hover,
 #app > main.contact-page a:hover {
@@ -527,9 +545,9 @@ select {
 <body>
 <div id="app" class="top10-app">
 <header>
-  <a class="title" href="./">
-    <h1><?= $config->top10MiniApp->title ?></h1>
-  </a>
+  <div class="header">
+  <?= $config->top10MiniApp->header ?>
+  </div>
 </header>
 <main class="home-page">
   <?php if ($config->top10MiniApp->description && strlen(trim($config->top10MiniApp->description)) > 0) { ?>

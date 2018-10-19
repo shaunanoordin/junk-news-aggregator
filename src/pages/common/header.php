@@ -41,9 +41,9 @@ $config = json_decode($config);
 <body>
 <div id="app">
 <header>
-  <a class="title" href="./">
-    <h1><?= $config->mainApp->title ?></h1>
-  </a>
+  <div class="header">
+    <?= $config->mainApp->header ?>
+  </div>
   <nav>
     <ul>
       <li><a href="./">Home</a></li>
