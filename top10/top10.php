@@ -125,7 +125,8 @@ function print_json($data) {
         </span>
       </div>
       <div class="row">
-        <label>Weighted:</label>
+        <label>Weighted total:</label>
+        <!--
         <span class="reaction">
           <span class="key">🔃</span>
           <span class="value"><?php p($item->w_numSHARES) ?></span>
@@ -158,8 +159,9 @@ function print_json($data) {
           <span class="key">😡</span>
           <span class="value"><?php p($item->w_numANGRY) ?></span>
         </span>
+        -->
         <span class="reaction">
-          <span class="key">All</span>
+          <span class="key"><!--All-->&nbsp;</span>
           <span class="value"><?php p($item->w_totalEngs) ?></span>
         </span>
       </div>
