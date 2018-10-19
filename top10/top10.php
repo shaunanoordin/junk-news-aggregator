@@ -183,6 +183,12 @@ function print_json($data) {
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
+/*
+App Styles
+----------
+
+--------------------------------------------------------------------------------
+ */
 /*  App Theme
  */
 /*  Basic Styles
@@ -193,7 +199,7 @@ function print_json($data) {
 :root {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  background: #fff;
+  background: #fff url(assets/simple-bg.png);
   color: #333;
 }
 html,
@@ -295,6 +301,9 @@ select {
 }
 #app > main {
   background: #fff;
+  flex: 1 0 auto;
+}
+#app.top10-app > main {
   flex: 1 1 auto;
 }
 /*  Page Style: Home Page (List-type)
