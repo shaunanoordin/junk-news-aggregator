@@ -13,7 +13,7 @@
         <option value="6">6 hours</option>
         <option value="9">9 hours</option>
         <option value="12">12 hours</option>
-        <option value="24">1 day</option>
+        <option value="24">24 hours</option>
       </select>
     </div>
     <div class="row">
