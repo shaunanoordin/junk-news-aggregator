@@ -374,11 +374,12 @@ select {
   flex: 0 0 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 0.25em 1em;
 }
 #app > main.home-page .sort-panel .row > label,
 #app > main.archive-page .sort-panel .row > label {
+  flex: 1 1 auto;
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
@@ -507,7 +508,7 @@ select {
 #app > main.archive-page .list .item .right .reactions .row {
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.8em;
+  font-size: 0.65em;
   justify-content: flex-end;
   line-height: 2em;
 }
@@ -521,6 +522,7 @@ select {
   flex: 0 0 auto;
   margin: 0.25em 0.5em;
   cursor: help;
+  min-width: 4em;
 }
 #app > main.home-page .list .item .right .reactions .row .reaction .key,
 #app > main.archive-page .list .item .right .reactions .row .reaction .key {

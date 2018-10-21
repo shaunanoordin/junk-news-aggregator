@@ -4,451 +4,563 @@ header('Content-Type: application/json');
 { 
   "data": [ 
     { 
+      "publisher_ID": "95475020353"
+      , 
+      "publisher_name": "breitbart"
+      , 
+      "publisher_website": "breitbart.com"
+      , 
+      "post_ID": "95475020353_786579995007424"
+      , 
+      "link": "https://www.facebook.com/Breitbart/videos/786579995007424/"
+      , 
+      "message": "LIVE: Witches casting hex on Brett Kavanaugh in Brooklyn..."
+      , 
+      "picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/s130x130/43703034_786613718337385_3258962330267942912_n.jpg?_nc_cat=103&_nc_ht=scontent.xx&oh=eaa386f46dc3ec457d7b1fc02a8bbf62&oe=5C3D55B0"
+      , 
+      "full_picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/43703034_786613718337385_3258962330267942912_n.jpg?_nc_cat=103&_nc_ht=scontent.xx&oh=9212bb3cee84efc39a493dd90221be4d&oe=5C4ADB42"
+      , 
+      "created_time": "2018-10-21 00:11:53+0000"
+      , 
+      "shares": "3267"
+      , 
+      "comments": "14877"
+      , 
+      "likes": "953"
+      , 
+      "LOVEs": "201"
+      , 
+      "HAHAs": "6444"
+      , 
+      "WOWs": "344"
+      , 
+      "SADs": "371"
+      , 
+      "ANGRYs": "3191"
+      , 
+      "totalEngs": "29648"
+      , 
+      "w_shares": "1.13"
+      , 
+      "w_comments": "5.15"
+      , 
+      "w_likes": "0.33"
+      , 
+      "w_LOVEs": "0.07"
+      , 
+      "w_WOWs": "0.12"
+      , 
+      "w_HAHAs": "2.23"
+      , 
+      "w_SADs": "0.13"
+      , 
+      "w_ANGRYs": "1.1"
+      , 
+      "w_totalEngs": "10.26"
+    } 
+    , 
+    { 
+      "publisher_ID": "95475020353"
+      , 
+      "publisher_name": "breitbart"
+      , 
+      "publisher_website": "breitbart.com"
+      , 
+      "post_ID": "95475020353_10161938409260354"
+      , 
+      "link": "https://www.breitbart.com/politics/2018/10/20/78k-sign-up-trump-cruz-rally-venue-holds-18k/?utm_medium=social&utm_source=facebook"
+      , 
+      "message": "Whoa!"
+      , 
+      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDiQuXgqsilD2G7&w=130&h=130&url=https%3A%2F%2Fmedia.breitbart.com%2Fmedia%2F2018%2F08%2FTrump-Cruz-smile-clap-getty.jpg&cfs=1&sx=74&sy=0&sw=480&sh=480&_nc_hash=AQDeiiv9BGfyQwEW"
+      , 
+      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQBeou-MMlK0URs5&url=https%3A%2F%2Fmedia.breitbart.com%2Fmedia%2F2018%2F08%2FTrump-Cruz-smile-clap-getty.jpg&_nc_hash=AQBhitZxHS6JZONC"
+      , 
+      "created_time": "2018-10-20 22:25:21+0000"
+      , 
+      "shares": "1468"
+      , 
+      "comments": "382"
+      , 
+      "likes": "6368"
+      , 
+      "LOVEs": "1225"
+      , 
+      "HAHAs": "51"
+      , 
+      "WOWs": "646"
+      , 
+      "SADs": "3"
+      , 
+      "ANGRYs": "2"
+      , 
+      "totalEngs": "10145"
+      , 
+      "w_shares": "0.71"
+      , 
+      "w_comments": "0.18"
+      , 
+      "w_likes": "3.06"
+      , 
+      "w_LOVEs": "0.59"
+      , 
+      "w_WOWs": "0.31"
+      , 
+      "w_HAHAs": "0.02"
+      , 
+      "w_SADs": "0"
+      , 
+      "w_ANGRYs": "0"
+      , 
+      "w_totalEngs": "4.88"
+    } 
+    , 
+    { 
+      "publisher_ID": "95475020353"
+      , 
+      "publisher_name": "breitbart"
+      , 
+      "publisher_website": "breitbart.com"
+      , 
+      "post_ID": "95475020353_10161938126345354"
+      , 
+      "link": "https://www.breitbart.com/politics/2018/10/20/donald-trump-more-popular-media-want-you-believe/?utm_source=facebook&utm_medium=social"
+      , 
+      "message": "Nolte: \"We keep hearing about how divisive and unpopular President Trump is; about how 'historically' unpopular he is. This is not even close to the truth.\""
+      , 
+      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAdSq7Vg_RvvJvQ&w=130&h=130&url=https%3A%2F%2Fmedia.breitbart.com%2Fmedia%2F2018%2F03%2FTrump-supporters-Brynn-AndersonAP.jpg&cfs=1&sx=160&sy=0&sw=480&sh=480&_nc_hash=AQDoSDHfVFmNTFbB"
+      , 
+      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?url=https%3A%2F%2Fmedia.breitbart.com%2Fmedia%2F2018%2F03%2FTrump-supporters-Brynn-AndersonAP.jpg&_nc_hash=AQCWAr70hVJIBhev"
+      , 
+      "created_time": "2018-10-20 21:25:22+0000"
+      , 
+      "shares": "1682"
+      , 
+      "comments": "377"
+      , 
+      "likes": "6345"
+      , 
+      "LOVEs": "831"
+      , 
+      "HAHAs": "91"
+      , 
+      "WOWs": "17"
+      , 
+      "SADs": "1"
+      , 
+      "ANGRYs": "3"
+      , 
+      "totalEngs": "9347"
+      , 
+      "w_shares": "0.81"
+      , 
+      "w_comments": "0.18"
+      , 
+      "w_likes": "3.05"
+      , 
+      "w_LOVEs": "0.4"
+      , 
+      "w_WOWs": "0.01"
+      , 
+      "w_HAHAs": "0.04"
+      , 
+      "w_SADs": "0"
+      , 
+      "w_ANGRYs": "0"
+      , 
+      "w_totalEngs": "4.49"
+    } 
+    , 
+    { 
+      "publisher_ID": "95475020353"
+      , 
+      "publisher_name": "breitbart"
+      , 
+      "publisher_website": "breitbart.com"
+      , 
+      "post_ID": "95475020353_428287267702546"
+      , 
+      "link": "https://www.facebook.com/Breitbart/videos/428287267702546/"
+      , 
+      "message": "LIVE: President Trump holds MAGA rally in Nevada..."
+      , 
+      "picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/s130x130/41943843_428325711032035_3868860987813658624_n.jpg?_nc_cat=111&_nc_ht=scontent.xx&oh=59f32c48056b6ab1f2f0b65e30061c28&oe=5C4E3DF4"
+      , 
+      "full_picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/41943843_428325711032035_3868860987813658624_n.jpg?_nc_cat=111&_nc_ht=scontent.xx&oh=30ebe155b3ec405962c85b4ecabbf2f4&oe=5C4BA506"
+      , 
+      "created_time": "2018-10-20 18:10:51+0000"
+      , 
+      "shares": "1748"
+      , 
+      "comments": "7203"
+      , 
+      "likes": "6082"
+      , 
+      "LOVEs": "3199"
+      , 
+      "HAHAs": "68"
+      , 
+      "WOWs": "33"
+      , 
+      "SADs": "13"
+      , 
+      "ANGRYs": "47"
+      , 
+      "totalEngs": "18393"
+      , 
+      "w_shares": "0.59"
+      , 
+      "w_comments": "2.44"
+      , 
+      "w_likes": "2.06"
+      , 
+      "w_LOVEs": "1.08"
+      , 
+      "w_WOWs": "0.01"
+      , 
+      "w_HAHAs": "0.02"
+      , 
+      "w_SADs": "0"
+      , 
+      "w_ANGRYs": "0.02"
+      , 
+      "w_totalEngs": "6.23"
+    } 
+    , 
+    { 
       "publisher_ID": "occupydemocrats"
       , 
       "publisher_name": "occupydemocrats"
       , 
       "publisher_website": "occupydemocrats.com"
       , 
-      "post_ID": "346937065399354_2358721587554215"
+      "post_ID": "346937065399354_2367169660042741"
       , 
-      "link": "https://www.facebook.com/OccupyDemocrats/photos/a.347907068635687/2358721004220940/?type=3"
+      "link": "https://www.facebook.com/OccupyDemocrats/photos/a.517901514969574/2367169540042753/?type=3"
       , 
-      "message": "LOL! Nailed it. :face_with_tears_of_joy:  Follow Occupy Democrats for more!"
+      "message": "LOL"
       , 
-      "picture": "https://scontent.xx.fbcdn.net/v/t1.0-0/s130x130/44115754_2358721007554273_7455303295817482240_n.jpg?_nc_cat=102&oh=ccfd1530cc83250a16d4c6e1a59b4045&oe=5C44B80C"
+      "picture": "https://scontent.xx.fbcdn.net/v/t1.0-0/s130x130/44484108_2367169546709419_7469651046386630656_n.jpg?_nc_cat=1&_nc_ht=scontent.xx&oh=b5bc8f9d5c7b3d49a1dfc66ed42f42c8&oe=5C3C3350"
       , 
-      "full_picture": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/44270143_2358721010887606_1792248191438028800_o.jpg?_nc_cat=108&oh=1ea5b1ddc772aca6ff33b0aee10815c6&oe=5C3CC20B"
+      "full_picture": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/44484108_2367169546709419_7469651046386630656_n.jpg?_nc_cat=1&_nc_ht=scontent.xx&oh=cdf4d49f7d391eac3843a9309f6d0e07&oe=5C49E145"
       , 
-      "created_time": "2018-10-15 19:57:54+0000"
+      "created_time": "2018-10-20 13:01:20+0000"
       , 
-      "shares": "28"
+      "shares": "4277"
       , 
-      "comments": "4"
+      "comments": "257"
       , 
-      "likes": "51"
+      "likes": "3480"
       , 
-      "LOVEs": "6"
+      "LOVEs": "242"
       , 
-      "HAHAs": "32"
+      "HAHAs": "2852"
       , 
-      "WOWs": "0"
+      "WOWs": "37"
       , 
-      "SADs": "0"
+      "SADs": "6"
       , 
-      "ANGRYs": "1"
+      "ANGRYs": "5"
       , 
-      "totalEngs": "122"
+      "totalEngs": "11156"
       , 
-      "w_shares": "0.22"
+      "w_shares": "1.21"
       , 
-      "w_comments": "0.03"
+      "w_comments": "0.07"
       , 
-      "w_likes": "0.4"
+      "w_likes": "0.99"
       , 
-      "w_LOVEs": "0.05"
+      "w_LOVEs": "0.07"
       , 
-      "w_WOWs": null 
+      "w_WOWs": "0.01"
       , 
-      "w_HAHAs": "0.25"
+      "w_HAHAs": "0.81"
       , 
-      "w_SADs": null 
+      "w_SADs": "0"
       , 
-      "w_ANGRYs": "0.01"
+      "w_ANGRYs": "0"
       , 
-      "w_totalEngs": "0.95"
+      "w_totalEngs": "3.17"
     } 
     , 
     { 
-      "publisher_ID": "patriotpost"
+      "publisher_ID": "95475020353"
       , 
-      "publisher_name": "patriotpost"
+      "publisher_name": "breitbart"
       , 
-      "publisher_website": "patriotpost.us"
+      "publisher_website": "breitbart.com"
       , 
-      "post_ID": "51560645913_10155951815000914"
+      "post_ID": "95475020353_1965520850157500"
       , 
-      "link": "https://www.facebook.com/PatriotPost/photos/a.82108390913/10155951814850914/?type=3"
+      "link": "https://www.facebook.com/Breitbart/videos/1965520850157500/"
       , 
-      "message": ""
+      "message": "LIVE: President Trump is speaking right now..."
       , 
-      "picture": "https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/44027566_10155951814860914_5690093203408027648_n.jpg?_nc_cat=110&oh=72fd987f3b15caad7cb74c865d5f0bc4&oe=5C42D8D3"
+      "picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/s130x130/43823655_1965575686818683_5343954109621862400_n.jpg?_nc_cat=100&_nc_ht=scontent.xx&oh=03e780ef1d909b7b73423a37aee9a455&oe=5C3D6A16"
       , 
-      "full_picture": "https://scontent.xx.fbcdn.net/v/t1.0-9/p720x720/44115777_10155951814855914_2513041023370788864_o.jpg?_nc_cat=111&oh=ea0a55a3f193bdc82dbce2f384fd89b3&oe=5C405F49"
+      "full_picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/43823655_1965575686818683_5343954109621862400_n.jpg?_nc_cat=100&_nc_ht=scontent.xx&oh=0e50fbe67036db13527b6a1159404a60&oe=5C4B9250"
       , 
-      "created_time": "2018-10-15 20:00:00+0000"
+      "created_time": "2018-10-20 00:08:18+0000"
       , 
-      "shares": null 
+      "shares": "1196"
       , 
-      "comments": "0"
+      "comments": "6165"
       , 
-      "likes": "0"
+      "likes": "4434"
       , 
-      "LOVEs": "0"
+      "LOVEs": "2810"
       , 
-      "HAHAs": "0"
+      "HAHAs": "40"
       , 
-      "WOWs": "0"
+      "WOWs": "20"
       , 
-      "SADs": "0"
+      "SADs": "14"
       , 
-      "ANGRYs": "0"
+      "ANGRYs": "48"
       , 
-      "totalEngs": "0"
+      "totalEngs": "14727"
       , 
-      "w_shares": null 
+      "w_shares": "0.39"
       , 
-      "w_comments": null 
+      "w_comments": "1.99"
       , 
-      "w_likes": null 
+      "w_likes": "1.43"
       , 
-      "w_LOVEs": null 
+      "w_LOVEs": "0.9"
       , 
-      "w_WOWs": null 
+      "w_WOWs": "0.01"
       , 
-      "w_HAHAs": null 
+      "w_HAHAs": "0.01"
       , 
-      "w_SADs": null 
+      "w_SADs": "0"
       , 
-      "w_ANGRYs": null 
+      "w_ANGRYs": "0.02"
       , 
-      "w_totalEngs": null 
+      "w_totalEngs": "4.74"
     } 
     , 
     { 
-      "publisher_ID": "thepeoplesvoicetv"
+      "publisher_ID": "95475020353"
       , 
-      "publisher_name": "yournewswire"
+      "publisher_name": "breitbart"
       , 
-      "publisher_website": "yournewswire.com"
+      "publisher_website": "breitbart.com"
       , 
-      "post_ID": "219195584894557_1296151487198956"
+      "post_ID": "95475020353_10161933339320354"
       , 
-      "link": "https://yournewswire.com/us-accuses-russia-of-trying-to-seize-syrias-oilfields/"
+      "link": "https://www.facebook.com/Breitbart/photos/a.10159587164165354/10161933339245354/?type=3"
       , 
-      "message": "Pentagon officials have charged Russia with wanting to seize Syria's oil and gas resources."
+      "message": "#JobsNotMobs"
       , 
-      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCf7Anrn-VkFfmh&w=130&h=130&url=https%3A%2F%2Fcdns.yournewswire.com%2Fwp-content%2Fuploads%2F2018%2F10%2FSyrian-oil-field-500x346.jpg&cfs=1&_nc_hash=AQCEmP3G_ZXQM1qB"
+      "picture": "https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/44298346_10161933339260354_3471359050149527552_n.jpg?_nc_cat=104&_nc_ht=scontent.xx&oh=05303676cbc635adf2d04970dabd958e&oe=5C587BBD"
       , 
-      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCZcVgsuXBTvS9Y&url=https%3A%2F%2Fcdns.yournewswire.com%2Fwp-content%2Fuploads%2F2018%2F10%2FSyrian-oil-field-500x346.jpg&_nc_hash=AQCx-sToEX6wOcl6"
+      "full_picture": "https://scontent.xx.fbcdn.net/v/t1.0-9/p720x720/44298346_10161933339260354_3471359050149527552_n.jpg?_nc_cat=104&_nc_ht=scontent.xx&oh=e421aba640b43e9c3b14023ff5bec334&oe=5C51AEB0"
       , 
-      "created_time": "2018-10-15 20:00:00+0000"
+      "created_time": "2018-10-19 21:07:52+0000"
       , 
-      "shares": null 
+      "shares": "1796"
       , 
-      "comments": "0"
+      "comments": "234"
       , 
-      "likes": "0"
+      "likes": "5444"
       , 
-      "LOVEs": "0"
+      "LOVEs": "709"
       , 
-      "HAHAs": "0"
+      "HAHAs": "115"
       , 
-      "WOWs": "0"
+      "WOWs": "11"
       , 
-      "SADs": "0"
+      "SADs": "1"
       , 
-      "ANGRYs": "0"
+      "ANGRYs": "6"
       , 
-      "totalEngs": "0"
+      "totalEngs": "8316"
       , 
-      "w_shares": null 
+      "w_shares": "0.57"
       , 
-      "w_comments": null 
+      "w_comments": "0.07"
       , 
-      "w_likes": null 
+      "w_likes": "1.74"
       , 
-      "w_LOVEs": null 
+      "w_LOVEs": "0.23"
       , 
-      "w_WOWs": null 
+      "w_WOWs": "0"
       , 
-      "w_HAHAs": null 
+      "w_HAHAs": "0.04"
       , 
-      "w_SADs": null 
+      "w_SADs": "0"
       , 
-      "w_ANGRYs": null 
+      "w_ANGRYs": "0"
       , 
-      "w_totalEngs": null 
+      "w_totalEngs": "2.66"
     } 
     , 
     { 
-      "publisher_ID": "patriotpost"
+      "publisher_ID": "dailycaller"
       , 
-      "publisher_name": "patriotpost"
+      "publisher_name": "dailycaller"
       , 
-      "publisher_website": "patriotpost.us"
+      "publisher_website": "dailycaller.com"
       , 
-      "post_ID": "51560645913_10155951914705914"
+      "post_ID": "182919686769_10155784454326770"
       , 
-      "link": "https://www.facebook.com/PatriotPost/photos/a.82108390913/10155951914575914/?type=3"
+      "link": "https://dailycaller.com/2018/10/19/protester-harasses-9-11-widow-nypd/"
       , 
-      "message": ""
+      "message": "NOT SO TOUGH ANYMORE; HUH?"
       , 
-      "picture": "https://scontent.xx.fbcdn.net/v/t1.0-0/p130x130/44054503_10155951914580914_8178758801315332096_n.jpg?_nc_cat=111&oh=4cc79d02febe8654dd62c1e24b717052&oe=5C58DED0"
+      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAg-mA991F1--Gm&w=130&h=130&url=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2018%2F10%2FhLqxj5rT.jpg&cfs=1&_nc_hash=AQBOgD7dy-jhYu-r"
       , 
-      "full_picture": "https://scontent.xx.fbcdn.net/v/t1.0-9/p720x720/44249899_10155951914585914_3523538779627323392_o.jpg?_nc_cat=108&oh=64d7fd7aa45ec3077e24cd35d91169c7&oe=5C40005E"
+      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQA8VvwQw_F1Rai5&url=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2018%2F10%2FhLqxj5rT.jpg&_nc_hash=AQDt6vhcmu2M2TuK"
       , 
-      "created_time": "2018-10-15 20:00:01+0000"
+      "created_time": "2018-10-19 19:01:00+0000"
       , 
-      "shares": null 
+      "shares": "2881"
       , 
-      "comments": "0"
+      "comments": "1161"
       , 
-      "likes": "0"
+      "likes": "4994"
       , 
-      "LOVEs": "0"
+      "LOVEs": "621"
       , 
-      "HAHAs": "0"
+      "HAHAs": "2511"
       , 
-      "WOWs": "0"
+      "WOWs": "108"
       , 
-      "SADs": "0"
+      "SADs": "29"
       , 
-      "ANGRYs": "0"
+      "ANGRYs": "124"
       , 
-      "totalEngs": "0"
+      "totalEngs": "12429"
       , 
-      "w_shares": null 
+      "w_shares": "0.81"
       , 
-      "w_comments": null 
+      "w_comments": "0.33"
       , 
-      "w_likes": null 
+      "w_likes": "1.41"
       , 
-      "w_LOVEs": null 
+      "w_LOVEs": "0.18"
       , 
-      "w_WOWs": null 
+      "w_WOWs": "0.03"
       , 
-      "w_HAHAs": null 
+      "w_HAHAs": "0.71"
       , 
-      "w_SADs": null 
+      "w_SADs": "0.01"
       , 
-      "w_ANGRYs": null 
+      "w_ANGRYs": "0.04"
       , 
-      "w_totalEngs": null 
+      "w_totalEngs": "3.51"
     } 
     , 
     { 
-      "publisher_ID": "WesternJournal"
+      "publisher_ID": "95475020353"
       , 
-      "publisher_name": "westernjournalism"
+      "publisher_name": "breitbart"
       , 
-      "publisher_website": "westernjournalism.com"
+      "publisher_website": "breitbart.com"
       , 
-      "post_ID": "123624513983_10156996148548984"
+      "post_ID": "95475020353_253445121987468"
       , 
-      "link": "https://www.westernjournal.com/wc/kenyan-running-great-keino-among-7-facing-corruption-charges/?utm_source=facebook&utm_medium=westernjournalism&utm_content=2018-10-15&utm_campaign=manualpost"
+      "link": "https://www.facebook.com/Breitbart/videos/253445121987468/"
       , 
-      "message": "He's facing charges of embezzlement and misappropriation of funds."
+      "message": "LIVE: President Trump holds MAGA rally in Montana..."
       , 
-      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAEkoaXsI4asMtf&w=130&h=130&url=https%3A%2F%2Fwww.westernjournal.com%2Fwc%2Fwp-content%2Fuploads%2F2018%2F10%2F9ff3b78ed71242a391665651dfa0a5a9-e1539616472591.jpg&cfs=1&sx=353&sy=0&sw=630&sh=630&_nc_hash=AQB5h6j0yV-_mUp9"
+      "picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/s130x130/42650142_253463731985607_1296079511976148992_n.jpg?_nc_cat=101&_nc_ht=scontent.xx&oh=bae023c999194fb7979443cc108101a1&oe=5C560250"
       , 
-      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQBS-9wkBqk3ph4q&url=https%3A%2F%2Fwww.westernjournal.com%2Fwc%2Fwp-content%2Fuploads%2F2018%2F10%2F9ff3b78ed71242a391665651dfa0a5a9-e1539616472591.jpg&_nc_hash=AQDEl9dm2NUKvxMD"
+      "full_picture": "https://scontent.xx.fbcdn.net/v/t15.5256-10/42650142_253463731985607_1296079511976148992_n.jpg?_nc_cat=101&_nc_ht=scontent.xx&oh=4d70a9ccc3a828bbaecd7ccc72676699&oe=5C4E2EA2"
       , 
-      "created_time": "2018-10-15 20:00:00+0000"
+      "created_time": "2018-10-19 00:28:49+0000"
       , 
-      "shares": null 
+      "shares": "1357"
       , 
-      "comments": "0"
+      "comments": "6207"
       , 
-      "likes": "0"
+      "likes": "5566"
       , 
-      "LOVEs": "0"
+      "LOVEs": "3067"
       , 
-      "HAHAs": "0"
+      "HAHAs": "55"
       , 
-      "WOWs": "0"
+      "WOWs": "22"
       , 
-      "SADs": "0"
+      "SADs": "10"
       , 
-      "ANGRYs": "0"
+      "ANGRYs": "69"
       , 
-      "totalEngs": "0"
+      "totalEngs": "16353"
       , 
-      "w_shares": null 
+      "w_shares": "0.72"
       , 
-      "w_comments": null 
+      "w_comments": "3.31"
       , 
-      "w_likes": null 
+      "w_likes": "2.97"
       , 
-      "w_LOVEs": null 
+      "w_LOVEs": "1.64"
       , 
-      "w_WOWs": null 
+      "w_WOWs": "0.01"
       , 
-      "w_HAHAs": null 
+      "w_HAHAs": "0.03"
       , 
-      "w_SADs": null 
+      "w_SADs": "0.01"
       , 
-      "w_ANGRYs": null 
+      "w_ANGRYs": "0.04"
       , 
-      "w_totalEngs": null 
+      "w_totalEngs": "8.73"
     } 
     , 
     { 
-      "publisher_ID": "DMLdaily"
+      "publisher_ID": "dailycaller"
       , 
-      "publisher_name": "dennismichaellynch"
+      "publisher_name": "dailycaller"
       , 
-      "publisher_website": "dennismichaellynch.com"
+      "publisher_website": "dailycaller.com"
       , 
-      "post_ID": "513600888679373_2242786539094124"
+      "post_ID": "182919686769_10155782712781770"
       , 
-      "link": "https://dmlnews.com/report-senate-intelligence-staffer-trump-called-important-leaker-pleads-guilty-lying-fbi/"
+      "link": "https://dailycaller.com/2018/10/18/rosie-odonnell-send-military-white-house-get-trump/"
       , 
-      "message": "Breaking  https://dmlnews.com/report-senate-intelligence-staffer-trump-called-important-leaker-pleads-guilty-lying-fbi/"
+      "message": "THIS. IS. DISGUSTING."
       , 
-      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCUJ7nmwJu8tSo3&w=130&h=130&url=http%3A%2F%2Fdmlnews.com%2Fwp-content%2Fuploads%2F2017%2F10%2FBreaking-News.jpg&cfs=1&_nc_hash=AQBZ9XA5iVaL7B04"
+      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDKaMhXr6olbE5n&w=130&h=130&url=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2018%2F10%2FScreen-Shot-2018-10-18-at-5.02.38-PM.png&cfs=1&sx=64&sy=0&sw=664&sh=664&_nc_hash=AQB-uxDHSbapEKM3"
       , 
-      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAywLJ4zj9GCx8s&url=http%3A%2F%2Fdmlnews.com%2Fwp-content%2Fuploads%2F2017%2F10%2FBreaking-News.jpg&_nc_hash=AQCdXTb-F4-q-sAS"
+      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCTLTtqb47khpDo&url=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2018%2F10%2FScreen-Shot-2018-10-18-at-5.02.38-PM.png&_nc_hash=AQBoDhQIhwKgE9zq"
       , 
-      "created_time": "2018-10-15 20:00:01+0000"
+      "created_time": "2018-10-18 22:00:41+0000"
       , 
-      "shares": null 
+      "shares": "2862"
       , 
-      "comments": "0"
+      "comments": "5739"
       , 
-      "likes": "0"
+      "likes": "1085"
       , 
-      "LOVEs": "0"
+      "LOVEs": "30"
       , 
-      "HAHAs": "0"
+      "HAHAs": "3501"
       , 
-      "WOWs": "0"
+      "WOWs": "274"
       , 
-      "SADs": "0"
+      "SADs": "155"
       , 
-      "ANGRYs": "0"
+      "ANGRYs": "4260"
       , 
-      "totalEngs": "0"
+      "totalEngs": "17906"
       , 
-      "w_shares": null 
+      "w_shares": "0.8"
       , 
-      "w_comments": null 
+      "w_comments": "1.61"
       , 
-      "w_likes": null 
+      "w_likes": "0.3"
       , 
-      "w_LOVEs": null 
+      "w_LOVEs": "0.01"
       , 
-      "w_WOWs": null 
+      "w_WOWs": "0.08"
       , 
-      "w_HAHAs": null 
+      "w_HAHAs": "0.98"
       , 
-      "w_SADs": null 
+      "w_SADs": "0.04"
       , 
-      "w_ANGRYs": null 
+      "w_ANGRYs": "1.2"
       , 
-      "w_totalEngs": null 
-    } 
-    , 
-    { 
-      "publisher_ID": "thepoliticalinsider"
-      , 
-      "publisher_name": "thepoliticalinsider"
-      , 
-      "publisher_website": "thepoliticalinsider.com"
-      , 
-      "post_ID": "112723252096438_2079976965371047"
-      , 
-      "link": "https://thepoliticalinsider.com/60-minutes-painting-white-house/"
-      , 
-      "message": "Trump is the absolute master of driving liberals crazy!"
-      , 
-      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAiOC8oKLBxQlTD&w=130&h=130&url=https%3A%2F%2Fi1.wp.com%2Fthepoliticalinsider.com%2Fcontent%2Fuploads%2F2018%2F10%2FTrump-Painting-1539613808.jpg%3Ffit%3D700%252C384%26ssl%3D1&cfs=1&_nc_hash=AQA5rgs1pIU4gzql"
-      , 
-      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAjfn-8PLYmmj4M&url=https%3A%2F%2Fi1.wp.com%2Fthepoliticalinsider.com%2Fcontent%2Fuploads%2F2018%2F10%2FTrump-Painting-1539613808.jpg%3Ffit%3D700%252C384%26ssl%3D1&_nc_hash=AQANmqUDrG4VTM-j"
-      , 
-      "created_time": "2018-10-15 20:00:01+0000"
-      , 
-      "shares": null 
-      , 
-      "comments": "0"
-      , 
-      "likes": "0"
-      , 
-      "LOVEs": "0"
-      , 
-      "HAHAs": "0"
-      , 
-      "WOWs": "0"
-      , 
-      "SADs": "0"
-      , 
-      "ANGRYs": "0"
-      , 
-      "totalEngs": "0"
-      , 
-      "w_shares": null 
-      , 
-      "w_comments": null 
-      , 
-      "w_likes": null 
-      , 
-      "w_LOVEs": null 
-      , 
-      "w_WOWs": null 
-      , 
-      "w_HAHAs": null 
-      , 
-      "w_SADs": null 
-      , 
-      "w_ANGRYs": null 
-      , 
-      "w_totalEngs": null 
-    } 
-    , 
-    { 
-      "publisher_ID": "RedStateBlog"
-      , 
-      "publisher_name": "redstate"
-      , 
-      "publisher_website": "redstate.com"
-      , 
-      "post_ID": "106547192707583_2475407525821526"
-      , 
-      "link": "https://www.redstate.com/bradslager/2018/10/15/trump-actually-literally-driving-left-nuts/"
-      , 
-      "message": "A banner year for therapists."
-      , 
-      "picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAFDJ9b3dV-2JXY&w=130&h=130&url=https%3A%2F%2Fwww.redstate.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fcouch.jpg&cfs=1&_nc_hash=AQDf4tZiLwJ_b4-l"
-      , 
-      "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQAuMdXTFuDHhF-d&url=https%3A%2F%2Fwww.redstate.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fcouch.jpg&_nc_hash=AQD1Pgu04PKrxDM1"
-      , 
-      "created_time": "2018-10-15 20:00:01+0000"
-      , 
-      "shares": null 
-      , 
-      "comments": "0"
-      , 
-      "likes": "0"
-      , 
-      "LOVEs": "0"
-      , 
-      "HAHAs": "0"
-      , 
-      "WOWs": "0"
-      , 
-      "SADs": "0"
-      , 
-      "ANGRYs": "0"
-      , 
-      "totalEngs": "0"
-      , 
-      "w_shares": null 
-      , 
-      "w_comments": null 
-      , 
-      "w_likes": null 
-      , 
-      "w_LOVEs": null 
-      , 
-      "w_WOWs": null 
-      , 
-      "w_HAHAs": null 
-      , 
-      "w_SADs": null 
-      , 
-      "w_ANGRYs": null 
-      , 
-      "w_totalEngs": null 
+      "w_totalEngs": "5.03"
     } 
   ] 
 } 
