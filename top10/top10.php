@@ -126,7 +126,7 @@ function print_json($data) {
         </span>
       </div>
       <div class="row">
-        <label>Age-adjusted:</label>
+        <label>Age-adjusted total:</label>
         <!--
         <span class="reaction">
           <span class="key">🔃</span>
