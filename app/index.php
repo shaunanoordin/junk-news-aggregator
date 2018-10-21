@@ -26,7 +26,7 @@
   
   <div class="sort-panel">
     <div class="row">
-      <label>Sort by:</label>
+      <label>Sort by total reaction numbers:</label>
       <span>
         <a class="sort-button" data-sort="oldest" href="#" title="Oldest">Oldest</a>
         <a class="sort-button" data-sort="newest" href="#" title="Newest">Newest</a>
@@ -42,7 +42,7 @@
       </span>
     </div>
     <div class="row">
-      <label>Sort by weighted:</label>
+      <label>Sort by age-adjusted reaction numbers:</label>
       <span>
         <a class="sort-button" data-sort="w_comments" href="#" title="comments (weighted)">💬</a>
         <a class="sort-button" data-sort="w_shares" href="#" title="shares (weighted)">🔃</a>

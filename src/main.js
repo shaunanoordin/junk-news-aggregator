@@ -406,7 +406,7 @@ class App {
       
       //For each type of Reaction, add it to the Reactions.
       //--------------------------------
-      macro_addRowOfReactions(null, {
+      macro_addRowOfReactions("Total:", {
         "🔃": "shares",
         "💬": "comments",
         "👍": "likes",
@@ -418,7 +418,7 @@ class App {
         "All": "totalEngs",
       }, false);
       
-      macro_addRowOfReactions("Weighted:", {
+      macro_addRowOfReactions("Age-adjusted:", {
         "🔃": "w_shares",
         "💬": "w_comments",
         "👍": "w_likes",
