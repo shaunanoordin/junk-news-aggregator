@@ -135,7 +135,7 @@ select {
 }
 #app > main.home-page .description-panel a,
 #app > main.archive-page .description-panel a {
-  color: #002147;
+  color: #aa2a2a;
 }
 #app > main.home-page .filter-panel,
 #app > main.archive-page .filter-panel {
