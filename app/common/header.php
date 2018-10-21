@@ -48,6 +48,8 @@ $config = json_decode($config);
     <ul>
       <li><a href="./">Home</a></li>
       <li><a href="archive.php">Archive</a></li>
+      <li><a href="https://newsaggregator.oii.ox.ac.uk/">About</a></li>
+      <li><a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a></li>
     </ul>
   </nav>
 </header>

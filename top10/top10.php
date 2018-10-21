@@ -87,6 +87,7 @@ function print_json($data) {
     </div>
     <div class="reactions">
       <div class="row">
+        <label>Total:</label>
         <span class="reaction">
           <span class="key">🔃</span>
           <span class="value"><?php p($item->shares) ?></span>
@@ -125,7 +126,7 @@ function print_json($data) {
         </span>
       </div>
       <div class="row">
-        <label>Weighted total:</label>
+        <label>Age-adjusted total:</label>
         <!--
         <span class="reaction">
           <span class="key">🔃</span>
@@ -185,12 +186,6 @@ function print_json($data) {
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
-/*
-App Styles
-----------
-
---------------------------------------------------------------------------------
- */
 /*  App Theme
  */
 /*  Basic Styles
@@ -322,7 +317,7 @@ select {
 }
 #app > main.home-page .description-panel a,
 #app > main.archive-page .description-panel a {
-  color: #002147;
+  color: #aa2a2a;
 }
 #app > main.home-page .filter-panel,
 #app > main.archive-page .filter-panel {
@@ -379,11 +374,12 @@ select {
   flex: 0 0 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 0.25em 1em;
 }
 #app > main.home-page .sort-panel .row > label,
 #app > main.archive-page .sort-panel .row > label {
+  flex: 1 1 auto;
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
@@ -512,7 +508,7 @@ select {
 #app > main.archive-page .list .item .right .reactions .row {
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.8em;
+  font-size: 0.65em;
   justify-content: flex-end;
   line-height: 2em;
 }
@@ -526,6 +522,7 @@ select {
   flex: 0 0 auto;
   margin: 0.25em 0.5em;
   cursor: help;
+  min-width: 4em;
 }
 #app > main.home-page .list .item .right .reactions .row .reaction .key,
 #app > main.archive-page .list .item .right .reactions .row .reaction .key {
@@ -557,8 +554,15 @@ select {
 <div id="app" class="top10-app">
 <header>
   <div class="header">
-  <?= $config->top10MiniApp->header ?>
+    <?= $config->top10MiniApp->header ?>
   </div>
+  <nav>
+    <ul>
+      <li><a href="https://newsaggregator.oii.ox.ac.uk/">About</a></li>
+      <li><a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a></li>
+      <li><a href="https://newsaggregator.oii.ox.ac.uk/access.php">Access</a></li>
+    </ul>
+  </nav>
 </header>
 <main class="home-page">
   <?php if ($config->top10MiniApp->description && strlen(trim($config->top10MiniApp->description)) > 0) { ?>

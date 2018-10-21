@@ -10,9 +10,10 @@ App Styles
 //------------------------------------------------------------------------------
 $black = #333
 $white = #fff
-$blue = #002147  //Oxford blue
+$oxford-blue = #002147
 $blue-highlight = #3cf
 $red = #c33
+$oxford-red = #aa2a2a
 $grey-mid = #ccc
 $grey-dark = #999
 
@@ -81,7 +82,7 @@ select
       display: block
       flex: 1 1 auto
       margin: 0.5em
-      color: $blue
+      color: $oxford-blue
       display: block
   
     h1
@@ -91,7 +92,7 @@ select
       line-height: 80px
   
   nav
-    background: $blue
+    background: $oxford-blue
     color: $white
     font-size: 0.75em
     text-transform: uppercase
@@ -123,7 +124,7 @@ select
 
 #app > footer
   flex: 0 0 auto
-  background: $blue
+  background: $oxford-blue
   color: $white
   font-size: 0.8em
   padding: 0.1em 0.5em
@@ -151,7 +152,7 @@ select
     padding: 0.5em 1em
     
     a
-      color: $blue
+      color: $oxford-red
   
   .filter-panel
     background: $grey-mid
@@ -190,10 +191,11 @@ select
       flex: 0 0 auto
       flex-direction: row
       flex-wrap: wrap
-      justify-content: center
+      justify-content: flex-end
       padding: 0.25em 1em
       
       > label
+        flex: 1 1 auto
         display: inline-block
         padding: 0.5em
         line-height: 1em
@@ -224,7 +226,7 @@ select
     padding: 0
     
     .info
-      background: $blue
+      background: $oxford-blue
       color: $white
       padding: 2em
       text-align: center
@@ -234,7 +236,7 @@ select
     
     .item
       align-items: flex-start
-      border: 1px solid $blue
+      border: 1px solid $oxford-blue
       display: flex
       margin: 0.5em
       overflow: auto
@@ -301,7 +303,7 @@ select
           .row
             display: flex
             flex-wrap: wrap
-            font-size: 0.8em
+            font-size: 0.65em
             justify-content: flex-end
             line-height: 2em
           
@@ -313,6 +315,7 @@ select
               flex: 0 0 auto
               margin: 0.25em 0.5em
               cursor: help
+              min-width: 4em
 
               .key
                 color: $grey-mid
@@ -332,7 +335,7 @@ select
   padding: 1em 2em
   
   a
-    color: $blue
+    color: $oxford-blue
     
     &:hover
       color: $blue-highlight
