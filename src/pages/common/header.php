@@ -37,6 +37,7 @@ $config = json_decode($config);
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="./main.css" rel="stylesheet">
 <script src="./main.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="app">

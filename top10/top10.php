@@ -66,7 +66,7 @@ function print_json($data) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="./top10-logo-facebook.png">
+        <img src="./assets/logo-facebook.png">
       </a>
       <a
         class="link-website"
@@ -190,6 +190,7 @@ function print_json($data) {
 <style>
 <?= $css ?>
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="app" class="top10-app">
