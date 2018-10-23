@@ -16,11 +16,13 @@ error_reporting(E_ALL);
 //Config
 $config = @file_get_contents('./news/files/app-config.json');  //Use @ to suppress errors.
 $data = @file_get_contents('./news/files/top10.json');  //Use @ to suppress errors.
+$css = @file_get_contents('./news/app/main.css');
 
 //If the config could not be found, try another place.
 //On localhost, the file is relative to the home directory, where there router.php file is.
 if (!$config) { $config = @file_get_contents('files/app-config.json'); }
 if (!$data) { $data = @file_get_contents('files/top10.json'); }
+if (!$css) { $css = @file_get_contents('app/main.css'); }
 
 //Apologies, but the config here is very messy and added in as a patch
 //post-development once the server was set up and appeared much different than
@@ -186,368 +188,7 @@ function print_json($data) {
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
-/*  App Theme
- */
-/*  Basic Styles
- */
-* {
-  box-sizing: border-box;
-}
-:root {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  background: #fff url(assets/simple-bg.png);
-  color: #333;
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-select {
-  font-family: inherit;
-  font-size: inherit;
-}
-/* App Style: Main Layout
- */
-#app {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  max-width: 50rem;
-  margin: 0 auto;
-  background: #fff;
-}
-#app > header {
-  flex: 0 0 auto;
-}
-#app > header .header {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-}
-#app > header .header a.logo {
-  display: block;
-  flex: 0 0 auto;
-  margin: 0.5em;
-}
-#app > header .header a.logo img {
-  display: block;
-  width: 110px;
-}
-#app > header .header a.title {
-  display: block;
-  flex: 1 1 auto;
-  margin: 0.5em;
-  color: #002147;
-  display: block;
-}
-#app > header .header h1 {
-  font-size: 1.25em;
-  margin: 0;
-  padding: 0.5em;
-  line-height: 80px;
-}
-#app > header nav {
-  background: #002147;
-  color: #fff;
-  font-size: 0.75em;
-  text-transform: uppercase;
-}
-#app > header nav a {
-  display: block;
-}
-#app > header nav a:hover {
-  background: #3cf;
-}
-#app > header nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-@media (max-width: 800px) {
-  #app > header nav ul {
-    flex-direction: column;
-  }
-}
-#app > header nav ul li {
-  flex: 0 0 auto;
-  margin: 0;
-  min-width: 8em;
-  line-height: 3em;
-  padding: 0;
-  text-align: center;
-}
-#app > footer {
-  flex: 0 0 auto;
-  background: #002147;
-  color: #fff;
-  font-size: 0.8em;
-  padding: 0.1em 0.5em;
-  text-align: right;
-}
-#app > main {
-  background: #fff;
-  flex: 1 0 auto;
-}
-#app.top10-app > main {
-  flex: 1 1 auto;
-}
-/*  Page Style: Home Page (List-type)
- */
-#app > main.home-page,
-#app > main.archive-page {
-  display: flex;
-  flex-direction: column;
-}
-#app > main.home-page .description-panel,
-#app > main.archive-page .description-panel {
-  font-size: 0.8em;
-  padding: 0.5em 1em;
-}
-#app > main.home-page .description-panel a,
-#app > main.archive-page .description-panel a {
-  color: #aa2a2a;
-}
-#app > main.home-page .filter-panel,
-#app > main.archive-page .filter-panel {
-  background: #ccc;
-  font-size: 0.8em;
-}
-#app > main.home-page .filter-panel .row,
-#app > main.archive-page .filter-panel .row {
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0.25em 1em;
-}
-@media (max-width: 800px) {
-  #app > main.home-page .filter-panel .row,
-  #app > main.archive-page .filter-panel .row {
-    flex-direction: column;
-  }
-}
-#app > main.home-page .filter-panel .row > span,
-#app > main.archive-page .filter-panel .row > span {
-  flex: 0 0 auto;
-  line-height: 2em;
-}
-#app > main.home-page .filter-panel .row > input,
-#app > main.archive-page .filter-panel .row > input,
-#app > main.home-page .filter-panel .row > button,
-#app > main.archive-page .filter-panel .row > button,
-#app > main.home-page .filter-panel .row > select,
-#app > main.archive-page .filter-panel .row > select {
-  flex: 0 0 auto;
-  margin: 0 0.5em;
-}
-@media (max-width: 800px) {
-  #app > main.home-page .filter-panel .row > input,
-  #app > main.archive-page .filter-panel .row > input,
-  #app > main.home-page .filter-panel .row > button,
-  #app > main.archive-page .filter-panel .row > button,
-  #app > main.home-page .filter-panel .row > select,
-  #app > main.archive-page .filter-panel .row > select {
-    min-height: 2.5em;
-    margin: 0;
-  }
-}
-#app > main.home-page .sort-panel,
-#app > main.archive-page .sort-panel {
-  color: #999;
-  font-size: 0.8em;
-}
-#app > main.home-page .sort-panel .row,
-#app > main.archive-page .sort-panel .row {
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  padding: 0.25em 1em;
-}
-#app > main.home-page .sort-panel .row > label,
-#app > main.archive-page .sort-panel .row > label {
-  flex: 1 1 auto;
-  display: inline-block;
-  padding: 0.5em;
-  line-height: 1em;
-}
-#app > main.home-page .sort-panel .row > span,
-#app > main.archive-page .sort-panel .row > span {
-  display: inline-block;
-}
-@media (max-width: 800px) {
-  #app > main.home-page .sort-panel .row > span,
-  #app > main.archive-page .sort-panel .row > span {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-#app > main.home-page .sort-panel .row > span a,
-#app > main.archive-page .sort-panel .row > span a {
-  display: inline-block;
-  padding: 0.5em;
-  line-height: 1em;
-  border-right: 1px solid #999;
-}
-#app > main.home-page .sort-panel .row > span a:last-child,
-#app > main.archive-page .sort-panel .row > span a:last-child {
-  border-right: none;
-}
-#app > main.home-page .list,
-#app > main.archive-page .list {
-  box-shadow: inset 0 -0.2em 1em #999;
-  flex: 1 1 auto;
-  list-style: none;
-  margin: 0;
-  overflow: auto;
-  padding: 0;
-}
-#app > main.home-page .list .info,
-#app > main.archive-page .list .info {
-  background: #002147;
-  color: #fff;
-  padding: 2em;
-  text-align: center;
-}
-#app > main.home-page .list .info.error,
-#app > main.archive-page .list .info.error {
-  background: #c33;
-}
-#app > main.home-page .list .item,
-#app > main.archive-page .list .item {
-  align-items: flex-start;
-  border: 1px solid #002147;
-  display: flex;
-  margin: 0.5em;
-  overflow: auto;
-}
-#app > main.home-page .list .item .left,
-#app > main.archive-page .list .item .left {
-  display: block;
-  flex: 0 0 auto;
-  width: 10em;
-  margin: 0.5em;
-}
-#app > main.home-page .list .item .left .photo,
-#app > main.archive-page .list .item .left .photo {
-  background: #999;
-  width: 100%;
-}
-#app > main.home-page .list .item .left .photo img,
-#app > main.archive-page .list .item .left .photo img {
-  width: 100%;
-  display: block;
-}
-#app > main.home-page .list .item .left .links,
-#app > main.archive-page .list .item .left .links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-#app > main.home-page .list .item .left .links .link-facebook,
-#app > main.archive-page .list .item .left .links .link-facebook {
-  display: inline-block;
-  padding: 0.25em;
-}
-#app > main.home-page .list .item .left .links .link-facebook img,
-#app > main.archive-page .list .item .left .links .link-facebook img {
-  width: 1em;
-  display: block;
-}
-#app > main.home-page .list .item .left .links .link-website,
-#app > main.archive-page .list .item .left .links .link-website {
-  display: inline-block;
-  font-size: 1em;
-  padding: 0.25em;
-}
-#app > main.home-page .list .item .right,
-#app > main.archive-page .list .item .right {
-  color: #333;
-  flex: 1 1 auto;
-  margin: 0.5em;
-}
-#app > main.home-page .list .item .right .header,
-#app > main.archive-page .list .item .right .header {
-  align-items: center;
-  display: flex;
-  margin-bottom: 1em;
-}
-#app > main.home-page .list .item .right .header .publisher,
-#app > main.archive-page .list .item .right .header .publisher {
-  flex: 1 1 auto;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-#app > main.home-page .list .item .right .header .time,
-#app > main.archive-page .list .item .right .header .time {
-  color: #999;
-  cursor: pointer;
-  flex: 0 0 auto;
-  font-size: 0.8em;
-}
-#app > main.home-page .list .item .right .message,
-#app > main.archive-page .list .item .right .message {
-  line-height: 1.5em;
-  margin-bottom: 1em;
-}
-#app > main.home-page .list .item .right .reactions .row,
-#app > main.archive-page .list .item .right .reactions .row {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.65em;
-  justify-content: flex-end;
-  line-height: 2em;
-}
-#app > main.home-page .list .item .right .reactions .row label,
-#app > main.archive-page .list .item .right .reactions .row label {
-  color: #ccc;
-  margin: 0.25em 0.5em;
-}
-#app > main.home-page .list .item .right .reactions .row .reaction,
-#app > main.archive-page .list .item .right .reactions .row .reaction {
-  flex: 0 0 auto;
-  margin: 0.25em 0.5em;
-  cursor: help;
-  min-width: 4em;
-}
-#app > main.home-page .list .item .right .reactions .row .reaction .key,
-#app > main.archive-page .list .item .right .reactions .row .reaction .key {
-  color: #ccc;
-  margin: 0 0.05em;
-}
-#app > main.home-page .list .item .right .reactions .row .reaction .value,
-#app > main.archive-page .list .item .right .reactions .row .reaction .value {
-  color: #999;
-  margin: 0 0.05em;
-}
-/*  Page Style: About Page, Contact Page (Info-type)
- */
-#app > main.about-page,
-#app > main.contact-page {
-  padding: 1em 2em;
-}
-#app > main.about-page a,
-#app > main.contact-page a {
-  color: #002147;
-}
-#app > main.about-page a:hover,
-#app > main.contact-page a:hover {
-  color: #3cf;
-}
+<?= $css ?>
 </style>
 </head>
 <body>
@@ -558,9 +199,21 @@ select {
   </div>
   <nav>
     <ul>
-      <li><a href="https://newsaggregator.oii.ox.ac.uk/">About</a></li>
-      <li><a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a></li>
-      <li><a href="https://newsaggregator.oii.ox.ac.uk/access.php">Access</a></li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/">Home</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/about.php">About</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/how.php">Methodology</a>
+      </li>
+      <li class="selected">
+        <a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/access.php">Access</a>
+      </li>
     </ul>
   </nav>
 </header>
