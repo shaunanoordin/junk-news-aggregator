@@ -54,7 +54,7 @@ $config = json_decode($config);
         <a href="https://newsaggregator.oii.ox.ac.uk/about.php">About</a>
       </li>
       <li>
-        <a href="https://newsaggregator.oii.ox.ac.uk/how.php">Methodology</a>
+        <a href="https://newsaggregator.oii.ox.ac.uk/methodology.php">Methodology</a>
       </li>
       <li>
         <a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a>
