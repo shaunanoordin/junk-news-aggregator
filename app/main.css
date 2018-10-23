@@ -51,6 +51,11 @@ select {
   flex-direction: row;
   align-items: flex-end;
 }
+@media (max-width: 800px) {
+  #app > header .header {
+    flex-wrap: wrap;
+  }
+}
 #app > header .header a.logo {
   display: block;
   flex: 0 0 auto;
@@ -59,6 +64,11 @@ select {
 #app > header .header a.logo img {
   display: block;
   width: 110px;
+}
+@media (max-width: 800px) {
+  #app > header .header a.logo img {
+    width: 32px;
+  }
 }
 #app > header .header a.title {
   display: block;
@@ -72,6 +82,12 @@ select {
   margin: 0;
   padding: 0.5em;
   line-height: 80px;
+}
+@media (max-width: 800px) {
+  #app > header .header h1 {
+    line-height: 24px;
+    font-size: 1em;
+  }
 }
 #app > header nav {
   background: #002147;
@@ -125,7 +141,7 @@ select {
   flex: 1 0 auto;
 }
 #app.top10-app > main {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 }
 /*  Page Style: Home Page (List-type)
  */
