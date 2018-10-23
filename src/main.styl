@@ -99,7 +99,7 @@ select
       
       @media (max-width: $mobile-width)
         line-height: 24px
-        font-size: 1em
+        font-size: 0.8em
   
   nav
     background: $oxford-blue
@@ -262,11 +262,17 @@ select
       margin: 0.5em
       overflow: auto
       
+      @media (max-width: $mobile-width)
+        flex-direction: column
+      
       .left
         display: block
         flex: 0 0 auto
         width: 10em
         margin: 0.5em
+        
+        @media (max-width: $mobile-width)
+          margin: 0.5em auto
         
         .photo
           background: $grey-dark

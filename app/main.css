@@ -86,7 +86,7 @@ select {
 @media (max-width: 800px) {
   #app > header .header h1 {
     line-height: 24px;
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }
 #app > header nav {
@@ -281,12 +281,24 @@ select {
   margin: 0.5em;
   overflow: auto;
 }
+@media (max-width: 800px) {
+  #app > main.home-page .list .item,
+  #app > main.archive-page .list .item {
+    flex-direction: column;
+  }
+}
 #app > main.home-page .list .item .left,
 #app > main.archive-page .list .item .left {
   display: block;
   flex: 0 0 auto;
   width: 10em;
   margin: 0.5em;
+}
+@media (max-width: 800px) {
+  #app > main.home-page .list .item .left,
+  #app > main.archive-page .list .item .left {
+    margin: 0.5em auto;
+  }
 }
 #app > main.home-page .list .item .left .photo,
 #app > main.archive-page .list .item .left .photo {
