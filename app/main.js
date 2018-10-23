@@ -237,7 +237,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./about.php\": \"./src/pages/about.php\",\n\t\"./archive.php\": \"./src/pages/archive.php\",\n\t\"./common/footer.php\": \"./src/pages/common/footer.php\",\n\t\"./common/header.php\": \"./src/pages/common/header.php\",\n\t\"./contact.php\": \"./src/pages/contact.php\",\n\t\"./index.php\": \"./src/pages/index.php\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\tvar module = __webpack_require__(id);\n\treturn module;\n}\nfunction webpackContextResolve(req) {\n\tvar id = map[req];\n\tif(!(id + 1)) { // check for number or string\n\t\tvar e = new Error('Cannot find module \"' + req + '\".');\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn id;\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages sync recursive \\\\.(php|html)$\";\n\n//# sourceURL=webpack:///./src/pages_sync_\\.(php%7Chtml)$?");
+eval("var map = {\n\t\"./about.php\": \"./src/pages/about.php\",\n\t\"./archive.php\": \"./src/pages/archive.php\",\n\t\"./common/footer.php\": \"./src/pages/common/footer.php\",\n\t\"./common/header.php\": \"./src/pages/common/header.php\",\n\t\"./common/sort-panel.php\": \"./src/pages/common/sort-panel.php\",\n\t\"./contact.php\": \"./src/pages/contact.php\",\n\t\"./index.php\": \"./src/pages/index.php\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\tvar module = __webpack_require__(id);\n\treturn module;\n}\nfunction webpackContextResolve(req) {\n\tvar id = map[req];\n\tif(!(id + 1)) { // check for number or string\n\t\tvar e = new Error('Cannot find module \"' + req + '\".');\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn id;\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages sync recursive \\\\.(php|html)$\";\n\n//# sourceURL=webpack:///./src/pages_sync_\\.(php%7Chtml)$?");
 
 /***/ }),
 
@@ -282,6 +282,17 @@ eval("module.exports = __webpack_require__.p + \"common/footer.php\";\n\n//# sou
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"common/header.php\";\n\n//# sourceURL=webpack:///./src/pages/common/header.php?");
+
+/***/ }),
+
+/***/ "./src/pages/common/sort-panel.php":
+/*!*****************************************!*\
+  !*** ./src/pages/common/sort-panel.php ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"common/sort-panel.php\";\n\n//# sourceURL=webpack:///./src/pages/common/sort-panel.php?");
 
 /***/ }),
 

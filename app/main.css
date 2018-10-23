@@ -214,15 +214,21 @@ select {
     flex-wrap: wrap;
   }
 }
-#app > main.home-page .sort-panel .row > span a,
-#app > main.archive-page .sort-panel .row > span a {
+#app > main.home-page .sort-panel .row > span a.sort-button,
+#app > main.archive-page .sort-panel .row > span a.sort-button {
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
   border-right: 1px solid #999;
+  text-align: center;
+  width: 2.5em;
 }
-#app > main.home-page .sort-panel .row > span a:last-child,
-#app > main.archive-page .sort-panel .row > span a:last-child {
+#app > main.home-page .sort-panel .row > span a.large.sort-button,
+#app > main.archive-page .sort-panel .row > span a.large.sort-button {
+  width: 5.25em;
+}
+#app > main.home-page .sort-panel .row > span a.sort-button:last-child,
+#app > main.archive-page .sort-panel .row > span a.sort-button:last-child {
   border-right: none;
 }
 #app > main.home-page .list,
