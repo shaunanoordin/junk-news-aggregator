@@ -213,7 +213,10 @@ function print_json($data) {
         <a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a>
       </li>
       <li>
-        <a href="https://newsaggregator.oii.ox.ac.uk/access.php">Access</a>
+        <a href="https://newsaggregator.oii.ox.ac.uk/access.php">Sign Up</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/news/app/">Log In</a>
       </li>
     </ul>
   </nav>
