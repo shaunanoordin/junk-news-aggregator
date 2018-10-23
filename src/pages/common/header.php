@@ -46,10 +46,24 @@ $config = json_decode($config);
   </div>
   <nav>
     <ul>
-      <li><a href="./">Home</a></li>
-      <li><a href="archive.php">Archive</a></li>
-      <li><a href="https://newsaggregator.oii.ox.ac.uk/">About</a></li>
-      <li><a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a></li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/">Home</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/about.php">About</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/how.php">Methodology</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a>
+      </li>
+      <li <?= ($page_id === "news") ? "class=\"selected\"" : "" ?>>
+        <a href="./">Explore</a>
+      </li>
+      <li <?= ($page_id === "archive") ? "class=\"selected\"" : "" ?>>
+        <a href="archive.php">Archive</a>
+      </li>
     </ul>
   </nav>
 </header>
