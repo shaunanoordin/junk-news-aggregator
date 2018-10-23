@@ -1,3 +1,4 @@
+<?php $page_id = "archive" ?>
 <?php include "common/header.php" ?>
 <main class="archive-page">
   <?php if ($config->mainApp->archiveDescription && strlen(trim($config->mainApp->archiveDescription)) > 0) { ?>

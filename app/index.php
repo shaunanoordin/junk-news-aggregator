@@ -1,3 +1,4 @@
+<?php $page_id = "news" ?>
 <?php include "common/header.php" ?>
 <main class="home-page">
   <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>

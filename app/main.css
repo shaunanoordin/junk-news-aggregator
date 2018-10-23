@@ -79,12 +79,6 @@ select {
   font-size: 0.75em;
   text-transform: uppercase;
 }
-#app > header nav a {
-  display: block;
-}
-#app > header nav a:hover {
-  background: #3cf;
-}
 #app > header nav ul {
   display: flex;
   flex-direction: row;
@@ -102,17 +96,29 @@ select {
   flex: 0 0 auto;
   margin: 0;
   min-width: 8em;
-  line-height: 3em;
+  line-height: 2.6em;
   padding: 0;
   text-align: center;
+  border-top: 0.1em solid transparent;
+  border-bottom: 0.1em solid transparent;
+}
+#app > header nav ul li.selected {
+  border-top: 0.2em solid #fff;
+  border-bottom: 0.2em solid #fff;
+}
+#app > header nav ul li:hover {
+  background: #aa2a2a;
+}
+#app > header nav ul li a {
+  display: block;
 }
 #app > footer {
   flex: 0 0 auto;
   background: #002147;
   color: #fff;
   font-size: 0.8em;
-  padding: 0.1em 0.5em;
-  text-align: right;
+  padding: 0.25em 0.5em;
+  text-align: left;
 }
 #app > main {
   background: #fff;
@@ -357,18 +363,4 @@ select {
 #app > main.archive-page .list .item .right .reactions .row .reaction .value {
   color: #999;
   margin: 0 0.05em;
-}
-/*  Page Style: About Page, Contact Page (Info-type)
- */
-#app > main.about-page,
-#app > main.contact-page {
-  padding: 1em 2em;
-}
-#app > main.about-page a,
-#app > main.contact-page a {
-  color: #002147;
-}
-#app > main.about-page a:hover,
-#app > main.contact-page a:hover {
-  color: #3cf;
 }
