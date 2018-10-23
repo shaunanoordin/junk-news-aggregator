@@ -221,11 +221,11 @@ select {
   line-height: 1em;
   border-right: 1px solid #999;
   text-align: center;
-  width: 2.5em;
+  width: 3em;
 }
 #app > main.home-page .sort-panel .row > span a.large.sort-button,
 #app > main.archive-page .sort-panel .row > span a.large.sort-button {
-  width: 5.25em;
+  width: 6.25em;
 }
 #app > main.home-page .sort-panel .row > span a.sort-button:last-child,
 #app > main.archive-page .sort-panel .row > span a.sort-button:last-child {

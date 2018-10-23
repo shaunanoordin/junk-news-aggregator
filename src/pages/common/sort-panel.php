@@ -9,8 +9,8 @@
   <div class="row">
     <label>Sort by total reaction numbers:</label>
     <span>
-      <a class="sort-button" data-sort="comments" href="#" title="comments">💬</a>
       <a class="sort-button" data-sort="shares" href="#" title="shares">🔃</a>
+      <a class="sort-button" data-sort="comments" href="#" title="comments">💬</a>
       <a class="sort-button" data-sort="likes" href="#" title="likes">👍</a>
       <a class="sort-button" data-sort="LOVEs" href="#" title="LOVEs">❤️</a>
       <a class="sort-button" data-sort="HAHAs" href="#" title="HAHAs">😄</a>
@@ -23,8 +23,8 @@
   <div class="row">
     <label>Sort by age-adjusted reaction numbers:</label>
     <span>
-      <a class="sort-button" data-sort="w_comments" href="#" title="comments (weighted)">💬</a>
       <a class="sort-button" data-sort="w_shares" href="#" title="shares (weighted)">🔃</a>
+      <a class="sort-button" data-sort="w_comments" href="#" title="comments (weighted)">💬</a>
       <a class="sort-button" data-sort="w_likes" href="#" title="likes (weighted)">👍</a>
       <a class="sort-button" data-sort="w_LOVEs" href="#" title="LOVEs (weighted)">❤️</a>
       <a class="sort-button" data-sort="w_HAHAs" href="#" title="HAHAs (weighted)">😄</a>
