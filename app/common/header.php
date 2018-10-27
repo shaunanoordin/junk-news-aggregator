@@ -62,9 +62,9 @@ $config = json_decode($config);
       <li <?= ($page_id === "news") ? "class=\"selected\"" : "" ?>>
         <a href="./">Explore</a>
       </li>
-      <li <?= ($page_id === "archive") ? "class=\"selected\"" : "" ?>>
+      <!--<li <?= ($page_id === "archive") ? "class=\"selected\"" : "" ?>>
         <a href="archive.php">Archive</a>
-      </li>
+      </li>-->
     </ul>
   </nav>
 </header>

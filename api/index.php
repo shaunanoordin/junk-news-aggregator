@@ -127,7 +127,7 @@ if ($input_limit !== "" && intval($input_limit)) {
 if (!$input_engagement_matters) {
   $sql_query = "SELECT * FROM " . $db_table . $sql_where . $sql_order . $sql_limit;
 } else {
-  $sql_query = "SELECT * FROM (SELECT * FROM " . $db_table . $sql_where . " ORDER BY totalEngs DESC " . $sql_limit . ") AS midA " . $sql_order;
+  $sql_query = "SELECT * FROM (SELECT * FROM " . $db_table . $sql_where . " ORDER BY w_totalEngs DESC " . $sql_limit . ") AS midA " . $sql_order;
 }
 
 //Prepare the output JSON.
