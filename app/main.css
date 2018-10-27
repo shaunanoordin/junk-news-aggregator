@@ -54,12 +54,37 @@ select {
 @media (max-width: 800px) {
   #app > header .header {
     flex-wrap: wrap;
+    padding: 1em;
+    padding-bottom: 0;
+  }
+}
+#app > header .header a {
+  display: block;
+}
+#app > header .header .desktop-only {
+  display: block;
+}
+@media (max-width: 800px) {
+  #app > header .header .desktop-only {
+    display: none;
+  }
+}
+#app > header .header .mobile-only {
+  display: none;
+}
+@media (max-width: 800px) {
+  #app > header .header .mobile-only {
+    display: block;
   }
 }
 #app > header .header a.logo {
-  display: block;
   flex: 0 0 auto;
   margin: 0.5em;
+}
+@media (max-width: 800px) {
+  #app > header .header a.logo {
+    margin: 0.2em;
+  }
 }
 #app > header .header a.logo img {
   display: block;
@@ -67,15 +92,20 @@ select {
 }
 @media (max-width: 800px) {
   #app > header .header a.logo img {
-    width: 32px;
+    width: 60px;
   }
 }
 #app > header .header a.title {
-  display: block;
   flex: 1 1 auto;
   margin: 0.5em;
   color: #002147;
   display: block;
+}
+@media (max-width: 800px) {
+  #app > header .header a.title {
+    width: 100%;
+    text-align: center;
+  }
 }
 #app > header .header h1 {
   font-size: 1.25em;
@@ -86,8 +116,11 @@ select {
 @media (max-width: 800px) {
   #app > header .header h1 {
     line-height: 24px;
-    font-size: 0.8em;
+    font-size: 1.25em;
   }
+}
+#app > header .header .filler {
+  flex: 1 1 auto;
 }
 #app > header nav {
   background: #002147;
