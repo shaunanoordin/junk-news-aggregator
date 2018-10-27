@@ -62,11 +62,11 @@ function print_json($data) {
       <a
         class="link-facebook"
         title="View Facebook post"
-        href="<?php p("https://facebook.com/" . $item->post_id) ?>"
+        href="<?php p("https://facebook.com/" . $item->post_ID) ?>"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="./top10-logo-facebook.png">
+        <img src="./assets/logo-facebook.png">
       </a>
       <a
         class="link-website"
@@ -190,6 +190,7 @@ function print_json($data) {
 <style>
 <?= $css ?>
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="app" class="top10-app">
@@ -206,13 +207,16 @@ function print_json($data) {
         <a href="https://newsaggregator.oii.ox.ac.uk/about.php">About</a>
       </li>
       <li>
-        <a href="https://newsaggregator.oii.ox.ac.uk/how.php">Methodology</a>
+        <a href="https://newsaggregator.oii.ox.ac.uk/methodology.php">Methodology</a>
       </li>
       <li class="selected">
         <a href="https://newsaggregator.oii.ox.ac.uk/top10.php">Top 10</a>
       </li>
       <li>
-        <a href="https://newsaggregator.oii.ox.ac.uk/access.php">Access</a>
+        <a href="https://newsaggregator.oii.ox.ac.uk/access.php">Sign Up</a>
+      </li>
+      <li>
+        <a href="https://newsaggregator.oii.ox.ac.uk/news/app/">Log In</a>
       </li>
     </ul>
   </nav>

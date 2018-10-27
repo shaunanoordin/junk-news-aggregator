@@ -69,6 +69,9 @@ select
     flex-direction: row
     align-items: flex-end
     
+    @media (max-width: $mobile-width)
+      flex-wrap: wrap
+    
     a.logo
       display: block
       flex: 0 0 auto
@@ -77,6 +80,9 @@ select
       img
         display: block
         width: 110px
+        
+        @media (max-width: $mobile-width)
+          width: 32px
       
     a.title
       display: block
@@ -90,6 +96,10 @@ select
       margin: 0
       padding: 0.5em
       line-height: 80px
+      
+      @media (max-width: $mobile-width)
+        line-height: 24px
+        font-size: 0.8em
   
   nav
     background: $oxford-blue
@@ -141,7 +151,7 @@ select
   flex: 1 0 auto  //Due to the increased amount of text on the main app (description + footer), the main section should now expand to fit the content.
   
 #app.top10-app > main
-  flex: 1 1 auto
+  flex: 1 0 auto  //Ditto for the top 10, since it's no longer intended to be an embedded item
 
 //------------------------------------------------------------------------------
 
@@ -252,11 +262,17 @@ select
       margin: 0.5em
       overflow: auto
       
+      @media (max-width: $mobile-width)
+        flex-direction: column
+      
       .left
         display: block
         flex: 0 0 auto
         width: 10em
         margin: 0.5em
+        
+        @media (max-width: $mobile-width)
+          margin: 0.5em auto
         
         .photo
           background: $grey-dark
