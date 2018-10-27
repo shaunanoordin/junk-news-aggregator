@@ -79,7 +79,12 @@ select {
 }
 #app > header .header a.logo {
   flex: 0 0 auto;
-  margin: 0.2em;
+  margin: 0.5em;
+}
+@media (max-width: 800px) {
+  #app > header .header a.logo {
+    margin: 0.2em;
+  }
 }
 #app > header .header a.logo img {
   display: block;
