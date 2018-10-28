@@ -111,7 +111,7 @@ function print_json($data) {
       <div class="row">
         <label>Age-adjusted total:</label>
         <span class="reaction">
-          <span class="key"><!--All-->&nbsp;</span>
+          <span class="key">All</span>
           <span class="value"><?php p($item->w_totalEngs) ?></span>
         </span>
       </div>

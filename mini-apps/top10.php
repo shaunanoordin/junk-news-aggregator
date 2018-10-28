@@ -164,7 +164,7 @@ function print_json($data) {
         </span>
         -->
         <span class="reaction">
-          <span class="key"><!--All-->&nbsp;</span>
+          <span class="key">All</span>
           <span class="value"><?php p($item->w_totalEngs) ?></span>
         </span>
       </div>
