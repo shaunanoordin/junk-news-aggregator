@@ -54,8 +54,7 @@ function print_json($data) {
   <a
     class="image"
     href="top10.php"
-    target="_blank"
-    rel="noopener noreferrer"
+    <?php /* target="_blank" rel="noopener noreferrer" */ ?>
     style="background-image: url(<?php p($item->picture) ?>)"
   >
     &nbsp;

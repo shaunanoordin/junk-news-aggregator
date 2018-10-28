@@ -428,3 +428,14 @@ select {
 #app > main.splash-page .image-grid .item .popup {
   display: none;
 }
+#app > main.splash-page .image-grid .item:hover {
+  overflow: visible;
+}
+#app > main.splash-page .image-grid .item:hover .popup {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  max-width: 20em;
+  margin: 0 auto;
+  background: #fff;
+}

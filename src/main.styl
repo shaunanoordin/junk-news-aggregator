@@ -425,5 +425,16 @@ select
       
       .popup
         display: none
+      
+      &:hover
+        overflow: visible
+        
+        .popup
+          display: block
+          position: absolute
+          z-index: 1000
+          max-width: 20em
+          margin: 0 auto
+          background: $white
 
 //------------------------------------------------------------------------------
