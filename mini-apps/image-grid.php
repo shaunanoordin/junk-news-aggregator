@@ -60,7 +60,7 @@ function print_json($data) {
     &nbsp;
   </a>
 
-  <div class="popup">
+  <a class="popup" href="top10.php">
     <div class="header">
       <span class="publisher"><?php p($item->publisher_name) ?></span>
       <span class="time"><?php p($item->created_time) ?></span>
@@ -116,7 +116,7 @@ function print_json($data) {
         </span>
       </div>
     </div>
-  </div>
+  </a>
 </li>
 
     <?php
