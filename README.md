@@ -20,6 +20,8 @@ Project anatomy:
 - Media assets are meant to be placed in the `/assets` folder, but this is optional.
 - Entry point is `index.html`.
 
+Prerequisites: Node.js, npm, PHP
+
 Starting the project:
 
 1. Install the project dependencies by running `npm install`

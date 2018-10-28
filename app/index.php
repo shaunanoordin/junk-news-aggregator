@@ -1,6 +1,6 @@
 <?php $page_id = "news" ?>
 <?php include "common/header.php" ?>
-<main class="home-page">
+<main class="list-page">
   <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>
   <div class="description-panel"><?= $config->mainApp->homeDescription ?></div>
   <?php } ?>

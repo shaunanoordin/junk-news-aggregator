@@ -1,6 +1,6 @@
 <?php $page_id = "archive" ?>
 <?php include "common/header.php" ?>
-<main class="archive-page">
+<main class="list-page">
   <?php if ($config->mainApp->archiveDescription && strlen(trim($config->mainApp->archiveDescription)) > 0) { ?>
   <div class="description-panel"><?= $config->mainApp->archiveDescription ?></div>
   <?php } ?>
