@@ -46,41 +46,22 @@ function p($d) {
 
 function print_json($data) {
   $i = 1;
-  for ($i = 1; $i <= 10; $i++) {
+  for ($i = 1; $i <= 256; $i++) {
     $item = $data->{$i};
     if (!$item) continue;
     ?>
 <li class="item">
-  <div class="left">
-    <a 
-      href="<?php p($item->link) ?>"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="<?php p($item->picture) ?>">
-    </a>
-    <div class="links">
-      <a
-        class="link-facebook"
-        title="View Facebook post"
-        href="<?php p("https://facebook.com/" . $item->post_ID) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="./assets/logo-facebook.png">
-      </a>
-      <a
-        class="link-website"
-        title="View original article"
-        href="<?php p($item->link) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        🌐
-      </a>
-    </div>
-  </div>
-  <div class="right">
+  <a
+    class="image"
+    href="top10.php"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="background-image: url(<?php p($item->picture) ?>)"
+  >
+    &nbsp;
+  </a>
+
+  <div class="popup">
     <div class="header">
       <span class="publisher"><?php p($item->publisher_name) ?></span>
       <span class="time"><?php p($item->created_time) ?></span>
@@ -130,40 +111,6 @@ function print_json($data) {
       </div>
       <div class="row">
         <label>Age-adjusted total:</label>
-        <!--
-        <span class="reaction">
-          <span class="key">🔃</span>
-          <span class="value"><?php p($item->w_numSHARES) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">💬</span>
-          <span class="value"><?php p($item->w_numCOMMENTS) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">👍</span>
-          <span class="value"><?php p($item->w_numLIKE) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">❤️</span>
-          <span class="value"><?php p($item->w_numLOVE) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">😄</span>
-          <span class="value"><?php p($item->w_numHAHA) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">😲</span>
-          <span class="value"><?php p($item->w_numWOW) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">😟</span>
-          <span class="value"><?php p($item->w_numSAD) ?></span>
-        </span>
-        <span class="reaction">
-          <span class="key">😡</span>
-          <span class="value"><?php p($item->w_numANGRY) ?></span>
-        </span>
-        -->
         <span class="reaction">
           <span class="key"><!--All-->&nbsp;</span>
           <span class="value"><?php p($item->w_totalEngs) ?></span>
