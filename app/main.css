@@ -388,7 +388,6 @@ select {
   flex-direction: column;
 }
 #app > main.splash-page .info-section {
-  font-size: 0.8em;
   padding: 0.5em 1em;
 }
 #app > main.splash-page .info-section a {
