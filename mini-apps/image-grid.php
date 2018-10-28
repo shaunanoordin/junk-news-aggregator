@@ -53,7 +53,7 @@ function print_json($data) {
 <li class="item">
   <a
     class="image"
-    href="top10.php"
+    href="https://newsaggregator.oii.ox.ac.uk/news/app/"
     <?php /* target="_blank" rel="noopener noreferrer" */ ?>
     style="background-image: url(<?php p($item->picture) ?>)"
   >
