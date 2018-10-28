@@ -78,7 +78,7 @@ class App {
       filterTime: '',
       filterMessage: '',
       filterPublisher: '',
-      sort: '',
+      sort: 'w_engagement',
       limit: 200,
       most_engaging: '',  //If this is set to a non-empty string, it means we're only interested in the most engaging stories from the specified time period and the given filters.
     }, this.initialListSettings);
