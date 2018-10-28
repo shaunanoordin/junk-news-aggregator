@@ -60,7 +60,7 @@ function print_json($data) {
     &nbsp;
   </a>
 
-  <a class="popup" href="top10.php">
+  <a class="popup" href="https://newsaggregator.oii.ox.ac.uk/news/app/">
     <div class="header">
       <span class="publisher"><?php p($item->publisher_name) ?></span>
       <span class="time"><?php p($item->created_time) ?></span>
