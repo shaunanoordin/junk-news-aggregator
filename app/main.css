@@ -176,29 +176,24 @@ select {
 #app.top10-app > main {
   flex: 1 0 auto;
 }
-/*  Page Style: Home Page (List-type)
+/*  Page Style: Home Page, Top 10, etc (List-type)
  */
-#app > main.home-page,
-#app > main.archive-page {
+#app > main.list-page {
   display: flex;
   flex-direction: column;
 }
-#app > main.home-page .description-panel,
-#app > main.archive-page .description-panel {
+#app > main.list-page .description-panel {
   font-size: 0.8em;
   padding: 0.5em 1em;
 }
-#app > main.home-page .description-panel a,
-#app > main.archive-page .description-panel a {
+#app > main.list-page .description-panel a {
   color: #aa2a2a;
 }
-#app > main.home-page .filter-panel,
-#app > main.archive-page .filter-panel {
+#app > main.list-page .filter-panel {
   background: #ccc;
   font-size: 0.8em;
 }
-#app > main.home-page .filter-panel .row,
-#app > main.archive-page .filter-panel .row {
+#app > main.list-page .filter-panel .row {
   display: flex;
   flex: 0 0 auto;
   flex-direction: row;
@@ -206,43 +201,33 @@ select {
   padding: 0.25em 1em;
 }
 @media (max-width: 800px) {
-  #app > main.home-page .filter-panel .row,
-  #app > main.archive-page .filter-panel .row {
+  #app > main.list-page .filter-panel .row {
     flex-direction: column;
   }
 }
-#app > main.home-page .filter-panel .row > span,
-#app > main.archive-page .filter-panel .row > span {
+#app > main.list-page .filter-panel .row > span {
   flex: 0 0 auto;
   line-height: 2em;
 }
-#app > main.home-page .filter-panel .row > input,
-#app > main.archive-page .filter-panel .row > input,
-#app > main.home-page .filter-panel .row > button,
-#app > main.archive-page .filter-panel .row > button,
-#app > main.home-page .filter-panel .row > select,
-#app > main.archive-page .filter-panel .row > select {
+#app > main.list-page .filter-panel .row > input,
+#app > main.list-page .filter-panel .row > button,
+#app > main.list-page .filter-panel .row > select {
   flex: 0 0 auto;
   margin: 0 0.5em;
 }
 @media (max-width: 800px) {
-  #app > main.home-page .filter-panel .row > input,
-  #app > main.archive-page .filter-panel .row > input,
-  #app > main.home-page .filter-panel .row > button,
-  #app > main.archive-page .filter-panel .row > button,
-  #app > main.home-page .filter-panel .row > select,
-  #app > main.archive-page .filter-panel .row > select {
+  #app > main.list-page .filter-panel .row > input,
+  #app > main.list-page .filter-panel .row > button,
+  #app > main.list-page .filter-panel .row > select {
     min-height: 2.5em;
     margin: 0;
   }
 }
-#app > main.home-page .sort-panel,
-#app > main.archive-page .sort-panel {
+#app > main.list-page .sort-panel {
   color: #999;
   font-size: 0.8em;
 }
-#app > main.home-page .sort-panel .row,
-#app > main.archive-page .sort-panel .row {
+#app > main.list-page .sort-panel .row {
   display: flex;
   flex: 0 0 auto;
   flex-direction: row;
@@ -250,27 +235,23 @@ select {
   justify-content: flex-end;
   padding: 0.25em 1em;
 }
-#app > main.home-page .sort-panel .row > label,
-#app > main.archive-page .sort-panel .row > label {
+#app > main.list-page .sort-panel .row > label {
   flex: 1 1 auto;
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
 }
-#app > main.home-page .sort-panel .row > span,
-#app > main.archive-page .sort-panel .row > span {
+#app > main.list-page .sort-panel .row > span {
   display: inline-block;
 }
 @media (max-width: 800px) {
-  #app > main.home-page .sort-panel .row > span,
-  #app > main.archive-page .sort-panel .row > span {
+  #app > main.list-page .sort-panel .row > span {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 }
-#app > main.home-page .sort-panel .row > span a.sort-button,
-#app > main.archive-page .sort-panel .row > span a.sort-button {
+#app > main.list-page .sort-panel .row > span a.sort-button {
   display: inline-block;
   padding: 0.5em;
   line-height: 1em;
@@ -278,16 +259,13 @@ select {
   text-align: center;
   width: 3em;
 }
-#app > main.home-page .sort-panel .row > span a.large.sort-button,
-#app > main.archive-page .sort-panel .row > span a.large.sort-button {
+#app > main.list-page .sort-panel .row > span a.large.sort-button {
   width: 6.25em;
 }
-#app > main.home-page .sort-panel .row > span a.sort-button:last-child,
-#app > main.archive-page .sort-panel .row > span a.sort-button:last-child {
+#app > main.list-page .sort-panel .row > span a.sort-button:last-child {
   border-right: none;
 }
-#app > main.home-page .list,
-#app > main.archive-page .list {
+#app > main.list-page .list {
   box-shadow: inset 0 -0.2em 1em #999;
   flex: 1 1 auto;
   list-style: none;
@@ -295,19 +273,16 @@ select {
   overflow: auto;
   padding: 0;
 }
-#app > main.home-page .list .info,
-#app > main.archive-page .list .info {
+#app > main.list-page .list .info {
   background: #002147;
   color: #fff;
   padding: 2em;
   text-align: center;
 }
-#app > main.home-page .list .info.error,
-#app > main.archive-page .list .info.error {
+#app > main.list-page .list .info.error {
   background: #c33;
 }
-#app > main.home-page .list .item,
-#app > main.archive-page .list .item {
+#app > main.list-page .list .item {
   align-items: flex-start;
   border: 1px solid #002147;
   display: flex;
@@ -315,113 +290,111 @@ select {
   overflow: auto;
 }
 @media (max-width: 800px) {
-  #app > main.home-page .list .item,
-  #app > main.archive-page .list .item {
+  #app > main.list-page .list .item {
     flex-direction: column;
   }
 }
-#app > main.home-page .list .item .left,
-#app > main.archive-page .list .item .left {
+#app > main.list-page .list .item .left {
   display: block;
   flex: 0 0 auto;
   width: 10em;
   margin: 0.5em;
 }
 @media (max-width: 800px) {
-  #app > main.home-page .list .item .left,
-  #app > main.archive-page .list .item .left {
+  #app > main.list-page .list .item .left {
     margin: 0.5em auto;
   }
 }
-#app > main.home-page .list .item .left .photo,
-#app > main.archive-page .list .item .left .photo {
+#app > main.list-page .list .item .left .photo {
   background: #999;
   width: 100%;
 }
-#app > main.home-page .list .item .left .photo img,
-#app > main.archive-page .list .item .left .photo img {
+#app > main.list-page .list .item .left .photo img {
   width: 100%;
   display: block;
 }
-#app > main.home-page .list .item .left .links,
-#app > main.archive-page .list .item .left .links {
+#app > main.list-page .list .item .left .links {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-#app > main.home-page .list .item .left .links .link-facebook,
-#app > main.archive-page .list .item .left .links .link-facebook {
+#app > main.list-page .list .item .left .links .link-facebook {
   display: inline-block;
   padding: 0.25em;
 }
-#app > main.home-page .list .item .left .links .link-facebook img,
-#app > main.archive-page .list .item .left .links .link-facebook img {
+#app > main.list-page .list .item .left .links .link-facebook img {
   width: 1em;
   display: block;
 }
-#app > main.home-page .list .item .left .links .link-website,
-#app > main.archive-page .list .item .left .links .link-website {
+#app > main.list-page .list .item .left .links .link-website {
   display: inline-block;
   font-size: 1em;
   padding: 0.25em;
 }
-#app > main.home-page .list .item .right,
-#app > main.archive-page .list .item .right {
+#app > main.list-page .list .item .right {
   color: #333;
   flex: 1 1 auto;
   margin: 0.5em;
 }
-#app > main.home-page .list .item .right .header,
-#app > main.archive-page .list .item .right .header {
+#app > main.list-page .list .item .right .header {
   align-items: center;
   display: flex;
   margin-bottom: 1em;
 }
-#app > main.home-page .list .item .right .header .publisher,
-#app > main.archive-page .list .item .right .header .publisher {
+#app > main.list-page .list .item .right .header .publisher {
   flex: 1 1 auto;
   font-size: 1.1em;
   font-weight: bold;
 }
-#app > main.home-page .list .item .right .header .time,
-#app > main.archive-page .list .item .right .header .time {
+#app > main.list-page .list .item .right .header .time {
   color: #999;
   cursor: pointer;
   flex: 0 0 auto;
   font-size: 0.8em;
 }
-#app > main.home-page .list .item .right .message,
-#app > main.archive-page .list .item .right .message {
+#app > main.list-page .list .item .right .message {
   line-height: 1.5em;
   margin-bottom: 1em;
 }
-#app > main.home-page .list .item .right .reactions .row,
-#app > main.archive-page .list .item .right .reactions .row {
+#app > main.list-page .list .item .right .reactions .row {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.65em;
   justify-content: flex-end;
   line-height: 2em;
 }
-#app > main.home-page .list .item .right .reactions .row label,
-#app > main.archive-page .list .item .right .reactions .row label {
+#app > main.list-page .list .item .right .reactions .row label {
   color: #ccc;
   margin: 0.25em 0.5em;
 }
-#app > main.home-page .list .item .right .reactions .row .reaction,
-#app > main.archive-page .list .item .right .reactions .row .reaction {
+#app > main.list-page .list .item .right .reactions .row .reaction {
   flex: 0 0 auto;
   margin: 0.25em 0.5em;
   cursor: help;
   min-width: 4em;
 }
-#app > main.home-page .list .item .right .reactions .row .reaction .key,
-#app > main.archive-page .list .item .right .reactions .row .reaction .key {
+#app > main.list-page .list .item .right .reactions .row .reaction .key {
   color: #ccc;
   margin: 0 0.05em;
 }
-#app > main.home-page .list .item .right .reactions .row .reaction .value,
-#app > main.archive-page .list .item .right .reactions .row .reaction .value {
+#app > main.list-page .list .item .right .reactions .row .reaction .value {
   color: #999;
   margin: 0 0.05em;
+}
+/*  Page Style: Home Page, Top 10, etc (List-type)
+ */
+#app > main.splash-page {
+  display: flex;
+  flex-direction: column;
+}
+#app > main.splash-page .info-section {
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+}
+#app > main.splash-page .info-section a {
+  color: #aa2a2a;
+}
+#app > main.splash-page .image-grid {
+  background: #ccc;
+  font-size: 0.8em;
 }

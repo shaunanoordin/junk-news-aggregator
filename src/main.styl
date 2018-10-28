@@ -180,11 +180,10 @@ select
 
 //------------------------------------------------------------------------------
 
-/*  Page Style: Home Page (List-type)
+/*  Page Style: Home Page, Top 10, etc (List-type)
  */
 //------------------------------------------------------------------------------
-#app > main.home-page
-#app > main.archive-page
+#app > main.list-page
   display: flex
   flex-direction: column
   
@@ -377,4 +376,24 @@ select
                 color: $grey-dark
                 margin: 0 0.05em
     
+//------------------------------------------------------------------------------
+
+/*  Page Style: Home Page, Top 10, etc (List-type)
+ */
+//------------------------------------------------------------------------------
+#app > main.splash-page
+  display: flex
+  flex-direction: column
+  
+  .info-section
+    font-size: 0.8em
+    padding: 0.5em 1em
+    
+    a
+      color: $oxford-red
+  
+  .image-grid
+    background: $grey-mid
+    font-size: 0.8em
+
 //------------------------------------------------------------------------------

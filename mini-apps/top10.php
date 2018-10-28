@@ -221,7 +221,7 @@ function print_json($data) {
     </ul>
   </nav>
 </header>
-<main class="home-page">
+<main class="list-page">
   <?php if ($config->top10MiniApp->description && strlen(trim($config->top10MiniApp->description)) > 0) { ?>
   <div class="description-panel"><?= $config->top10MiniApp->description ?></div>
   <?php } ?>
