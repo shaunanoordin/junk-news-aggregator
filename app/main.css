@@ -169,6 +169,15 @@ select {
   padding: 0.25em 0.5em;
   text-align: left;
 }
+#app > .oii-footer {
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  background: #fff;
+  color: #999;
+}
+#app > .oii-footer a {
+  color: #999;
+}
 #app > main {
   background: #fff;
   flex: 1 0 auto;
