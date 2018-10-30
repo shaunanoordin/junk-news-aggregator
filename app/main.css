@@ -169,6 +169,15 @@ select {
   padding: 0.25em 0.5em;
   text-align: left;
 }
+#app > .oii-footer {
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  background: #fff;
+  color: #999;
+}
+#app > .oii-footer a {
+  color: #999;
+}
 #app > main {
   background: #fff;
   flex: 1 0 auto;
@@ -388,10 +397,16 @@ select {
   flex-direction: column;
 }
 #app > main.splash-page .info-section {
-  font-size: 0.8em;
   padding: 0.5em 1em;
+  overflow: auto;
+}
+#app > main.splash-page .info-section p {
+  line-height: 1.5em;
 }
 #app > main.splash-page .info-section a {
+  color: #aa2a2a;
+}
+#app > main.splash-page .form-section a {
   color: #aa2a2a;
 }
 #app > main.splash-page .image-grid {
@@ -440,7 +455,7 @@ select {
   box-shadow: inset 0 -0.2em 1em #999, 0 -0.2em 2em #333;
   padding: 1em;
   background: #fff;
-  margin: 2em auto 0 -20em;
+  margin: 0 auto 0 -20em;
   left: 50vw;
   width: 40em;
   max-width: 100vw;
@@ -497,4 +512,23 @@ select {
 #app > main.splash-page .image-grid .item:hover .popup .reactions .row .reaction .value {
   color: #999;
   margin: 0 0.05em;
+}
+/*  Page Style: Info Page (About, Methodology, etc)
+ */
+#app > main.info-page .info-section {
+  padding: 0.5em 1em;
+  overflow: auto;
+}
+#app > main.info-page .info-section p {
+  line-height: 1.5em;
+}
+#app > main.info-page .info-section li {
+  line-height: 1.5em;
+  margin: 0.5em 0;
+}
+#app > main.info-page .info-section a {
+  color: #aa2a2a;
+}
+#app > main.info-page .info-section > section {
+  margin: 1em 0 2em 0;
 }

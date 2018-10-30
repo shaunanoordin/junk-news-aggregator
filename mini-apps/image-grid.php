@@ -53,14 +53,14 @@ function print_json($data) {
 <li class="item">
   <a
     class="image"
-    href="top10.php"
+    href="https://newsaggregator.oii.ox.ac.uk/news/app/"
     <?php /* target="_blank" rel="noopener noreferrer" */ ?>
     style="background-image: url(<?php p($item->picture) ?>)"
   >
     &nbsp;
   </a>
 
-  <div class="popup">
+  <a class="popup" href="https://newsaggregator.oii.ox.ac.uk/news/app/">
     <div class="header">
       <span class="publisher"><?php p($item->publisher_name) ?></span>
       <span class="time"><?php p($item->created_time) ?></span>
@@ -111,12 +111,12 @@ function print_json($data) {
       <div class="row">
         <label>Age-adjusted total:</label>
         <span class="reaction">
-          <span class="key"><!--All-->&nbsp;</span>
+          <span class="key">All</span>
           <span class="value"><?php p($item->w_totalEngs) ?></span>
         </span>
       </div>
     </div>
-  </div>
+  </a>
 </li>
 
     <?php
@@ -181,6 +181,7 @@ function print_json($data) {
 <?php if ($config->imageGridMiniApp->footer && strlen(trim($config->imageGridMiniApp->footer)) > 0) { ?>
 <footer><?= $config->imageGridMiniApp->footer ?></footer>
 <?php } ?>
+<div class="oii-footer">&copy; <a href="http://www.oii.ox.ac.uk/">Oxford Internet Institute</a> 2018 | <a href="http://www.oii.ox.ac.uk/legal/">Terms of Use</a> | <a href="http://www.oii.ox.ac.uk/legal/privacy.cfm">Privacy Policy</a> | <a href="https://www.oii.ox.ac.uk/cookie-statement/">Cookie Statement</a> | <a href="http://www.oii.ox.ac.uk/legal/copyright.cfm">Copyright Policy</a> | <a href="http://www.oii.ox.ac.uk/legal/accessibility.cfm">Accessibility</a></div>
 </div><!--/#app-->
 </body>
 </html>
