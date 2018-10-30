@@ -406,6 +406,9 @@ select {
 #app > main.splash-page .info-section a {
   color: #aa2a2a;
 }
+#app > main.splash-page .form-section a {
+  color: #aa2a2a;
+}
 #app > main.splash-page .image-grid {
   background: #ccc;
   font-size: 0.8em;
