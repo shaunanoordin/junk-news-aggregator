@@ -506,3 +506,14 @@ select {
   color: #999;
   margin: 0 0.05em;
 }
+/*  Page Style: Info Page (About, Methodology, etc)
+ */
+#app > main.info-page .info-section {
+  padding: 0.5em 1em;
+}
+#app > main.info-page .info-section a {
+  color: #aa2a2a;
+}
+#app > main.info-page .info-section > section {
+  margin: 1em 0;
+}
