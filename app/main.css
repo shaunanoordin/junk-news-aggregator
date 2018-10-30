@@ -398,6 +398,10 @@ select {
 }
 #app > main.splash-page .info-section {
   padding: 0.5em 1em;
+  overflow: auto;
+}
+#app > main.splash-page .info-section p {
+  line-height: 1.5em;
 }
 #app > main.splash-page .info-section a {
   color: #aa2a2a;
@@ -510,10 +514,18 @@ select {
  */
 #app > main.info-page .info-section {
   padding: 0.5em 1em;
+  overflow: auto;
+}
+#app > main.info-page .info-section p {
+  line-height: 1.5em;
+}
+#app > main.info-page .info-section li {
+  line-height: 1.5em;
+  margin: 0.5em 0;
 }
 #app > main.info-page .info-section a {
   color: #aa2a2a;
 }
 #app > main.info-page .info-section > section {
-  margin: 1em 0;
+  margin: 1em 0 2em 0;
 }

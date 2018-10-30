@@ -1,3 +1,4 @@
+<?php $page_id = "methodology" ?>
 <?php include "common/header.php" ?>
 <main class="info-page">
   <div class="info-section">
