@@ -50,7 +50,11 @@ function safely_print_json_aux($item, $depth) {
       } else if (is_null($val)) {
         echo "null \r\n";
       } else {
-        echo "\"" . str_replace('"', '\\"', strval($val)) . "\"". "\r\n";
+        $printVal = $val;
+        $printVal = str_replace('\\', '\\\\', strval($printVal));
+        $printVal = str_replace('"', '\\"', strval($printVal));
+        
+        echo "\"" . $printVal . "\"". "\r\n";
       }
     }
     
