@@ -13,12 +13,25 @@ gathered from social media.
 - Developing the web app requires Node.js installed on your machine and a handy command line interface. (Bash, cmd.exe, etc)
 - However, the _compiled_ web app itself can be run simply by opening the `index.html` in a web browser. (Chrome, Firefox, etc)
 
-Project anatomy:
+Project Anatomy/Components:
 
-- Source JS (ES6 JavaScript) and STYL (Stylus CSS) files are in the `/src` folder.
-- Compiled JS and CSS files are in the `/app` folder.
-- Media assets are meant to be placed in the `/assets` folder, but this is optional.
-- Entry point is `index.html`.
+- **Main News Aggregator app** - originally designed as a standalone app, but later integrated into a larger website.
+  - Source code in [/src/main-news-app](./src/main-news-app)
+  - Compiled via `webpack` (run `npm start` for convenience)
+  - Compiled code at [/web/news/app](./web/news/app)
+- **Image Grid/Top256 Mini-App/Home Page** (yep, it's a bit overloaded) - code at [/web/index.php](./web/index.php)
+- **Top 10 Mini-App** - code at [/web/top10.php](./web/top10.php)
+- **Database Interface** - connects to external news database. Code at [/web/news/api](./web/news/api)
+- **Data Files** - contains list of top 10/top 256 articles and the app config. Found at [/web/news/files](./web/news/files)
+  - Data files are updated frequently on the live server.
+- **App and Mini-App Config File** - found at [/web/news/files/app-config.json](./web/news/files/app-config.json)
+  - Please modify `app-config.json` to change the title, text, etc displayed on the app and mini-apps.
+- **Website** - the full website consists of every other file in [/web](web/)
+
+External Requirements:
+
+- News database (separate project)
+- Data file generating scripts (separate project)
 
 Prerequisites: Node.js, npm, PHP
 
@@ -27,10 +40,3 @@ Starting the project:
 1. Install the project dependencies by running `npm install`
 2. Run `npm start` to start the server.
 3. Open `http://localhost:3000` on your browser to view the app.
-
-Alternatively, there's a developer mode:
-
-1. `npm install`
-2. `npm run dev`
-3. `http://localhost:3000`
-4. Changes to the JS and STYL files will now be compiled automatically; i.e. Babel/Webpack and Stylus now _watch_ the files. Refreshing the browser window should should show the latest edits.

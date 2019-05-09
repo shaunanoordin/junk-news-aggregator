@@ -3,6 +3,10 @@
 Router for PHP's Built-In Web Server
 ------------------------------------
 
+UPDATE: router.php is no longer used after 2019.05.10
+We now use `php -S localhost:3000 -t web` to specify a default server with its
+root directory at `./web`
+
 PHP5 has a built-in webserver that allows us to test .PHP files without having
 to setup Apache or WAMP or similar. Sweet! This router.php provides the basic
 rules necessary for the built-in webserver to recognise which files to serve as
