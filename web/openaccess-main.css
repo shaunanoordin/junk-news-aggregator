@@ -1,0 +1,77 @@
+/*
+Additional CSS
+--------------
+
+Main CSS is imported from in news/app/main.css via openaccess-header
+
+--------------------------------------------------------------------------------
+ */
+
+/*
+ JG Additional CSS - FORMS
+*/
+
+#submit{
+	width:100px;
+	margin-top:30px;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:calc(50% - 40px);
+	margin-right:calc(50% - 40px);
+	margin-bottom:30px;
+	background-color:#1e72c6;
+	color:#FFFFFF;
+	border-style:none;
+	border-width:0px;
+}
+
+#submit:hover{
+	background-color:#002147;
+}
+
+#submit:focus{
+	background-color:purple;
+}
+
+#form-container h2{
+	text-align:center;
+}
+
+.check{
+	color:red;
+	display:none;
+	font-size:12px;
+}
+
+
+#reason{
+	height:150px; 
+	width:100%;
+}
+
+#formcontainer{
+	max-width:600px;
+	width:100%;
+	margin-left:calc(50% - 300px);
+	margin-right:calc(50% - 300px);
+	
+}
+
+@media (max-width: 500px) {
+
+	#formcontainer{
+		width:calc(100% - 40px);
+		margin-left:20px!important;
+		margin-right:20px!important;
+	}
+	
+}
+
+h2{
+	font-size:1.3em;
+}
+
+#app > main.home-page .oii-central-panel {
+  background: #FFF;
+}

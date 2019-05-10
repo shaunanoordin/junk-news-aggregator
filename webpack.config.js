@@ -8,7 +8,7 @@ Webpack Config
 var path = require("path");
 var nib = require("nib");
 
-var APP_FOLDER = "app";
+var MAIN_APP_FOLDER = "web/news/app";
 
 //Plugins
 var CleanWebpackPlugin = require("clean-webpack-plugin");  //Cleans (deletes) the build folder before, er, building.
@@ -22,7 +22,7 @@ module.exports = {
   //Hence, make sure all asset and style files (e.g. JPG/GIF/PNG files,
   //CSS/Stylus files) are imported/referenced in this entry file (or in a JS
   //file imported by this entry file, etc) or one of its "children" JS files.
-  entry: "./src/main.js",
+  entry: "./src/main-news-app/main.js",
   
   //Main output package/bundle
   //Webpack combines all the code imported by the entry JS file (and all the
@@ -30,7 +30,7 @@ module.exports = {
   //JS file to be used by our app.
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, APP_FOLDER),
+    path: path.resolve(__dirname, MAIN_APP_FOLDER),
     //publicPath: "/",  //Optional: defines the base path for the app.
   },
   
@@ -39,7 +39,7 @@ module.exports = {
   //- ExtractTextPlugin: allows us to extract the CSS code into a file separate
   //  from the main packaged output JS file.
   plugins: [
-    new CleanWebpackPlugin([APP_FOLDER]),
+    new CleanWebpackPlugin([MAIN_APP_FOLDER]),
     new ExtractTextPlugin({
       filename: '[name].css',
       allChunks: true,
@@ -67,7 +67,7 @@ module.exports = {
           //These options ensures the image's folder structure is preserved.
           options: {
             name: "[path][name].[ext]",
-            context: path.join(__dirname, "src/pages")
+            context: path.join(__dirname, "src/main-news-app/pages")
           }
         }],
       },
@@ -81,7 +81,7 @@ module.exports = {
           //These options ensures the image's folder structure is preserved.
           options: {
             name: "[path][name].[ext]",
-            context: path.join(__dirname, "src")
+            context: path.join(__dirname, "src/main-news-app")
           }
         }],
       },

@@ -28,7 +28,7 @@
     "superagent": "3.8.3"
   },
   "scripts": {
-    "start": "concurrently \"webpack --watch\" \"php -S localhost:3000 router.php\"",
+    "start": "concurrently \"webpack --watch\" \"php -S localhost:3000 -t web\"",
     "build": "webpack"
   }
 }

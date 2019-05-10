@@ -1,0 +1,8 @@
+Junk News Coding Criteria,,
+Criterion Code,Criterion,Full Descrption
+P,Professionalism ,"These sources do not employ standards and best practices of professional journalism. They refrain from providing clear information about real authors, editors, publishers and owners. They lack transparency and accountability, and do not publish corrections on debunked information"
+S,Style,"These sources use emotionally driven language with emotive expressions, hyperbole, ad hominem attacks, misleading headlines, excessive capitalization, unsafe generalizations and logical fallacies, moving images, and lots of pictures and mobilizing memes."
+CR,Credibility,"These sources rely on false information and conspiracy theories, which they often employ strategically. They report without consulting multiple sources and do not fact-check. Sources are often untrustworthy and standards of production lack reliability."
+"LB (Left-wing bias), RB (Right wing bias) B (Bias)",Bias,"Reporting in these sources is highly biased, ideologically skewed or hyper-partisan, and news reporting frequently includes strongly opinionated commentary and inflammatory viewpoints."
+CT,Counterfeit,"These sources mimic established news reporting. They counterfeit fonts, branding and stylistic content strategies. Commentary and junk content is stylistically disguised as news, with references to news agencies and credible sources, and headlines written in a news tone with date, time and location stamps."
+JN AGG,JN Aggregator,"These sources aggregate other sources of junk news."
