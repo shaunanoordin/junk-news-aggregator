@@ -176,7 +176,7 @@ function print_json($data) {
 		<p> <small> <strong> Warning: </strong> Junk news posts may contain hateful or inappropriate language and graphic images. </small> </p>
 		<div id="visual_jna"> <h2>Visual Junk News Aggregator</h2> </div>  
   </div>
-  <div class="filter-panel">
+  <div id="top256" class="filter-panel">
     <!-- Event selection -->
     <div class="major row">
       <div class="group">
@@ -195,7 +195,7 @@ function print_json($data) {
     </div>
     <script>
       document.getElementById('filter-event').onchange = function reloadPageForEvent(e) {
-        window.location = window.location.href.replace(/(\?.*)/g, '') + '?event=' + e.target.value
+        window.location = window.location.href.replace(/(\?.*)/g, '') + '?event=' + e.target.value + "#top256"
       };
     </script>
     <!-- /Event selection -->
