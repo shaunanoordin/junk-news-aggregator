@@ -1,7 +1,7 @@
 <?php $page_id = "news" ?>
 <?php include "common/header.php" ?>
 <?php
-// Fetch user input
+// Fetch user input for Event
 // --------------------------------
 function httpGet($key) { return (isset($_GET[$key])) ? $_GET[$key] : ""; } 
 function validateInputWithConfig($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }

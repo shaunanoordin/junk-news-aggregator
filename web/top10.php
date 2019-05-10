@@ -39,6 +39,16 @@ $data = json_decode($data);
 --------------------------------------------------------------------------------
  */
 
+// Fetch user input for Event
+function httpGet($key) { return (isset($_GET[$key])) ? $_GET[$key] : ""; } 
+function validateInputWithConfig($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }
+
+$event = validateInputWithConfig(httpGet("event"), $config->events);
+
+/*
+--------------------------------------------------------------------------------
+ */
+
 function p($d) {
   echo htmlspecialchars($d);
 }
@@ -221,6 +231,30 @@ function print_json($data) {
 <main class="list-page">
   <?php if ($config->top10MiniApp->description && strlen(trim($config->top10MiniApp->description)) > 0) { ?>
   <div class="description-panel"><?= $config->top10MiniApp->description ?></div>
+  <div class="filter-panel">
+    <!-- Event selection -->
+    <div class="major row">
+      <div class="group">
+        <span>Event:</span>
+        <select id="filter-event">
+          <?php foreach ($config->events as $eventName => $eventDetails) { ?>
+            <option
+              value="<?= htmlspecialchars($eventName) ?>"
+              <?= ($event === $eventName) ? "selected" : ""?>
+            >
+              <?= htmlspecialchars($eventDetails->label) ?>
+            </option>
+          <?php } ?>
+        </select>
+      </div>
+    </div>
+    <script>
+      document.getElementById('filter-event').onchange = function reloadPageForEvent(e) {
+        window.location = window.location.href.replace(/(\?.*)/g, '') + '?event=' + e.target.value
+      };
+    </script>
+    <!-- /Event selection -->
+  </div>
   <?php } ?>
   <ul id="list" class="list">
     <?php print_json($data) ?>
