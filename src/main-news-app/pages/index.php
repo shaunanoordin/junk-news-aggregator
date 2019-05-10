@@ -1,10 +1,39 @@
 <?php $page_id = "news" ?>
 <?php include "common/header.php" ?>
+<?php
+// Fetch user input
+// --------------------------------
+function httpGet($key) { return (isset($_GET[$key])) ? $_GET[$key] : ""; } 
+function validateInput($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }
+
+$event = validateInput(httpGet("event"), $config->events);
+//--------------------------------
+?>
 <main class="list-page">
   <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>
   <div class="description-panel"><?= $config->mainApp->homeDescription ?></div>
   <?php } ?>
   <div class="filter-panel">
+    <!-- Event selection -->
+    <div class="major row">
+      <div class="group">
+        <span>Event:</span>
+        <select id="filter-event">
+          <?php foreach ($config->events as $eventName => $eventDetails) { ?>
+            <option
+              value="<?= htmlspecialchars($eventName) ?>"
+              <?= ($event === $eventName) ? "selected" : ""?>
+            >
+              <?= htmlspecialchars($eventDetails->label) ?>
+            </option>
+          <?php } ?>
+        </select>
+      </div>
+      <div class="group">
+        <span>Language:</span>
+      </div>
+    </div>
+    <!-- /Event selection -->
     <div class="row">
       <span>Showing Facebook news posts from the last</span>
       <select id="filter-time">

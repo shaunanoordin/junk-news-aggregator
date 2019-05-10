@@ -214,23 +214,35 @@ select {
     flex-direction: column;
   }
 }
-#app > main.list-page .filter-panel .row > span {
+#app > main.list-page .filter-panel .row.major {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0.25em;
+  padding: 0.25em;
+  border: 1px solid #fff;
+}
+#app > main.list-page .filter-panel .row span {
   flex: 0 0 auto;
   line-height: 2em;
 }
-#app > main.list-page .filter-panel .row > input,
-#app > main.list-page .filter-panel .row > button,
-#app > main.list-page .filter-panel .row > select {
+#app > main.list-page .filter-panel .row input,
+#app > main.list-page .filter-panel .row button,
+#app > main.list-page .filter-panel .row select {
   flex: 0 0 auto;
   margin: 0 0.5em;
 }
 @media (max-width: 800px) {
-  #app > main.list-page .filter-panel .row > input,
-  #app > main.list-page .filter-panel .row > button,
-  #app > main.list-page .filter-panel .row > select {
+  #app > main.list-page .filter-panel .row input,
+  #app > main.list-page .filter-panel .row button,
+  #app > main.list-page .filter-panel .row select {
     min-height: 2.5em;
     margin: 0;
   }
+}
+#app > main.list-page .filter-panel .row .group {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1em;
 }
 #app > main.list-page .sort-panel {
   color: #999;

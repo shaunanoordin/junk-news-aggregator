@@ -216,21 +216,33 @@ select
 
       @media (max-width: $mobile-width)
         flex-direction: column
+        
+      &.major
+        font-size: 1.1em
+        font-weight: bold
+        margin: 0.25em
+        padding: 0.25em
+        border: 1px solid $white
       
-      > span
+      span
         flex: 0 0 auto
         line-height: 2em
-      
-      > input
-      > button
-      > select
+        
+      input
+      button
+      select
         flex: 0 0 auto
         margin: 0 0.5em
 
         @media (max-width: $mobile-width)
           min-height: 2.5em
           margin: 0
-
+          
+      .group
+        display: flex
+        flex-direction: row
+        margin: 0 1em
+      
   .sort-panel
     color: $grey-dark
     font-size: 0.8em
