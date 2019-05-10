@@ -36,6 +36,7 @@ $eventDetails = ($event !== "") ? $config->events->$event : reset($config->event
 $data = @file_get_contents('./news/files/' . $eventDetails->top10file);  //Use @ to suppress errors.
 if (!$data) die();
 $data = json_decode($data);
+
 /*
 --------------------------------------------------------------------------------
  */

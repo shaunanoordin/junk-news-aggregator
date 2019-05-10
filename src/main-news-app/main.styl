@@ -196,206 +196,206 @@ select
   display: flex
   flex-direction: column
   
-  .description-panel
-    font-size: 0.8em
-    padding: 0.5em 1em
-    
-    a
-      color: $oxford-red
-  
-  .filter-panel
-    background: $grey-mid
-    font-size: 0.8em
-        
-    .row
-      display: flex
+.description-panel
+  font-size: 0.8em
+  padding: 0.5em 1em
+
+  a
+    color: $oxford-red
+
+.filter-panel
+  background: $grey-mid
+  font-size: 0.8em
+
+  .row
+    display: flex
+    flex: 0 0 auto
+    flex-direction: row
+    justify-content: center
+    padding: 0.25em 1em
+
+    @media (max-width: $mobile-width)
+      flex-direction: column
+
+    &.major
+      font-size: 1.1em
+      font-weight: bold
+      margin: 0.25em
+      padding: 0.25em
+      border: 1px solid $white
+
+    span
       flex: 0 0 auto
-      flex-direction: row
-      justify-content: center
-      padding: 0.25em 1em
+      line-height: 2em
+
+    input
+    button
+    select
+      flex: 0 0 auto
+      margin: 0 0.5em
 
       @media (max-width: $mobile-width)
-        flex-direction: column
-        
-      &.major
-        font-size: 1.1em
-        font-weight: bold
-        margin: 0.25em
-        padding: 0.25em
-        border: 1px solid $white
-      
-      span
-        flex: 0 0 auto
-        line-height: 2em
-        
-      input
-      button
-      select
-        flex: 0 0 auto
-        margin: 0 0.5em
+        min-height: 2.5em
+        margin: 0
 
-        @media (max-width: $mobile-width)
-          min-height: 2.5em
-          margin: 0
-          
-      .group
-        display: flex
-        flex-direction: row
-        margin: 0 1em
-      
-  .sort-panel
-    color: $grey-dark
-    font-size: 0.8em
-    
-    .row
+    .group
       display: flex
-      flex: 0 0 auto
       flex-direction: row
-      flex-wrap: wrap
-      justify-content: flex-end
-      padding: 0.25em 1em
-      
-      > label
-        flex: 1 1 auto
+      margin: 0 1em
+
+.sort-panel
+  color: $grey-dark
+  font-size: 0.8em
+
+  .row
+    display: flex
+    flex: 0 0 auto
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: flex-end
+    padding: 0.25em 1em
+
+    > label
+      flex: 1 1 auto
+      display: inline-block
+      padding: 0.5em
+      line-height: 1em
+
+    > span
+      display: inline-block
+
+      @media (max-width: $mobile-width)
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+
+      a.sort-button
         display: inline-block
         padding: 0.5em
         line-height: 1em
+        border-right: 1px solid $grey-dark
+        text-align: center
+        width: 3em
 
-      > span
-        display: inline-block
-        
-        @media (max-width: $mobile-width)
-          display: flex
-          justify-content: center
-          flex-wrap: wrap
+      a.large.sort-button
+        width: 6.25em
 
-        a.sort-button
-          display: inline-block
-          padding: 0.5em
-          line-height: 1em
-          border-right: 1px solid $grey-dark
-          text-align: center
-          width: 3em
-          
-        a.large.sort-button
-          width: 6.25em
+      a.sort-button:last-child
+        border-right: none
 
-        a.sort-button:last-child
-          border-right: none
-  
-  .list
-    box-shadow: inset 0 -0.2em 1em $grey-dark
-    flex: 1 1 auto
-    list-style: none
-    margin: 0
+.list
+  box-shadow: inset 0 -0.2em 1em $grey-dark
+  flex: 1 1 auto
+  list-style: none
+  margin: 0
+  overflow: auto
+  padding: 0
+
+  .info
+    background: $oxford-blue
+    color: $white
+    padding: 2em
+    text-align: center
+
+    &.error
+      background: $red
+
+  .item
+    align-items: flex-start
+    border: 1px solid $oxford-blue
+    display: flex
+    margin: 0.5em
     overflow: auto
-    padding: 0
-    
-    .info
-      background: $oxford-blue
-      color: $white
-      padding: 2em
-      text-align: center
-      
-      &.error
-        background: $red
-    
-    .item
-      align-items: flex-start
-      border: 1px solid $oxford-blue
-      display: flex
+
+    @media (max-width: $mobile-width)
+      flex-direction: column
+
+    .left
+      display: block
+      flex: 0 0 auto
+      width: 10em
       margin: 0.5em
-      overflow: auto
-      
+
       @media (max-width: $mobile-width)
-        flex-direction: column
-      
-      .left
-        display: block
-        flex: 0 0 auto
-        width: 10em
-        margin: 0.5em
-        
-        @media (max-width: $mobile-width)
-          margin: 0.5em auto
-        
-        .photo
-          background: $grey-dark
+        margin: 0.5em auto
+
+      .photo
+        background: $grey-dark
+        width: 100%
+
+        img
           width: 100%
+          display: block
+
+      .links
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        .link-facebook
+          display: inline-block
+          padding: 0.25em
 
           img
-            width: 100%
+            width: 1em
             display: block
-        
-        .links
-          display: flex
-          flex-direction: row
-          align-items: center
-        
-          .link-facebook
-            display: inline-block
-            padding: 0.25em
 
-            img
-              width: 1em
-              display: block
+        .link-website
+          display: inline-block
+          font-size: 1em
+          padding: 0.25em
 
-          .link-website
-            display: inline-block
-            font-size: 1em
-            padding: 0.25em
-          
-      .right
-        color: $black
-        flex: 1 1 auto
-        margin: 0.5em
-        
-        .header
-          align-items: center
+    .right
+      color: $black
+      flex: 1 1 auto
+      margin: 0.5em
+
+      .header
+        align-items: center
+        display: flex
+        margin-bottom: 1em
+
+        .publisher
+          flex: 1 1 auto
+          font-size: 1.1em
+          font-weight: bold
+
+        .time
+          color: $grey-dark
+          cursor: pointer
+          flex: 0 0 auto
+          font-size: 0.8em
+
+      .message
+        line-height: 1.5em
+        margin-bottom: 1em
+
+      .reactions
+
+        .row
           display: flex
-          margin-bottom: 1em
-          
-          .publisher
-            flex: 1 1 auto
-            font-size: 1.1em
-            font-weight: bold
-            
-          .time
-            color: $grey-dark
-            cursor: pointer
+          flex-wrap: wrap
+          font-size: 0.65em
+          justify-content: flex-end
+          line-height: 2em
+
+          label
+            color: $grey-mid
+            margin: 0.25em 0.5em
+
+          .reaction
             flex: 0 0 auto
-            font-size: 0.8em
-        
-        .message
-          line-height: 1.5em
-          margin-bottom: 1em
-          
-        .reactions
-          
-          .row
-            display: flex
-            flex-wrap: wrap
-            font-size: 0.65em
-            justify-content: flex-end
-            line-height: 2em
-          
-            label
+            margin: 0.25em 0.5em
+            cursor: help
+            min-width: 4em
+
+            .key
               color: $grey-mid
-              margin: 0.25em 0.5em
+              margin: 0 0.05em
 
-            .reaction
-              flex: 0 0 auto
-              margin: 0.25em 0.5em
-              cursor: help
-              min-width: 4em
-
-              .key
-                color: $grey-mid
-                margin: 0 0.05em
-
-              .value
-                color: $grey-dark
-                margin: 0 0.05em
+            .value
+              color: $grey-dark
+              margin: 0 0.05em
     
 //------------------------------------------------------------------------------
 
