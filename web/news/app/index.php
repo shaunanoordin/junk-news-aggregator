@@ -4,10 +4,19 @@
 // Fetch user input
 // --------------------------------
 function httpGet($key) { return (isset($_GET[$key])) ? $_GET[$key] : ""; } 
-function validateInput($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }
+function validateInputWithConfig($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }
 
-$event = validateInput(httpGet("event"), $config->events);
-//--------------------------------
+$event = validateInputWithConfig(httpGet("event"), $config->events);
+// --------------------------------
+?>
+<?php
+// Print config for JS code
+// --------------------------------
+echo "<script> \r\n";
+echo "window.config = window.config || {}; \r\n";
+echo "config.events = " . json_encode($config->events) . "; \r\n";
+echo "</script> \r\n";
+// --------------------------------
 ?>
 <main class="list-page">
   <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>
@@ -31,6 +40,7 @@ $event = validateInput(httpGet("event"), $config->events);
       </div>
       <div class="group">
         <span>Language:</span>
+        <select id="filter-lang"></select>
       </div>
     </div>
     <!-- /Event selection -->
