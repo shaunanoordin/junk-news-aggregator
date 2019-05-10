@@ -15,25 +15,11 @@ error_reporting(E_ALL);
 
 //Config
 $config = @file_get_contents('./news/files/app-config.json');  //Use @ to suppress errors.
-$data = @file_get_contents('./news/files/top10.json');  //Use @ to suppress errors.
 $css = @file_get_contents('./news/app/main.css');
 
-//If the config could not be found, try another place.
-//On localhost, the file is relative to the home directory, where there router.php file is.
-if (!$config) { $config = @file_get_contents('files/app-config.json'); }
-if (!$data) { $data = @file_get_contents('files/top10.json'); }
-if (!$css) { $css = @file_get_contents('app/main.css'); }
-
-//Apologies, but the config here is very messy and added in as a patch
-//post-development once the server was set up and appeared much different than
-//planned.
-
 //Process input
-if (!$config || !$data) {
-  die();
-}
+if (!$config) die();
 $config = json_decode($config);
-$data = json_decode($data);
 
 /*
 --------------------------------------------------------------------------------
@@ -44,7 +30,12 @@ function httpGet($key) { return (isset($_GET[$key])) ? $_GET[$key] : ""; }
 function validateInputWithConfig($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }
 
 $event = validateInputWithConfig(httpGet("event"), $config->events);
+$eventDetails = ($event !== "") ? $config->events->$event : reset($config->events);  // reset() gets the first item in the array, using it as our default.
 
+// Pull the data file of the appropriate event.
+$data = @file_get_contents('./news/files/' . $eventDetails->top10file);  //Use @ to suppress errors.
+if (!$data) die();
+$data = json_decode($data);
 /*
 --------------------------------------------------------------------------------
  */
@@ -54,8 +45,11 @@ function p($d) {
 }
 
 function print_json($data) {
+  if (!$data) return;
+
   $i = 1;
   for ($i = 1; $i <= 10; $i++) {
+    if (!isset($data->{$i})) continue;  // Safety for empty/incomplete data files
     $item = $data->{$i};
     if (!$item) continue;
     ?>
