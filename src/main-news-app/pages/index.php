@@ -1,10 +1,49 @@
 <?php $page_id = "news" ?>
 <?php include "common/header.php" ?>
+<?php
+// Fetch user input for Event
+// --------------------------------
+function httpGet($key) { return (isset($_GET[$key])) ? $_GET[$key] : ""; } 
+function validateInputWithConfig($name, $arr) { $found = false; foreach ($arr as $k=>$v) { if ($name === $k) $found = true; } return ($found) ? $name : ""; }
+
+$event = validateInputWithConfig(httpGet("event"), $config->events);
+// --------------------------------
+?>
+<?php
+// Print config for JS code
+// --------------------------------
+echo "<script> \r\n";
+echo "window.config = window.config || {}; \r\n";
+echo "config.events = " . json_encode($config->events) . "; \r\n";
+echo "</script> \r\n";
+// --------------------------------
+?>
 <main class="list-page">
   <?php if ($config->mainApp->homeDescription && strlen(trim($config->mainApp->homeDescription)) > 0) { ?>
   <div class="description-panel"><?= $config->mainApp->homeDescription ?></div>
   <?php } ?>
   <div class="filter-panel">
+    <!-- Event selection -->
+    <div class="major row">
+      <div class="group">
+        <span>Event:</span>
+        <select id="filter-event">
+          <?php foreach ($config->events as $eventName => $eventDetails) { ?>
+            <option
+              value="<?= htmlspecialchars($eventName) ?>"
+              <?= ($event === $eventName) ? "selected" : ""?>
+            >
+              <?= htmlspecialchars($eventDetails->label) ?>
+            </option>
+          <?php } ?>
+        </select>
+      </div>
+      <div class="group">
+        <span>Language:</span>
+        <select id="filter-lang"></select>
+      </div>
+    </div>
+    <!-- /Event selection -->
     <div class="row">
       <span>Showing Facebook news posts from the last</span>
       <select id="filter-time">

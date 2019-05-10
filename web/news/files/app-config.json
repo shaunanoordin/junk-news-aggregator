@@ -17,5 +17,29 @@
     "header": "<a class=\"logo\" href=\"https://comprop.oii.ox.ac.uk/\"><img src=\"https://newsaggregator.oii.ox.ac.uk/assets/ComProp-logo.svg\" alt=\"Comprop\"></a><span class=\"filler mobile-only\"></span><a class=\"logo mobile-only\" href=\"http://www.oii.ox.ac.uk\"><img src=\"https://newsaggregator.oii.ox.ac.uk/assets/OII-textless-logo-blue.svg\" alt=\"OII\"></a><a class=\"logo mobile-only\" href=\"http://www.ox.ac.uk\"><img src=\"https://newsaggregator.oii.ox.ac.uk/assets/ox-brand-RGB.svg\" alt=\"Oxford\"></a><a class=\"title\" href=\"./\"><h1>Junk News Aggregator</h1></a><a class=\"logo desktop-only\" href=\"http://www.oii.ox.ac.uk\"><img src=\"https://newsaggregator.oii.ox.ac.uk/assets/OII-logo-blue.svg\" alt=\"OII\"></a><a class=\"logo desktop-only\" href=\"http://www.ox.ac.uk\"><img src=\"https://newsaggregator.oii.ox.ac.uk/assets/ox-brand-RGB.svg\" alt=\"Oxford\"></a>",
     "description": "...",
     "footer": "<strong> DISCLAIMER: </strong> This aggregator identifies \"junk news\" sites based on a grounded typology tested in several scientific studies conducted by the COMPROP research group. It reflects our scientific opinion and evaluation (the basis of opinion is described in our <a href=\"about.php\">methodology</a>), and does not necessarily reflect the views of our funders or the University of Oxford."
+  },
+  "events": {
+    "EU2019": {
+      "label": "EU Elections 2019",
+      "top10file": "eu2019_top10.json",
+      "top256file": "eu2019_top256.json",
+      "languages": {
+        "eng": { "label": "English" },
+        "de": { "label": "German / Deutsch" },
+        "es": { "label": "Spanish / Español" },
+        "fr": { "label": "French / Français" },
+        "it": { "label": "Italian / Italiano" },
+        "pl": { "label": "Polish / Polski" },
+        "sv": { "label": "Swedish / Svenska" }
+      }
+    },
+    "USmidterms2018": {
+      "label": "US Midterm Elections 2018",
+      "top10file": "usmidterms2018_top10.json",
+      "top256file": "usmidterms2018_top256.json",
+      "languages": {
+        "eng": { "label": "English" }
+      }
+    }
   }
 }
