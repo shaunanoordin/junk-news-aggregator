@@ -91,8 +91,8 @@ class App {
       //Register UI: event filter
       if (this.html.filterEvent) {
         this.html.filterEvent.onchange = () => {
-          this.updateLanguages();
           this.list_settings.filterEvent = this.html.filterEvent.value;
+          this.updateLanguages();  // Remember to update languages after updating the Event value.
           this.fetchList();
         };
         this.updateLanguages();
