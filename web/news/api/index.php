@@ -36,13 +36,15 @@ if (!$sql_connection->select_db($db_database)) {
 $input_debug = varGet("debug");
 $input_message = trim(varGet("message"));
 $input_publisher = trim(varGet("publisher"));
+$input_event = trim(varGet("event"));
+$input_lang = trim(varGet("lang"));
 $input_limit = varGet("limit");
 $input_hours_ago = varGet("hours_ago");
 $input_order = varGet("order");
 $input_engagement_matters = trim(varGet("most_engaging")) !== '';  //This flag indicates whether we're only interested in the most engaging stories.
 
 //Construct the SQL query: WHERE
-$sql_where = " WHERE (newsType = 'JUNK') AND (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) ";
+$sql_where = " WHERE (newsType = 'JUNK') AND (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) AND (eventTag LIKE ?) AND (lang LIKE ?)";
 if ($input_hours_ago !== "" && intval($input_hours_ago) > 0) {
   $sql_where = $sql_where . " AND (TIMESTAMPDIFF(HOUR, created_time, NOW()) <= " . intval($input_hours_ago) . ") "; 
 }
@@ -136,10 +138,12 @@ $json = [
 ];
 
 //Send the query and fetch the results.
-$search_message = ($input_message) ? "%".$input_message."%" : "%";
-$search_publisher = ($input_publisher) ? "%".$input_publisher."%" : "%";
+$search_message = ($input_message) ? "%".$input_message."%" : "%";  // Messages can be searched by wildcards.
+$search_publisher = ($input_publisher) ? "%".$input_publisher."%" : "%";  // Publishers can be searched by wildcards.
+$search_event = ($input_event) ? $input_event : "%";  // If event is specified, don't use wildcard.
+$search_lang = ($input_lang) ? $input_lang : "%";  // If lang is specified, don't use wildcard.
 $sql_prepared_statement = $sql_connection->prepare($sql_query);
-$sql_prepared_statement->bind_param("ss", $search_message, $search_publisher);
+$sql_prepared_statement->bind_param("ssss", $search_message, $search_publisher, $search_event, $search_lang);
 $sql_prepared_statement->execute();
 $sql_results = $sql_prepared_statement->get_result();
 
@@ -151,6 +155,8 @@ while ($row = $sql_results->fetch_assoc()) {
     "post_ID" => $row["post_ID"],
     "link" => $row["link"],
     "message" => $row["message"],
+    "eventTag" => $row["eventTag"],
+    "lang" => $row["lang"],
     "picture" => $row["picture"],
     "full_picture" => $row["full_picture"],
     "created_time" => $row["created_time"] . "+0000",  //Specify the UTC time zone
