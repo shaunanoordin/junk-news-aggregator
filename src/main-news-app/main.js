@@ -199,6 +199,8 @@ class App {
     list.appendChild(eleMessage);
     
     request.get(this.API_URL)
+    .query({ event: this.list_settings.filterEvent })
+    .query({ lang: this.list_settings.filterLang })
     .query({ hours_ago: this.list_settings.filterTime })
     .query({ message: this.list_settings.filterMessage })
     .query({ publisher: this.list_settings.filterPublisher })
