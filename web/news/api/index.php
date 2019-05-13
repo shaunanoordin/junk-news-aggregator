@@ -32,6 +32,9 @@ if (!$sql_connection->select_db($db_database)) {
   die("Database Selection Error");
 }
 
+//Set Character Set to UTF-8 to handle accented characters, etc.
+$sql_connection->set_charset("utf8");
+
 //Get any query variables.
 $input_debug = varGet("debug");
 $input_message = trim(varGet("message"));
