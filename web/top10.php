@@ -230,7 +230,7 @@ function print_json($data) {
     <!-- Event selection -->
     <div class="major row">
       <div class="group">
-        <span>Event:</span>
+        <span>Location:</span>
         <select id="filter-event">
           <?php foreach ($config->events as $eventName => $eventDetails) { ?>
             <option

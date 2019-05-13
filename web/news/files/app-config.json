@@ -20,7 +20,7 @@
   },
   "events": {
     "EU2019": {
-      "label": "EU Elections 2019",
+      "label": "EU",
       "top10file": "eu2019_top10.json",
       "top256file": "eu2019_top256.json",
       "languages": {
@@ -34,7 +34,7 @@
       }
     },
     "USmidterms2018": {
-      "label": "US Midterm Elections 2018",
+      "label": "US",
       "top10file": "usmidterms2018_top10.json",
       "top256file": "usmidterms2018_top256.json",
       "languages": {
