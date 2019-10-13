@@ -61,12 +61,12 @@ function print_json($data) {
     <div class="links">
       <a
         class="link-facebook"
-        title="View Facebook post"
+        title="View original post"
         href="<?php p("https://facebook.com/" . $item->post_ID) ?>"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="./assets/logo-facebook.png">
+        🔗
       </a>
       <a
         class="link-website"

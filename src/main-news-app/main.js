@@ -330,14 +330,11 @@ class App {
         const eleLinkFacebook = document.createElement("a");
         eleLinkFacebook.className = "link-facebook";
         eleLinkFacebook.href = urlFacebook;
-        eleLinkFacebook.title = "View Facebook post";
+        eleLinkFacebook.title = "View original post";
         eleLinkFacebook.target = "_blank";
         eleLinkFacebook.rel = "noopener noreferrer";
-        eleLinks.appendChild(eleLinkFacebook);
-        
-        const eleLinkFacebookImg = document.createElement("img");
-        eleLinkFacebookImg.src = "assets/logo-facebook.png";
-        eleLinkFacebook.appendChild(eleLinkFacebookImg);
+        eleLinkFacebook.textContent = "🔗";
+        eleLinks.appendChild(eleLinkFacebook);        
       }
       
       if (item.link) {
@@ -347,7 +344,6 @@ class App {
         eleLinkWebsite.title = "View original article";
         eleLinkWebsite.target = "_blank";
         eleLinkWebsite.rel = "noopener noreferrer";
-        eleLinkWebsite.textContent = "🌐";
         eleLinks.appendChild(eleLinkWebsite);
       }
       

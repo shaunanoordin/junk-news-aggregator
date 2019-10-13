@@ -85,12 +85,12 @@ echo "</script> \r\n";
         <div class="links">
           <a
             class="link-facebook"
-            title="View Facebook post"
+            title="View original post"
             href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="assets/logo-facebook.png">
+            🔗
           </a>
           <a
             class="link-website"
