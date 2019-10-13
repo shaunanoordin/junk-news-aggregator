@@ -43,6 +43,8 @@ $input_event = trim(varGet("event"));
 $input_lang = trim(varGet("lang"));
 $input_limit = varGet("limit");
 $input_hours_ago = varGet("hours_ago");
+$input_date_start = varGet("date_start");
+$input_date_end = varGet("date_end");
 $input_order = varGet("order");
 $input_engagement_matters = trim(varGet("most_engaging")) !== '';  //This flag indicates whether we're only interested in the most engaging stories.
 
@@ -50,6 +52,12 @@ $input_engagement_matters = trim(varGet("most_engaging")) !== '';  //This flag i
 $sql_where = " WHERE (newsType = 'JUNK') AND (message IS NOT null) AND (message LIKE ?) AND (publisher_name LIKE ?) AND (eventTag LIKE ?) AND (lang LIKE ?)";
 if ($input_hours_ago !== "" && intval($input_hours_ago) > 0) {
   $sql_where = $sql_where . " AND (TIMESTAMPDIFF(HOUR, created_time, NOW()) <= " . intval($input_hours_ago) . ") "; 
+}
+if (cleanDateInput($input_date_start) !== "") {
+  $sql_where = $sql_where . " AND ('". cleanDateInput($input_date_start) . "' <= DATE(created_time)) "; 
+}
+if (cleanDateInput($input_date_end) !== "") {
+  $sql_where = $sql_where . " AND ('". cleanDateInput($input_date_end) . "' >= DATE(created_time)) "; 
 }
 
 //Construct the SQL query: ORDER
