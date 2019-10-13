@@ -73,4 +73,15 @@ function safely_print_json_aux($item, $depth) {
     echo (str_repeat(" ", $depth*2) . "] \r\n");
   }
 }
+
+/*  Cleans a string representing a date, to make it safe for database input.
+ */
+function cleanDateInput($str) {
+  if (preg_match("/^(\d{4})(\-)(\d{2})(\-)(\d{2})$/", $str)) {
+    $date = @DateTime::createFromFormat('Y-m-d', $str);
+    return $date->format('Y-m-d');
+  }
+  
+  return "";
+}
 ?>
