@@ -59,7 +59,9 @@ class App {
       list: document.getElementById("list"),
       filterEvent: document.getElementById("filter-event"),
       filterLang: document.getElementById("filter-lang"),
-      filterTime: document.getElementById("filter-time"),
+      //filterTime: document.getElementById("filter-time"),
+      filterDateStart: document.getElementById("filter-date-start"),
+      filterDateEnd: document.getElementById("filter-date-end"),
       filterMessage: document.getElementById("filter-message"),
       filterPublisher: document.getElementById("filter-publisher"),
       filterButton: document.getElementById("filter-button"),
@@ -77,7 +79,9 @@ class App {
     this.list_settings = Object.assign({
       filterEvent: this.html.filterEvent.value || "",
       filterLang: this.html.filterLang.value || "",
-      filterTime: this.html.filterTime.value || "",
+      //filterTime: this.html.filterTime.value || "",
+      filterDateStart: this.html.filterDateStart.value || "",
+      filterDateEnd: this.html.filterDateEnd.value || "",
       filterMessage: this.html.filterMessage.value || "",
       filterPublisher: this.html.filterPublisher.value || "",
       sort: "w_engagement",
@@ -107,9 +111,25 @@ class App {
       }
       
       //Register UI: time filter
-      if (this.html.filterTime) {
-        this.html.filterTime.onchange = () => {
-          this.list_settings.filterTime = this.html.filterTime.value;
+      // if (this.html.filterTime) {
+      //   this.html.filterTime.onchange = () => {
+      //     this.list_settings.filterTime = this.html.filterTime.value;
+      //     this.fetchList();
+      //   };
+      // }
+      
+      //Register UI: date start
+      if (this.html.filterDateStart) {
+        this.html.filterDateStart.onchange = () => {
+          this.list_settings.dateStart = this.html.filterDateStart.value;
+          this.fetchList();
+        };
+      }
+      
+      //Register UI: date end
+      if (this.html.filterDateEnd) {
+        this.html.filterDateEnd.onchange = () => {
+          this.list_settings.dateEnd = this.html.filterDateEnd.value;
           this.fetchList();
         };
       }
@@ -147,7 +167,7 @@ class App {
       }
       
       //Initial data fetch.
-      this.list_settings.filterTime = this.html.filterTime.value;
+      //this.list_settings.filterTime = this.html.filterTime.value;
       this.fetchList();
     }
     //--------------------------------
@@ -201,7 +221,9 @@ class App {
     request.get(this.API_URL)
     .query({ event: this.list_settings.filterEvent })
     .query({ lang: this.list_settings.filterLang })
-    .query({ hours_ago: this.list_settings.filterTime })
+    //.query({ hours_ago: this.list_settings.filterTime })
+    .query({ date_start: this.list_settings.dateStart })
+    .query({ date_end: this.list_settings.dateEnd })
     .query({ message: this.list_settings.filterMessage })
     .query({ publisher: this.list_settings.filterPublisher })
     .query({ limit: this.list_settings.limit })

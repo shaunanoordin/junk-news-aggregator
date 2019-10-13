@@ -45,6 +45,7 @@ echo "</script> \r\n";
     </div>
     <!-- /Event selection -->
     <div class="row">
+      <!--
       <span>Showing Facebook news posts from the last</span>
       <select id="filter-time">
         <option value="">All time</option>
@@ -61,6 +62,11 @@ echo "</script> \r\n";
         <option value="720">1 month</option>
         <option value="7200">10 months</option>
       </select>
+      -->
+      <span>Showing Facebook news posts from</span>
+      <input id="filter-date-start" type="text" value="" placeholder="2000-01-01">
+      <span> to </span>
+      <input id="filter-date-end" type="text" value="" placeholder="2050-12-31">
     </div>
     <div class="row">
       <span>optionally filtered by</span>
