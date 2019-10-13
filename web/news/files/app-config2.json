@@ -1,0 +1,13 @@
+{
+  "mainApp": {
+    "title": "Junk News Aggregator",
+    "homeDescription": "This site shows English language junk news stories posted on Facebook in the context of the 2018 US miterm elections. The term “junk news” is defined in our <a href=\"https://newsaggregator.oii.ox.ac.uk/\">methodology</a>.",
+    "archiveDescription": "This archive shows English language junk news stories posted on Facebook more than 24 hours ago, in the context of the 2018 US miterm elections. The term “junk news” is defined in our <a href=\"https://newsaggregator.oii.ox.ac.uk/\">methodology</a>.",
+    "footer": "2018"
+  },
+  "top10MiniApp": {
+    "title": "Junk News Aggregator - Top 10",
+    "description": "This site shows the top 10 English language junk news stories posted on Facebook in the last 24 hours, in the context of the 2018 US miterm elections. It is updated once a day at 5pm ET. The term “junk news” is defined in our <a href=\"https://newsaggregator.oii.ox.ac.uk/\">methodology</a>. This is a smaller version of the full Junk News Aggregator, <a href=\"https://newsaggregator.oii.ox.ac.uk/access.php\">available here</a>",
+    "footer": "2018"
+  }
+}
