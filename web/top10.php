@@ -66,7 +66,7 @@ function print_json($data) {
     <div class="links">
       <a
         class="link-facebook"
-        title="View original post"
+        title="View Facebook post"
         href="<?php p("https://facebook.com/" . $item->post_ID) ?>"
         target="_blank"
         rel="noopener noreferrer"

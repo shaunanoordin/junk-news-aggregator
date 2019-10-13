@@ -330,7 +330,7 @@ class App {
         const eleLinkFacebook = document.createElement("a");
         eleLinkFacebook.className = "link-facebook";
         eleLinkFacebook.href = urlFacebook;
-        eleLinkFacebook.title = "View original post";
+        eleLinkFacebook.title = "View Facebook post";
         eleLinkFacebook.target = "_blank";
         eleLinkFacebook.rel = "noopener noreferrer";
         eleLinkFacebook.textContent = "🔗";
@@ -344,6 +344,7 @@ class App {
         eleLinkWebsite.title = "View original article";
         eleLinkWebsite.target = "_blank";
         eleLinkWebsite.rel = "noopener noreferrer";
+        eleLinkWebsite.textContent = "🌐";
         eleLinks.appendChild(eleLinkWebsite);
       }
       
