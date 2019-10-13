@@ -47,6 +47,7 @@ echo "</script> \r\n";
     <div class="row">
       <span>Showing Facebook news posts from the last</span>
       <select id="filter-time">
+        <option value="">All time</option>
         <option value="1">1 hour</option>
         <option value="2">2 hours</option>
         <option value="3">3 hours</option>
@@ -58,6 +59,7 @@ echo "</script> \r\n";
         <option value="72">3 days</option>
         <option value="168">1 week</option>
         <option value="720">1 month</option>
+        <option value="7200">10 months</option>
       </select>
     </div>
     <div class="row">
