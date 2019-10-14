@@ -125,22 +125,26 @@ class App {
       
       //Register UI: date start
       if (this.html.filterDateStart) {
-        this.html.filterDateStart.onchange = () => {
+        const doChange = () => {
           this.list_settings.dateStart = this.html.filterDateStart.value;
           this.fetchList();
         };
         
-        const startPicker = datepicker("#filter-date-start", { formatter: dateFormatter, minDate: null, maxDate: null, });
+        this.html.filterDateStart.onchange = doChange;
+        
+        const startPicker = datepicker("#filter-date-start", { formatter: dateFormatter, minDate: null, maxDate: null, onHide: doChange });
       }
       
       //Register UI: date end
       if (this.html.filterDateEnd) {
-        this.html.filterDateEnd.onchange = () => {
+        const doChange = () => {
           this.list_settings.dateEnd = this.html.filterDateEnd.value;
           this.fetchList();
         };
         
-        const endPicker = datepicker("#filter-date-end", { formatter: dateFormatter, minDate: null, maxDate: null, });
+        this.html.filterDateEnd.onchange = doChange;
+        
+        const endPicker = datepicker("#filter-date-end", { formatter: dateFormatter, minDate: null, maxDate: null, onHide: doChange });
       }
       
       //Register UI: message filter
