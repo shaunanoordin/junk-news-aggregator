@@ -125,22 +125,26 @@ class App {
       
       //Register UI: date start
       if (this.html.filterDateStart) {
-        this.html.filterDateStart.onchange = () => {
-          this.list_settings.dateStart = this.html.filterDateStart.value;
+        const doChange = () => {
+          this.list_settings.filterDateStart = this.html.filterDateStart.value;
           this.fetchList();
         };
         
-        const startPicker = datepicker("#filter-date-start", { formatter: dateFormatter, minDate: null, maxDate: null, });
+        this.html.filterDateStart.onchange = doChange;
+        
+        const startPicker = datepicker("#filter-date-start", { formatter: dateFormatter, minDate: null, maxDate: null, onHide: doChange });
       }
       
       //Register UI: date end
       if (this.html.filterDateEnd) {
-        this.html.filterDateEnd.onchange = () => {
-          this.list_settings.dateEnd = this.html.filterDateEnd.value;
+        const doChange = () => {
+          this.list_settings.filterDateEnd = this.html.filterDateEnd.value;
           this.fetchList();
         };
         
-        const endPicker = datepicker("#filter-date-end", { formatter: dateFormatter, minDate: null, maxDate: null, });
+        this.html.filterDateEnd.onchange = doChange;
+        
+        const endPicker = datepicker("#filter-date-end", { formatter: dateFormatter, minDate: null, maxDate: null, onHide: doChange });
       }
       
       //Register UI: message filter
@@ -231,8 +235,8 @@ class App {
     .query({ event: this.list_settings.filterEvent })
     .query({ lang: this.list_settings.filterLang })
     //.query({ hours_ago: this.list_settings.filterTime })
-    .query({ date_start: this.list_settings.dateStart })
-    .query({ date_end: this.list_settings.dateEnd })
+    .query({ date_start: this.list_settings.filterDateStart })
+    .query({ date_end: this.list_settings.filterDateEnd })
     .query({ message: this.list_settings.filterMessage })
     .query({ publisher: this.list_settings.filterPublisher })
     .query({ limit: this.list_settings.limit })
