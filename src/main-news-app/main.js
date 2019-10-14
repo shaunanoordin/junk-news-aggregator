@@ -407,6 +407,9 @@ class App {
           created_time = new Date(time_string);
         }
         
+        eleTime.textContent = created_time.toDateString();
+        
+        /*
         const timeAgo = (now - created_time) / 1000;  //Time since created_time, in seconds.
         
         if (isNaN(timeAgo)) {  //Failsafe
@@ -420,6 +423,7 @@ class App {
         } else {
           eleTime.textContent = Math.floor(timeAgo / (60 * 60 * 24)) + " day(s) ago";
         }
+        */
         
         eleTime.title = created_time;
       } catch (err) { eleTime.textContent = ""; }
