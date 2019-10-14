@@ -45,8 +45,10 @@ echo "</script> \r\n";
     </div>
     <!-- /Event selection -->
     <div class="row">
+      <!--
       <span>Showing Facebook news posts from the last</span>
       <select id="filter-time">
+        <option value="">All time</option>
         <option value="1">1 hour</option>
         <option value="2">2 hours</option>
         <option value="3">3 hours</option>
@@ -58,7 +60,13 @@ echo "</script> \r\n";
         <option value="72">3 days</option>
         <option value="168">1 week</option>
         <option value="720">1 month</option>
+        <option value="7200">10 months</option>
       </select>
+      -->
+      <span>Showing Facebook news posts from</span>
+      <input id="filter-date-start" type="text" value="" placeholder="2000-01-01">
+      <span> to </span>
+      <input id="filter-date-end" type="text" value="" placeholder="2050-12-31">
     </div>
     <div class="row">
       <span>optionally filtered by</span>
@@ -85,12 +93,12 @@ echo "</script> \r\n";
         <div class="links">
           <a
             class="link-facebook"
-            title="View Facebook post"
+            title="View original post"
             href="https://www.facebook.com/100PercentFEDUp/photos/a.330374477016724.83603.311190048935167/1703680866352738/?type=3"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="assets/logo-facebook.png">
+            🔗
           </a>
           <a
             class="link-website"

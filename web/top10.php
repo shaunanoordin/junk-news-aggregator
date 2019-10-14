@@ -71,7 +71,7 @@ function print_json($data) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="./assets/logo-facebook.png">
+        🔗
       </a>
       <a
         class="link-website"
