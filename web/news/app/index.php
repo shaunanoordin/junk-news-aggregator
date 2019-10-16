@@ -64,15 +64,15 @@ echo "</script> \r\n";
       </select>
       -->
       <span>Showing Facebook news posts from</span>
-      <input id="filter-date-start" type="text" value="" placeholder="2000-01-01">
+      <input id="filter-date-start" type="text" value="" placeholder="YYYY-MM-DD">
       <span> to </span>
-      <input id="filter-date-end" type="text" value="" placeholder="2050-12-31">
+      <input id="filter-date-end" type="text" value="" placeholder="YYYY-MM-DD">
     </div>
     <div class="row">
       <span>optionally filtered by</span>
       <input id="filter-message" type="text" value="" placeholder="content">
       <input id="filter-publisher" type="text" value="" placeholder="publisher">
-      <button id="filter-button">&raquo;</button>
+      <button id="filter-button">Search &raquo;</button>
     </div>
   </div>
   

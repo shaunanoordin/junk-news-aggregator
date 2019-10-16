@@ -98,7 +98,7 @@ class App {
         this.html.filterEvent.onchange = () => {
           this.list_settings.filterEvent = this.html.filterEvent.value;
           this.updateLanguages();  // Remember to update languages after updating the Event value.
-          this.fetchList();
+          //this.fetchList();
         };
         this.updateLanguages();
       }
@@ -107,7 +107,7 @@ class App {
       if (this.html.filterLang) {
         this.html.filterLang.onchange = () => {
           this.list_settings.filterLang = this.html.filterLang.value;
-          this.fetchList();
+          //this.fetchList();
         };
       }
       
@@ -127,7 +127,7 @@ class App {
       if (this.html.filterDateStart) {
         const doChange = () => {
           this.list_settings.filterDateStart = this.html.filterDateStart.value;
-          this.fetchList();
+          //this.fetchList();
         };
         
         this.html.filterDateStart.onchange = doChange;
@@ -139,7 +139,7 @@ class App {
       if (this.html.filterDateEnd) {
         const doChange = () => {
           this.list_settings.filterDateEnd = this.html.filterDateEnd.value;
-          this.fetchList();
+          //this.fetchList();
         };
         
         this.html.filterDateEnd.onchange = doChange;
@@ -151,7 +151,7 @@ class App {
       if (this.html.filterMessage) {
         this.html.filterMessage.onchange = () => {
           this.list_settings.filterMessage = this.html.filterMessage.value;
-          this.fetchList();
+          //this.fetchList();
         };
       }
       
@@ -159,7 +159,7 @@ class App {
       if (this.html.filterPublisher) {
         this.html.filterPublisher.onchange = () => {
           this.list_settings.filterPublisher = this.html.filterPublisher.value;
-          this.fetchList();
+          //this.fetchList();
         };
       }
       
